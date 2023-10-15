@@ -1,0 +1,2179 @@
+{
+  "1": {
+    "countryCode": "CI,BF,GH,GM,GN,IS,ML,MR,SH,SL,SN,TG",
+    "ianaId": "Africa/Abidjan",
+    "windowsId": "Greenwich Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "2": {
+    "countryCode": "DZ",
+    "ianaId": "Africa/Algiers",
+    "windowsId": "W. Central Africa Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "3": {
+    "countryCode": "GW",
+    "ianaId": "Africa/Bissau",
+    "windowsId": "Greenwich Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "4": {
+    "countryCode": "EG",
+    "ianaId": "Africa/Cairo",
+    "windowsId": "Egypt Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "5": {
+    "countryCode": "MA",
+    "ianaId": "Africa/Casablanca",
+    "windowsId": "Morocco Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "6": {
+    "countryCode": "ES",
+    "ianaId": "Africa/Ceuta",
+    "windowsId": "Romance Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": "Ceuta, Melilla"
+  },
+  "7": {
+    "countryCode": "EH",
+    "ianaId": "Africa/El_Aaiun",
+    "windowsId": "Morocco Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "8": {
+    "countryCode": "ZA,LS,SZ",
+    "ianaId": "Africa/Johannesburg",
+    "windowsId": "South Africa Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "9": {
+    "countryCode": "SS",
+    "ianaId": "Africa/Juba",
+    "windowsId": "South Africa Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "10": {
+    "countryCode": "SD",
+    "ianaId": "Africa/Khartoum",
+    "windowsId": "Sudan Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "11": {
+    "countryCode": "NG,AO,BJ,CD,CF,CG,CM,GA,GQ,NE",
+    "ianaId": "Africa/Lagos",
+    "windowsId": "W. Central Africa Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": "West Africa Time"
+  },
+  "12": {
+    "countryCode": "MZ,BI,BW,CD,MW,RW,ZM,ZW",
+    "ianaId": "Africa/Maputo",
+    "windowsId": "South Africa Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "Central Africa Time"
+  },
+  "13": {
+    "countryCode": "LR",
+    "ianaId": "Africa/Monrovia",
+    "windowsId": "Greenwich Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "14": {
+    "countryCode": "KE,DJ,ER,ET,KM,MG,SO,TZ,UG,YT",
+    "ianaId": "Africa/Nairobi",
+    "windowsId": "E. Africa Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "15": {
+    "countryCode": "TD",
+    "ianaId": "Africa/Ndjamena",
+    "windowsId": "W. Central Africa Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "16": {
+    "countryCode": "ST",
+    "ianaId": "Africa/Sao_Tome",
+    "windowsId": "Sao Tome Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "17": {
+    "countryCode": "LY",
+    "ianaId": "Africa/Tripoli",
+    "windowsId": "Libya Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "18": {
+    "countryCode": "TN",
+    "ianaId": "Africa/Tunis",
+    "windowsId": "W. Central Africa Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "19": {
+    "countryCode": "NA",
+    "ianaId": "Africa/Windhoek",
+    "windowsId": "Namibia Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "20": {
+    "countryCode": "US",
+    "ianaId": "America/Adak",
+    "windowsId": "Aleutian Standard Time",
+    "utcOffset": "(UTC-10:00)",
+    "comments": "Alaska - western Aleutians"
+  },
+  "21": {
+    "countryCode": "US",
+    "ianaId": "America/Anchorage",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska (most areas)"
+  },
+  "22": {
+    "countryCode": "BR",
+    "ianaId": "America/Araguaina",
+    "windowsId": "Tocantins Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Tocantins"
+  },
+  "23": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Buenos_Aires",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Buenos Aires (BA, CF)"
+  },
+  "24": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Catamarca",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Catamarca (CT); Chubut (CH)"
+  },
+  "25": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Cordoba",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "most areas: CB, CC, CN, ER, FM, MN, SE, SF"
+  },
+  "26": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Jujuy",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Jujuy (JY)"
+  },
+  "27": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/La_Rioja",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "La Rioja (LR)"
+  },
+  "28": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Mendoza",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Mendoza (MZ)"
+  },
+  "29": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Rio_Gallegos",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Santa Cruz (SC)"
+  },
+  "30": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Salta",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Salta (SA, LP, NQ, RN)"
+  },
+  "31": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/San_Juan",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "San Juan (SJ)"
+  },
+  "32": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/San_Luis",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "San Luis (SL)"
+  },
+  "33": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Tucuman",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Tucum\u00E1n (TM)"
+  },
+  "34": {
+    "countryCode": "AR",
+    "ianaId": "America/Argentina/Ushuaia",
+    "windowsId": "Argentina Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Tierra del Fuego (TF)"
+  },
+  "35": {
+    "countryCode": "PY",
+    "ianaId": "America/Asuncion",
+    "windowsId": "Paraguay Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "36": {
+    "countryCode": "BR",
+    "ianaId": "America/Bahia",
+    "windowsId": "Bahia Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Bahia"
+  },
+  "37": {
+    "countryCode": "MX",
+    "ianaId": "America/Bahia_Banderas",
+    "windowsId": "Central Standard Time (Mexico)",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Bah\u00EDa de Banderas"
+  },
+  "38": {
+    "countryCode": "BB",
+    "ianaId": "America/Barbados",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "39": {
+    "countryCode": "BR",
+    "ianaId": "America/Belem",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Par\u00E1 (east); Amap\u00E1"
+  },
+  "40": {
+    "countryCode": "BZ",
+    "ianaId": "America/Belize",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "41": {
+    "countryCode": "BR",
+    "ianaId": "America/Boa_Vista",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Roraima"
+  },
+  "42": {
+    "countryCode": "CO",
+    "ianaId": "America/Bogota",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "43": {
+    "countryCode": "US",
+    "ianaId": "America/Boise",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Mountain - ID (south); OR (east)"
+  },
+  "44": {
+    "countryCode": "CA",
+    "ianaId": "America/Cambridge_Bay",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Mountain - NU (west)"
+  },
+  "45": {
+    "countryCode": "BR",
+    "ianaId": "America/Campo_Grande",
+    "windowsId": "Central Brazilian Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Mato Grosso do Sul"
+  },
+  "46": {
+    "countryCode": "MX",
+    "ianaId": "America/Cancun",
+    "windowsId": "Eastern Standard Time (Mexico)",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Quintana Roo"
+  },
+  "47": {
+    "countryCode": "VE",
+    "ianaId": "America/Caracas",
+    "windowsId": "Venezuela Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "48": {
+    "countryCode": "GF",
+    "ianaId": "America/Cayenne",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": ""
+  },
+  "49": {
+    "countryCode": "US",
+    "ianaId": "America/Chicago",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central (most areas)"
+  },
+  "50": {
+    "countryCode": "MX",
+    "ianaId": "America/Chihuahua",
+    "windowsId": "Mountain Standard Time (Mexico)",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Chihuahua (most areas)"
+  },
+  "51": {
+    "countryCode": "MX",
+    "ianaId": "America/Ciudad_Juarez",
+    "windowsId": null,
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Chihuahua (US border - west)"
+  },
+  "52": {
+    "countryCode": "CR",
+    "ianaId": "America/Costa_Rica",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "53": {
+    "countryCode": "BR",
+    "ianaId": "America/Cuiaba",
+    "windowsId": "Central Brazilian Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Mato Grosso"
+  },
+  "54": {
+    "countryCode": "GL",
+    "ianaId": "America/Danmarkshavn",
+    "windowsId": "Greenwich Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": "National Park (east coast)"
+  },
+  "55": {
+    "countryCode": "CA",
+    "ianaId": "America/Dawson",
+    "windowsId": "Yukon Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "MST - Yukon (west)"
+  },
+  "56": {
+    "countryCode": "CA",
+    "ianaId": "America/Dawson_Creek",
+    "windowsId": "US Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "MST - BC (Dawson Cr, Ft St John)"
+  },
+  "57": {
+    "countryCode": "US",
+    "ianaId": "America/Denver",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Mountain (most areas)"
+  },
+  "58": {
+    "countryCode": "US",
+    "ianaId": "America/Detroit",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - MI (most areas)"
+  },
+  "59": {
+    "countryCode": "CA",
+    "ianaId": "America/Edmonton",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Mountain - AB; BC (E); NT (E); SK (W)"
+  },
+  "60": {
+    "countryCode": "BR",
+    "ianaId": "America/Eirunepe",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Amazonas (west)"
+  },
+  "61": {
+    "countryCode": "SV",
+    "ianaId": "America/El_Salvador",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "62": {
+    "countryCode": "CA",
+    "ianaId": "America/Fort_Nelson",
+    "windowsId": "US Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "MST - BC (Ft Nelson)"
+  },
+  "63": {
+    "countryCode": "BR",
+    "ianaId": "America/Fortaleza",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Brazil (northeast: MA, PI, CE, RN, PB)"
+  },
+  "64": {
+    "countryCode": "CA",
+    "ianaId": "America/Glace_Bay",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Atlantic - NS (Cape Breton)"
+  },
+  "65": {
+    "countryCode": "CA",
+    "ianaId": "America/Goose_Bay",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Atlantic - Labrador (most areas)"
+  },
+  "66": {
+    "countryCode": "TC",
+    "ianaId": "America/Grand_Turk",
+    "windowsId": "Turks And Caicos Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "67": {
+    "countryCode": "GT",
+    "ianaId": "America/Guatemala",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "68": {
+    "countryCode": "EC",
+    "ianaId": "America/Guayaquil",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Ecuador (mainland)"
+  },
+  "69": {
+    "countryCode": "GY",
+    "ianaId": "America/Guyana",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "70": {
+    "countryCode": "CA",
+    "ianaId": "America/Halifax",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Atlantic - NS (most areas); PE"
+  },
+  "71": {
+    "countryCode": "CU",
+    "ianaId": "America/Havana",
+    "windowsId": "Cuba Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "72": {
+    "countryCode": "MX",
+    "ianaId": "America/Hermosillo",
+    "windowsId": "US Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Sonora"
+  },
+  "73": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Indianapolis",
+    "windowsId": "US Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (most areas)"
+  },
+  "74": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Knox",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - IN (Starke)"
+  },
+  "75": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Marengo",
+    "windowsId": "US Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (Crawford)"
+  },
+  "76": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Petersburg",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (Pike)"
+  },
+  "77": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Tell_City",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - IN (Perry)"
+  },
+  "78": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Vevay",
+    "windowsId": "US Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (Switzerland)"
+  },
+  "79": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Vincennes",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (Da, Du, K, Mn)"
+  },
+  "80": {
+    "countryCode": "US",
+    "ianaId": "America/Indiana/Winamac",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - IN (Pulaski)"
+  },
+  "81": {
+    "countryCode": "CA",
+    "ianaId": "America/Inuvik",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Mountain - NT (west)"
+  },
+  "82": {
+    "countryCode": "CA",
+    "ianaId": "America/Iqaluit",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - NU (most areas)"
+  },
+  "83": {
+    "countryCode": "JM",
+    "ianaId": "America/Jamaica",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "84": {
+    "countryCode": "US",
+    "ianaId": "America/Juneau",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska - Juneau area"
+  },
+  "85": {
+    "countryCode": "US",
+    "ianaId": "America/Kentucky/Louisville",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - KY (Louisville area)"
+  },
+  "86": {
+    "countryCode": "US",
+    "ianaId": "America/Kentucky/Monticello",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - KY (Wayne)"
+  },
+  "87": {
+    "countryCode": "BO",
+    "ianaId": "America/La_Paz",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "88": {
+    "countryCode": "PE",
+    "ianaId": "America/Lima",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "89": {
+    "countryCode": "US",
+    "ianaId": "America/Los_Angeles",
+    "windowsId": "Pacific Standard Time",
+    "utcOffset": "(UTC-08:00)",
+    "comments": "Pacific"
+  },
+  "90": {
+    "countryCode": "BR",
+    "ianaId": "America/Maceio",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Alagoas, Sergipe"
+  },
+  "91": {
+    "countryCode": "NI",
+    "ianaId": "America/Managua",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "92": {
+    "countryCode": "BR",
+    "ianaId": "America/Manaus",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Amazonas (east)"
+  },
+  "93": {
+    "countryCode": "MQ",
+    "ianaId": "America/Martinique",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "94": {
+    "countryCode": "MX",
+    "ianaId": "America/Matamoros",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Coahuila, Nuevo Le\u00F3n, Tamaulipas (US border)"
+  },
+  "95": {
+    "countryCode": "MX",
+    "ianaId": "America/Mazatlan",
+    "windowsId": "Mountain Standard Time (Mexico)",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Baja California Sur, Nayarit (most areas), Sinaloa"
+  },
+  "96": {
+    "countryCode": "US",
+    "ianaId": "America/Menominee",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - MI (Wisconsin border)"
+  },
+  "97": {
+    "countryCode": "MX",
+    "ianaId": "America/Merida",
+    "windowsId": "Central Standard Time (Mexico)",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Campeche, Yucat\u00E1n"
+  },
+  "98": {
+    "countryCode": "US",
+    "ianaId": "America/Metlakatla",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska - Annette Island"
+  },
+  "99": {
+    "countryCode": "MX",
+    "ianaId": "America/Mexico_City",
+    "windowsId": "Central Standard Time (Mexico)",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central Mexico"
+  },
+  "100": {
+    "countryCode": "PM",
+    "ianaId": "America/Miquelon",
+    "windowsId": "Saint Pierre Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": ""
+  },
+  "101": {
+    "countryCode": "CA",
+    "ianaId": "America/Moncton",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Atlantic - New Brunswick"
+  },
+  "102": {
+    "countryCode": "MX",
+    "ianaId": "America/Monterrey",
+    "windowsId": "Central Standard Time (Mexico)",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Durango; Coahuila, Nuevo Le\u00F3n, Tamaulipas (most areas)"
+  },
+  "103": {
+    "countryCode": "UY",
+    "ianaId": "America/Montevideo",
+    "windowsId": "Montevideo Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": ""
+  },
+  "104": {
+    "countryCode": "US",
+    "ianaId": "America/New_York",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern (most areas)"
+  },
+  "105": {
+    "countryCode": "US",
+    "ianaId": "America/Nome",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska (west)"
+  },
+  "106": {
+    "countryCode": "BR",
+    "ianaId": "America/Noronha",
+    "windowsId": "UTC-02",
+    "utcOffset": "(UTC-02:00)",
+    "comments": "Atlantic islands"
+  },
+  "107": {
+    "countryCode": "US",
+    "ianaId": "America/North_Dakota/Beulah",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - ND (Mercer)"
+  },
+  "108": {
+    "countryCode": "US",
+    "ianaId": "America/North_Dakota/Center",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - ND (Oliver)"
+  },
+  "109": {
+    "countryCode": "US",
+    "ianaId": "America/North_Dakota/New_Salem",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - ND (Morton rural)"
+  },
+  "110": {
+    "countryCode": "GL",
+    "ianaId": "America/Nuuk",
+    "windowsId": "Greenland Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "most of Greenland"
+  },
+  "111": {
+    "countryCode": "MX",
+    "ianaId": "America/Ojinaga",
+    "windowsId": "Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "Chihuahua (US border - east)"
+  },
+  "112": {
+    "countryCode": "PA,CA,KY",
+    "ianaId": "America/Panama",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "EST - ON (Atikokan), NU (Coral H)"
+  },
+  "113": {
+    "countryCode": "SR",
+    "ianaId": "America/Paramaribo",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": ""
+  },
+  "114": {
+    "countryCode": "US,CA",
+    "ianaId": "America/Phoenix",
+    "windowsId": "US Mountain Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "MST - AZ (most areas), Creston BC"
+  },
+  "115": {
+    "countryCode": "HT",
+    "ianaId": "America/Port-au-Prince",
+    "windowsId": "Haiti Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": ""
+  },
+  "116": {
+    "countryCode": "BR",
+    "ianaId": "America/Porto_Velho",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Rond\u00F4nia"
+  },
+  "117": {
+    "countryCode": "PR,AG,CA,AI,AW,BL,BQ,CW,DM,GD,GP,KN,LC,MF,MS,SX,TT,VC,VG,VI",
+    "ianaId": "America/Puerto_Rico",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "AST"
+  },
+  "118": {
+    "countryCode": "CL",
+    "ianaId": "America/Punta_Arenas",
+    "windowsId": "Magallanes Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Region of Magallanes"
+  },
+  "119": {
+    "countryCode": "CA",
+    "ianaId": "America/Rankin_Inlet",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - NU (central)"
+  },
+  "120": {
+    "countryCode": "BR",
+    "ianaId": "America/Recife",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Pernambuco"
+  },
+  "121": {
+    "countryCode": "CA",
+    "ianaId": "America/Regina",
+    "windowsId": "Canada Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "CST - SK (most areas)"
+  },
+  "122": {
+    "countryCode": "CA",
+    "ianaId": "America/Resolute",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - NU (Resolute)"
+  },
+  "123": {
+    "countryCode": "BR",
+    "ianaId": "America/Rio_Branco",
+    "windowsId": "SA Pacific Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Acre"
+  },
+  "124": {
+    "countryCode": "BR",
+    "ianaId": "America/Santarem",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Par\u00E1 (west)"
+  },
+  "125": {
+    "countryCode": "CL",
+    "ianaId": "America/Santiago",
+    "windowsId": "Pacific SA Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "most of Chile"
+  },
+  "126": {
+    "countryCode": "DO",
+    "ianaId": "America/Santo_Domingo",
+    "windowsId": "SA Western Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "127": {
+    "countryCode": "BR",
+    "ianaId": "America/Sao_Paulo",
+    "windowsId": "E. South America Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Brazil (southeast: GO, DF, MG, ES, RJ, SP, PR, SC, RS)"
+  },
+  "128": {
+    "countryCode": "GL",
+    "ianaId": "America/Scoresbysund",
+    "windowsId": "Azores Standard Time",
+    "utcOffset": "(UTC-01:00)",
+    "comments": "Scoresbysund/Ittoqqortoormiit"
+  },
+  "129": {
+    "countryCode": "US",
+    "ianaId": "America/Sitka",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska - Sitka area"
+  },
+  "130": {
+    "countryCode": "CA",
+    "ianaId": "America/St_Johns",
+    "windowsId": "Newfoundland Standard Time",
+    "utcOffset": "(UTC-03:30)",
+    "comments": "Newfoundland; Labrador (southeast)"
+  },
+  "131": {
+    "countryCode": "CA",
+    "ianaId": "America/Swift_Current",
+    "windowsId": "Canada Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "CST - SK (midwest)"
+  },
+  "132": {
+    "countryCode": "HN",
+    "ianaId": "America/Tegucigalpa",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": ""
+  },
+  "133": {
+    "countryCode": "GL",
+    "ianaId": "America/Thule",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": "Thule/Pituffik"
+  },
+  "134": {
+    "countryCode": "MX",
+    "ianaId": "America/Tijuana",
+    "windowsId": "Pacific Standard Time (Mexico)",
+    "utcOffset": "(UTC-08:00)",
+    "comments": "Baja California"
+  },
+  "135": {
+    "countryCode": "CA,BS",
+    "ianaId": "America/Toronto",
+    "windowsId": "Eastern Standard Time",
+    "utcOffset": "(UTC-05:00)",
+    "comments": "Eastern - ON, QC (most areas)"
+  },
+  "136": {
+    "countryCode": "CA",
+    "ianaId": "America/Vancouver",
+    "windowsId": "Pacific Standard Time",
+    "utcOffset": "(UTC-08:00)",
+    "comments": "Pacific - BC (most areas)"
+  },
+  "137": {
+    "countryCode": "CA",
+    "ianaId": "America/Whitehorse",
+    "windowsId": "Yukon Standard Time",
+    "utcOffset": "(UTC-07:00)",
+    "comments": "MST - Yukon (east)"
+  },
+  "138": {
+    "countryCode": "CA",
+    "ianaId": "America/Winnipeg",
+    "windowsId": "Central Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Central - ON (west); Manitoba"
+  },
+  "139": {
+    "countryCode": "US",
+    "ianaId": "America/Yakutat",
+    "windowsId": "Alaskan Standard Time",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Alaska - Yakutat"
+  },
+  "140": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Casey",
+    "windowsId": "Central Pacific Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "Casey"
+  },
+  "141": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Davis",
+    "windowsId": "SE Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "Davis"
+  },
+  "142": {
+    "countryCode": "AU",
+    "ianaId": "Antarctica/Macquarie",
+    "windowsId": "Tasmania Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Macquarie Island"
+  },
+  "143": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Mawson",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Mawson"
+  },
+  "144": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Palmer",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Palmer"
+  },
+  "145": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Rothera",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Rothera"
+  },
+  "146": {
+    "countryCode": "AQ",
+    "ianaId": "Antarctica/Troll",
+    "windowsId": null,
+    "utcOffset": "(UTC-03:00)",
+    "comments": "Troll"
+  },
+  "147": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Almaty",
+    "windowsId": "Central Asia Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": "most of Kazakhstan"
+  },
+  "148": {
+    "countryCode": "JO",
+    "ianaId": "Asia/Amman",
+    "windowsId": "Jordan Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "149": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Anadyr",
+    "windowsId": "Russia Time Zone 11",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": "MSK\u002B09 - Bering Sea"
+  },
+  "150": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Aqtau",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Mangghysta\u016B/Mankistau"
+  },
+  "151": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Aqtobe",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Aqt\u00F6be/Aktobe"
+  },
+  "152": {
+    "countryCode": "TM",
+    "ianaId": "Asia/Ashgabat",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": ""
+  },
+  "153": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Atyrau",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Atyra\u016B/Atirau/Gur\u0027yev"
+  },
+  "154": {
+    "countryCode": "IQ",
+    "ianaId": "Asia/Baghdad",
+    "windowsId": "Arabic Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "155": {
+    "countryCode": "AZ",
+    "ianaId": "Asia/Baku",
+    "windowsId": "Azerbaijan Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": ""
+  },
+  "156": {
+    "countryCode": "TH,CX,KH,LA,VN",
+    "ianaId": "Asia/Bangkok",
+    "windowsId": "SE Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "north Vietnam"
+  },
+  "157": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Barnaul",
+    "windowsId": "Altai Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "MSK\u002B04 - Altai"
+  },
+  "158": {
+    "countryCode": "LB",
+    "ianaId": "Asia/Beirut",
+    "windowsId": "Middle East Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "159": {
+    "countryCode": "KG",
+    "ianaId": "Asia/Bishkek",
+    "windowsId": "Central Asia Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": ""
+  },
+  "160": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Chita",
+    "windowsId": "Transbaikal Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": "MSK\u002B06 - Zabaykalsky"
+  },
+  "161": {
+    "countryCode": "MN",
+    "ianaId": "Asia/Choibalsan",
+    "windowsId": "Ulaanbaatar Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Dornod, S\u00FCkhbaatar"
+  },
+  "162": {
+    "countryCode": "LK",
+    "ianaId": "Asia/Colombo",
+    "windowsId": "Sri Lanka Standard Time",
+    "utcOffset": "(UTC\u002B05:30)",
+    "comments": ""
+  },
+  "163": {
+    "countryCode": "SY",
+    "ianaId": "Asia/Damascus",
+    "windowsId": "Syria Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "164": {
+    "countryCode": "BD",
+    "ianaId": "Asia/Dhaka",
+    "windowsId": "Bangladesh Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": ""
+  },
+  "165": {
+    "countryCode": "TL",
+    "ianaId": "Asia/Dili",
+    "windowsId": "Tokyo Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": ""
+  },
+  "166": {
+    "countryCode": "AE,OM,RE,SC,TF",
+    "ianaId": "Asia/Dubai",
+    "windowsId": "Arabian Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": "Crozet, Scattered Is"
+  },
+  "167": {
+    "countryCode": "TJ",
+    "ianaId": "Asia/Dushanbe",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": ""
+  },
+  "168": {
+    "countryCode": "CY",
+    "ianaId": "Asia/Famagusta",
+    "windowsId": "GTB Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "Northern Cyprus"
+  },
+  "169": {
+    "countryCode": "PS",
+    "ianaId": "Asia/Gaza",
+    "windowsId": "West Bank Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "Gaza Strip"
+  },
+  "170": {
+    "countryCode": "PS",
+    "ianaId": "Asia/Hebron",
+    "windowsId": "West Bank Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "West Bank"
+  },
+  "171": {
+    "countryCode": "VN",
+    "ianaId": "Asia/Ho_Chi_Minh",
+    "windowsId": "SE Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "south Vietnam"
+  },
+  "172": {
+    "countryCode": "HK",
+    "ianaId": "Asia/Hong_Kong",
+    "windowsId": "China Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": ""
+  },
+  "173": {
+    "countryCode": "MN",
+    "ianaId": "Asia/Hovd",
+    "windowsId": "W. Mongolia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "Bayan-\u00D6lgii, Govi-Altai, Hovd, Uvs, Zavkhan"
+  },
+  "174": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Irkutsk",
+    "windowsId": "North Asia East Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "MSK\u002B05 - Irkutsk, Buryatia"
+  },
+  "175": {
+    "countryCode": "ID",
+    "ianaId": "Asia/Jakarta",
+    "windowsId": "SE Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "Java, Sumatra"
+  },
+  "176": {
+    "countryCode": "ID",
+    "ianaId": "Asia/Jayapura",
+    "windowsId": "Tokyo Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": "New Guinea (West Papua / Irian Jaya); Malukus/Moluccas"
+  },
+  "177": {
+    "countryCode": "IL",
+    "ianaId": "Asia/Jerusalem",
+    "windowsId": "Israel Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "178": {
+    "countryCode": "AF",
+    "ianaId": "Asia/Kabul",
+    "windowsId": "Afghanistan Standard Time",
+    "utcOffset": "(UTC\u002B04:30)",
+    "comments": ""
+  },
+  "179": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Kamchatka",
+    "windowsId": "Russia Time Zone 11",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": "MSK\u002B09 - Kamchatka"
+  },
+  "180": {
+    "countryCode": "PK",
+    "ianaId": "Asia/Karachi",
+    "windowsId": "Pakistan Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": ""
+  },
+  "181": {
+    "countryCode": "NP",
+    "ianaId": "Asia/Kathmandu",
+    "windowsId": "Nepal Standard Time",
+    "utcOffset": "(UTC\u002B05:45)",
+    "comments": ""
+  },
+  "182": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Khandyga",
+    "windowsId": "Yakutsk Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": "MSK\u002B06 - Tomponsky, Ust-Maysky"
+  },
+  "183": {
+    "countryCode": "IN",
+    "ianaId": "Asia/Kolkata",
+    "windowsId": "India Standard Time",
+    "utcOffset": "(UTC\u002B05:30)",
+    "comments": ""
+  },
+  "184": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Krasnoyarsk",
+    "windowsId": "North Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "MSK\u002B04 - Krasnoyarsk area"
+  },
+  "185": {
+    "countryCode": "MY,BN",
+    "ianaId": "Asia/Kuching",
+    "windowsId": "Singapore Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Sabah, Sarawak"
+  },
+  "186": {
+    "countryCode": "MO",
+    "ianaId": "Asia/Macau",
+    "windowsId": "China Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": ""
+  },
+  "187": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Magadan",
+    "windowsId": "Magadan Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "MSK\u002B08 - Magadan"
+  },
+  "188": {
+    "countryCode": "ID",
+    "ianaId": "Asia/Makassar",
+    "windowsId": "Singapore Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Borneo (east, south); Sulawesi/Celebes, Bali, Nusa Tengarra; Timor (west)"
+  },
+  "189": {
+    "countryCode": "PH",
+    "ianaId": "Asia/Manila",
+    "windowsId": "Singapore Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": ""
+  },
+  "190": {
+    "countryCode": "CY",
+    "ianaId": "Asia/Nicosia",
+    "windowsId": "GTB Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "most of Cyprus"
+  },
+  "191": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Novokuznetsk",
+    "windowsId": "North Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "MSK\u002B04 - Kemerovo"
+  },
+  "192": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Novosibirsk",
+    "windowsId": "N. Central Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "MSK\u002B04 - Novosibirsk"
+  },
+  "193": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Omsk",
+    "windowsId": "Omsk Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": "MSK\u002B03 - Omsk"
+  },
+  "194": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Oral",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "West Kazakhstan"
+  },
+  "195": {
+    "countryCode": "ID",
+    "ianaId": "Asia/Pontianak",
+    "windowsId": "SE Asia Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "Borneo (west, central)"
+  },
+  "196": {
+    "countryCode": "KP",
+    "ianaId": "Asia/Pyongyang",
+    "windowsId": "North Korea Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": ""
+  },
+  "197": {
+    "countryCode": "QA,BH",
+    "ianaId": "Asia/Qatar",
+    "windowsId": "Arab Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "198": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Qostanay",
+    "windowsId": "Central Asia Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": "Qostanay/Kostanay/Kustanay"
+  },
+  "199": {
+    "countryCode": "KZ",
+    "ianaId": "Asia/Qyzylorda",
+    "windowsId": "Qyzylorda Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Qyzylorda/Kyzylorda/Kzyl-Orda"
+  },
+  "200": {
+    "countryCode": "SA,AQ,KW,YE",
+    "ianaId": "Asia/Riyadh",
+    "windowsId": "Arab Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": "Syowa"
+  },
+  "201": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Sakhalin",
+    "windowsId": "Sakhalin Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "MSK\u002B08 - Sakhalin Island"
+  },
+  "202": {
+    "countryCode": "UZ",
+    "ianaId": "Asia/Samarkand",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Uzbekistan (west)"
+  },
+  "203": {
+    "countryCode": "KR",
+    "ianaId": "Asia/Seoul",
+    "windowsId": "Korea Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": ""
+  },
+  "204": {
+    "countryCode": "CN",
+    "ianaId": "Asia/Shanghai",
+    "windowsId": "China Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Beijing Time"
+  },
+  "205": {
+    "countryCode": "SG,MY",
+    "ianaId": "Asia/Singapore",
+    "windowsId": "Singapore Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "peninsular Malaysia"
+  },
+  "206": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Srednekolymsk",
+    "windowsId": "Russia Time Zone 10",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "MSK\u002B08 - Sakha (E); N Kuril Is"
+  },
+  "207": {
+    "countryCode": "TW",
+    "ianaId": "Asia/Taipei",
+    "windowsId": "Taipei Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": ""
+  },
+  "208": {
+    "countryCode": "UZ",
+    "ianaId": "Asia/Tashkent",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Uzbekistan (east)"
+  },
+  "209": {
+    "countryCode": "GE",
+    "ianaId": "Asia/Tbilisi",
+    "windowsId": "Georgian Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": ""
+  },
+  "210": {
+    "countryCode": "IR",
+    "ianaId": "Asia/Tehran",
+    "windowsId": "Iran Standard Time",
+    "utcOffset": "(UTC\u002B03:30)",
+    "comments": ""
+  },
+  "211": {
+    "countryCode": "BT",
+    "ianaId": "Asia/Thimphu",
+    "windowsId": "Bangladesh Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": ""
+  },
+  "212": {
+    "countryCode": "JP",
+    "ianaId": "Asia/Tokyo",
+    "windowsId": "Tokyo Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": ""
+  },
+  "213": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Tomsk",
+    "windowsId": "Tomsk Standard Time",
+    "utcOffset": "(UTC\u002B07:00)",
+    "comments": "MSK\u002B04 - Tomsk"
+  },
+  "214": {
+    "countryCode": "MN",
+    "ianaId": "Asia/Ulaanbaatar",
+    "windowsId": "Ulaanbaatar Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "most of Mongolia"
+  },
+  "215": {
+    "countryCode": "CN,AQ",
+    "ianaId": "Asia/Urumqi",
+    "windowsId": null,
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Xinjiang Time, Vostok"
+  },
+  "216": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Ust-Nera",
+    "windowsId": "Vladivostok Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "MSK\u002B07 - Oymyakonsky"
+  },
+  "217": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Vladivostok",
+    "windowsId": "Vladivostok Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "MSK\u002B07 - Amur River"
+  },
+  "218": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Yakutsk",
+    "windowsId": "Yakutsk Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": "MSK\u002B06 - Lena River"
+  },
+  "219": {
+    "countryCode": "MM,CC",
+    "ianaId": "Asia/Yangon",
+    "windowsId": "Myanmar Standard Time",
+    "utcOffset": "(UTC\u002B06:30)",
+    "comments": ""
+  },
+  "220": {
+    "countryCode": "RU",
+    "ianaId": "Asia/Yekaterinburg",
+    "windowsId": "Ekaterinburg Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "MSK\u002B02 - Urals"
+  },
+  "221": {
+    "countryCode": "AM",
+    "ianaId": "Asia/Yerevan",
+    "windowsId": "Caucasus Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": ""
+  },
+  "222": {
+    "countryCode": "PT",
+    "ianaId": "Atlantic/Azores",
+    "windowsId": "Azores Standard Time",
+    "utcOffset": "(UTC-01:00)",
+    "comments": "Azores"
+  },
+  "223": {
+    "countryCode": "BM",
+    "ianaId": "Atlantic/Bermuda",
+    "windowsId": "Atlantic Standard Time",
+    "utcOffset": "(UTC-04:00)",
+    "comments": ""
+  },
+  "224": {
+    "countryCode": "ES",
+    "ianaId": "Atlantic/Canary",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": "Canary Islands"
+  },
+  "225": {
+    "countryCode": "CV",
+    "ianaId": "Atlantic/Cape_Verde",
+    "windowsId": "Cape Verde Standard Time",
+    "utcOffset": "(UTC-01:00)",
+    "comments": ""
+  },
+  "226": {
+    "countryCode": "FO",
+    "ianaId": "Atlantic/Faroe",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "227": {
+    "countryCode": "PT",
+    "ianaId": "Atlantic/Madeira",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": "Madeira Islands"
+  },
+  "228": {
+    "countryCode": "GS",
+    "ianaId": "Atlantic/South_Georgia",
+    "windowsId": "UTC-02",
+    "utcOffset": "(UTC-02:00)",
+    "comments": ""
+  },
+  "229": {
+    "countryCode": "FK",
+    "ianaId": "Atlantic/Stanley",
+    "windowsId": "SA Eastern Standard Time",
+    "utcOffset": "(UTC-03:00)",
+    "comments": ""
+  },
+  "230": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Adelaide",
+    "windowsId": "Cen. Australia Standard Time",
+    "utcOffset": "(UTC\u002B09:30)",
+    "comments": "South Australia"
+  },
+  "231": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Brisbane",
+    "windowsId": "E. Australia Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Queensland (most areas)"
+  },
+  "232": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Broken_Hill",
+    "windowsId": "Cen. Australia Standard Time",
+    "utcOffset": "(UTC\u002B09:30)",
+    "comments": "New South Wales (Yancowinna)"
+  },
+  "233": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Darwin",
+    "windowsId": "AUS Central Standard Time",
+    "utcOffset": "(UTC\u002B09:30)",
+    "comments": "Northern Territory"
+  },
+  "234": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Eucla",
+    "windowsId": "Aus Central W. Standard Time",
+    "utcOffset": "(UTC\u002B08:45)",
+    "comments": "Western Australia (Eucla)"
+  },
+  "235": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Hobart",
+    "windowsId": "Tasmania Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Tasmania"
+  },
+  "236": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Lindeman",
+    "windowsId": "E. Australia Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Queensland (Whitsunday Islands)"
+  },
+  "237": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Lord_Howe",
+    "windowsId": "Lord Howe Standard Time",
+    "utcOffset": "(UTC\u002B10:30)",
+    "comments": "Lord Howe Island"
+  },
+  "238": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Melbourne",
+    "windowsId": "AUS Eastern Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Victoria"
+  },
+  "239": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Perth",
+    "windowsId": "W. Australia Standard Time",
+    "utcOffset": "(UTC\u002B08:00)",
+    "comments": "Western Australia (most areas)"
+  },
+  "240": {
+    "countryCode": "AU",
+    "ianaId": "Australia/Sydney",
+    "windowsId": "AUS Eastern Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "New South Wales (most areas)"
+  },
+  "241": {
+    "countryCode": "AD",
+    "ianaId": "Europe/Andorra",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "242": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Astrakhan",
+    "windowsId": "Astrakhan Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": "MSK\u002B01 - Astrakhan"
+  },
+  "243": {
+    "countryCode": "GR",
+    "ianaId": "Europe/Athens",
+    "windowsId": "GTB Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "244": {
+    "countryCode": "RS,BA,HR,ME,MK,SI",
+    "ianaId": "Europe/Belgrade",
+    "windowsId": "Central Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "245": {
+    "countryCode": "DE,DK,NO,SE,SJ",
+    "ianaId": "Europe/Berlin",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": "most of Germany"
+  },
+  "246": {
+    "countryCode": "BE,LU,NL",
+    "ianaId": "Europe/Brussels",
+    "windowsId": "Romance Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "247": {
+    "countryCode": "RO",
+    "ianaId": "Europe/Bucharest",
+    "windowsId": "GTB Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "248": {
+    "countryCode": "HU",
+    "ianaId": "Europe/Budapest",
+    "windowsId": "Central Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "249": {
+    "countryCode": "MD",
+    "ianaId": "Europe/Chisinau",
+    "windowsId": "E. Europe Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "250": {
+    "countryCode": "IE",
+    "ianaId": "Europe/Dublin",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "251": {
+    "countryCode": "GI",
+    "ianaId": "Europe/Gibraltar",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "252": {
+    "countryCode": "FI,AX",
+    "ianaId": "Europe/Helsinki",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "253": {
+    "countryCode": "TR",
+    "ianaId": "Europe/Istanbul",
+    "windowsId": "Turkey Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "254": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Kaliningrad",
+    "windowsId": "Kaliningrad Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "MSK-01 - Kaliningrad"
+  },
+  "255": {
+    "countryCode": "UA",
+    "ianaId": "Europe/Kiev",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": "most of Ukraine"
+  },
+  "256": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Kirov",
+    "windowsId": "Russian Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": "MSK\u002B00 - Kirov"
+  },
+  "257": {
+    "countryCode": "PT",
+    "ianaId": "Europe/Lisbon",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": "Portugal (mainland)"
+  },
+  "258": {
+    "countryCode": "GB,GG,IM,JE",
+    "ianaId": "Europe/London",
+    "windowsId": "GMT Standard Time",
+    "utcOffset": "(UTC\u002B00:00)",
+    "comments": ""
+  },
+  "259": {
+    "countryCode": "ES",
+    "ianaId": "Europe/Madrid",
+    "windowsId": "Romance Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": "Spain (mainland)"
+  },
+  "260": {
+    "countryCode": "MT",
+    "ianaId": "Europe/Malta",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "261": {
+    "countryCode": "BY",
+    "ianaId": "Europe/Minsk",
+    "windowsId": "Belarus Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": ""
+  },
+  "262": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Moscow",
+    "windowsId": "Russian Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": "MSK\u002B00 - Moscow area"
+  },
+  "263": {
+    "countryCode": "FR,MC",
+    "ianaId": "Europe/Paris",
+    "windowsId": "Romance Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "264": {
+    "countryCode": "CZ,SK",
+    "ianaId": "Europe/Prague",
+    "windowsId": "Central Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "265": {
+    "countryCode": "LV",
+    "ianaId": "Europe/Riga",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "266": {
+    "countryCode": "IT,SM,VA",
+    "ianaId": "Europe/Rome",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "267": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Samara",
+    "windowsId": "Russia Time Zone 3",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": "MSK\u002B01 - Samara, Udmurtia"
+  },
+  "268": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Saratov",
+    "windowsId": "Saratov Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": "MSK\u002B01 - Saratov"
+  },
+  "269": {
+    "countryCode": "RU,UA",
+    "ianaId": "Europe/Simferopol",
+    "windowsId": "Russian Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": "Crimea"
+  },
+  "270": {
+    "countryCode": "BG",
+    "ianaId": "Europe/Sofia",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "271": {
+    "countryCode": "EE",
+    "ianaId": "Europe/Tallinn",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "272": {
+    "countryCode": "AL",
+    "ianaId": "Europe/Tirane",
+    "windowsId": "Central Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "273": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Ulyanovsk",
+    "windowsId": "Astrakhan Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": "MSK\u002B01 - Ulyanovsk"
+  },
+  "274": {
+    "countryCode": "AT",
+    "ianaId": "Europe/Vienna",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "275": {
+    "countryCode": "LT",
+    "ianaId": "Europe/Vilnius",
+    "windowsId": "FLE Standard Time",
+    "utcOffset": "(UTC\u002B02:00)",
+    "comments": ""
+  },
+  "276": {
+    "countryCode": "RU",
+    "ianaId": "Europe/Volgograd",
+    "windowsId": "Volgograd Standard Time",
+    "utcOffset": "(UTC\u002B03:00)",
+    "comments": "MSK\u002B00 - Volgograd"
+  },
+  "277": {
+    "countryCode": "PL",
+    "ianaId": "Europe/Warsaw",
+    "windowsId": "Central European Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": ""
+  },
+  "278": {
+    "countryCode": "CH,DE,LI",
+    "ianaId": "Europe/Zurich",
+    "windowsId": "W. Europe Standard Time",
+    "utcOffset": "(UTC\u002B01:00)",
+    "comments": "B\u00FCsingen"
+  },
+  "279": {
+    "countryCode": "IO",
+    "ianaId": "Indian/Chagos",
+    "windowsId": "Central Asia Standard Time",
+    "utcOffset": "(UTC\u002B06:00)",
+    "comments": ""
+  },
+  "280": {
+    "countryCode": "MV,TF",
+    "ianaId": "Indian/Maldives",
+    "windowsId": "West Asia Standard Time",
+    "utcOffset": "(UTC\u002B05:00)",
+    "comments": "Kerguelen, St Paul I, Amsterdam I"
+  },
+  "281": {
+    "countryCode": "MU",
+    "ianaId": "Indian/Mauritius",
+    "windowsId": "Mauritius Standard Time",
+    "utcOffset": "(UTC\u002B04:00)",
+    "comments": ""
+  },
+  "282": {
+    "countryCode": "WS",
+    "ianaId": "Pacific/Apia",
+    "windowsId": "Samoa Standard Time",
+    "utcOffset": "(UTC\u002B13:00)",
+    "comments": ""
+  },
+  "283": {
+    "countryCode": "NZ,AQ",
+    "ianaId": "Pacific/Auckland",
+    "windowsId": "New Zealand Standard Time",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": "New Zealand time"
+  },
+  "284": {
+    "countryCode": "PG",
+    "ianaId": "Pacific/Bougainville",
+    "windowsId": "Bougainville Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "Bougainville"
+  },
+  "285": {
+    "countryCode": "NZ",
+    "ianaId": "Pacific/Chatham",
+    "windowsId": "Chatham Islands Standard Time",
+    "utcOffset": "(UTC\u002B12:45)",
+    "comments": "Chatham Islands"
+  },
+  "286": {
+    "countryCode": "CL",
+    "ianaId": "Pacific/Easter",
+    "windowsId": "Easter Island Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Easter Island"
+  },
+  "287": {
+    "countryCode": "VU",
+    "ianaId": "Pacific/Efate",
+    "windowsId": "Central Pacific Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": ""
+  },
+  "288": {
+    "countryCode": "TK",
+    "ianaId": "Pacific/Fakaofo",
+    "windowsId": "UTC\u002B13",
+    "utcOffset": "(UTC\u002B13:00)",
+    "comments": ""
+  },
+  "289": {
+    "countryCode": "FJ",
+    "ianaId": "Pacific/Fiji",
+    "windowsId": "Fiji Standard Time",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": ""
+  },
+  "290": {
+    "countryCode": "EC",
+    "ianaId": "Pacific/Galapagos",
+    "windowsId": "Central America Standard Time",
+    "utcOffset": "(UTC-06:00)",
+    "comments": "Gal\u00E1pagos Islands"
+  },
+  "291": {
+    "countryCode": "PF",
+    "ianaId": "Pacific/Gambier",
+    "windowsId": "UTC-09",
+    "utcOffset": "(UTC-09:00)",
+    "comments": "Gambier Islands"
+  },
+  "292": {
+    "countryCode": "SB,FM",
+    "ianaId": "Pacific/Guadalcanal",
+    "windowsId": "Central Pacific Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "Pohnpei"
+  },
+  "293": {
+    "countryCode": "GU,MP",
+    "ianaId": "Pacific/Guam",
+    "windowsId": "West Pacific Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": ""
+  },
+  "294": {
+    "countryCode": "US",
+    "ianaId": "Pacific/Honolulu",
+    "windowsId": "Hawaiian Standard Time",
+    "utcOffset": "(UTC-10:00)",
+    "comments": "Hawaii"
+  },
+  "295": {
+    "countryCode": "KI",
+    "ianaId": "Pacific/Kanton",
+    "windowsId": null,
+    "utcOffset": "(UTC-10:00)",
+    "comments": "Phoenix Islands"
+  },
+  "296": {
+    "countryCode": "KI",
+    "ianaId": "Pacific/Kiritimati",
+    "windowsId": "Line Islands Standard Time",
+    "utcOffset": "(UTC\u002B14:00)",
+    "comments": "Line Islands"
+  },
+  "297": {
+    "countryCode": "FM",
+    "ianaId": "Pacific/Kosrae",
+    "windowsId": "Central Pacific Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": "Kosrae"
+  },
+  "298": {
+    "countryCode": "MH",
+    "ianaId": "Pacific/Kwajalein",
+    "windowsId": "UTC\u002B12",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": "Kwajalein"
+  },
+  "299": {
+    "countryCode": "PF",
+    "ianaId": "Pacific/Marquesas",
+    "windowsId": "Marquesas Standard Time",
+    "utcOffset": "(UTC-09:30)",
+    "comments": "Marquesas Islands"
+  },
+  "300": {
+    "countryCode": "NR",
+    "ianaId": "Pacific/Nauru",
+    "windowsId": "UTC\u002B12",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": ""
+  },
+  "301": {
+    "countryCode": "NU",
+    "ianaId": "Pacific/Niue",
+    "windowsId": "UTC-11",
+    "utcOffset": "(UTC-11:00)",
+    "comments": ""
+  },
+  "302": {
+    "countryCode": "NF",
+    "ianaId": "Pacific/Norfolk",
+    "windowsId": "Norfolk Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": ""
+  },
+  "303": {
+    "countryCode": "NC",
+    "ianaId": "Pacific/Noumea",
+    "windowsId": "Central Pacific Standard Time",
+    "utcOffset": "(UTC\u002B11:00)",
+    "comments": ""
+  },
+  "304": {
+    "countryCode": "AS,UM",
+    "ianaId": "Pacific/Pago_Pago",
+    "windowsId": "UTC-11",
+    "utcOffset": "(UTC-11:00)",
+    "comments": "Midway"
+  },
+  "305": {
+    "countryCode": "PW",
+    "ianaId": "Pacific/Palau",
+    "windowsId": "Tokyo Standard Time",
+    "utcOffset": "(UTC\u002B09:00)",
+    "comments": ""
+  },
+  "306": {
+    "countryCode": "PN",
+    "ianaId": "Pacific/Pitcairn",
+    "windowsId": "UTC-08",
+    "utcOffset": "(UTC-08:00)",
+    "comments": ""
+  },
+  "307": {
+    "countryCode": "PG,AQ,FM",
+    "ianaId": "Pacific/Port_Moresby",
+    "windowsId": "West Pacific Standard Time",
+    "utcOffset": "(UTC\u002B10:00)",
+    "comments": "Papua New Guinea (most areas), Chuuk, Yap, Dumont d\u0027Urville"
+  },
+  "308": {
+    "countryCode": "CK",
+    "ianaId": "Pacific/Rarotonga",
+    "windowsId": "Hawaiian Standard Time",
+    "utcOffset": "(UTC-10:00)",
+    "comments": ""
+  },
+  "309": {
+    "countryCode": "PF",
+    "ianaId": "Pacific/Tahiti",
+    "windowsId": "Hawaiian Standard Time",
+    "utcOffset": "(UTC-10:00)",
+    "comments": "Society Islands"
+  },
+  "310": {
+    "countryCode": "KI,MH,TV,UM,WF",
+    "ianaId": "Pacific/Tarawa",
+    "windowsId": "UTC\u002B12",
+    "utcOffset": "(UTC\u002B12:00)",
+    "comments": "Gilberts, Marshalls, Wake"
+  },
+  "311": {
+    "countryCode": "TO",
+    "ianaId": "Pacific/Tongatapu",
+    "windowsId": "Tonga Standard Time",
+    "utcOffset": "(UTC\u002B13:00)",
+    "comments": ""
+  }
+}

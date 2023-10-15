@@ -1,0 +1,1346 @@
+{
+    "1": {
+        "programDay": 0,
+        "programFrom": "00:00"
+    },
+    "2": {
+        "programDay": 0,
+        "programFrom": "00:30"
+    },
+    "3": {
+        "programDay": 0,
+        "programFrom": "01:00"
+    },
+    "4": {
+        "programDay": 0,
+        "programFrom": "01:30"
+    },
+    "5": {
+        "programDay": 0,
+        "programFrom": "02:00"
+    },
+    "6": {
+        "programDay": 0,
+        "programFrom": "02:30"
+    },
+    "7": {
+        "programDay": 0,
+        "programFrom": "03:00"
+    },
+    "8": {
+        "programDay": 0,
+        "programFrom": "03:30"
+    },
+    "9": {
+        "programDay": 0,
+        "programFrom": "04:00"
+    },
+    "10": {
+        "programDay": 0,
+        "programFrom": "04:30"
+    },
+    "11": {
+        "programDay": 0,
+        "programFrom": "05:00"
+    },
+    "12": {
+        "programDay": 0,
+        "programFrom": "05:30"
+    },
+    "13": {
+        "programDay": 0,
+        "programFrom": "06:00"
+    },
+    "14": {
+        "programDay": 0,
+        "programFrom": "06:30"
+    },
+    "15": {
+        "programDay": 0,
+        "programFrom": "07:00"
+    },
+    "16": {
+        "programDay": 0,
+        "programFrom": "07:30"
+    },
+    "17": {
+        "programDay": 0,
+        "programFrom": "08:00"
+    },
+    "18": {
+        "programDay": 0,
+        "programFrom": "08:30"
+    },
+    "19": {
+        "programDay": 0,
+        "programFrom": "09:00"
+    },
+    "20": {
+        "programDay": 0,
+        "programFrom": "09:30"
+    },
+    "21": {
+        "programDay": 0,
+        "programFrom": "10:00"
+    },
+    "22": {
+        "programDay": 0,
+        "programFrom": "10:30"
+    },
+    "23": {
+        "programDay": 0,
+        "programFrom": "11:00"
+    },
+    "24": {
+        "programDay": 0,
+        "programFrom": "11:30"
+    },
+    "25": {
+        "programDay": 0,
+        "programFrom": "12:00"
+    },
+    "26": {
+        "programDay": 0,
+        "programFrom": "12:30"
+    },
+    "27": {
+        "programDay": 0,
+        "programFrom": "13:00"
+    },
+    "28": {
+        "programDay": 0,
+        "programFrom": "13:30"
+    },
+    "29": {
+        "programDay": 0,
+        "programFrom": "14:00"
+    },
+    "30": {
+        "programDay": 0,
+        "programFrom": "14:30"
+    },
+    "31": {
+        "programDay": 0,
+        "programFrom": "15:00"
+    },
+    "32": {
+        "programDay": 0,
+        "programFrom": "15:30"
+    },
+    "33": {
+        "programDay": 0,
+        "programFrom": "16:00"
+    },
+    "34": {
+        "programDay": 0,
+        "programFrom": "16:30"
+    },
+    "35": {
+        "programDay": 0,
+        "programFrom": "17:00"
+    },
+    "36": {
+        "programDay": 0,
+        "programFrom": "17:30"
+    },
+    "37": {
+        "programDay": 0,
+        "programFrom": "18:00"
+    },
+    "38": {
+        "programDay": 0,
+        "programFrom": "18:30"
+    },
+    "39": {
+        "programDay": 0,
+        "programFrom": "19:00"
+    },
+    "40": {
+        "programDay": 0,
+        "programFrom": "19:30"
+    },
+    "41": {
+        "programDay": 0,
+        "programFrom": "20:00"
+    },
+    "42": {
+        "programDay": 0,
+        "programFrom": "20:30"
+    },
+    "43": {
+        "programDay": 0,
+        "programFrom": "21:00"
+    },
+    "44": {
+        "programDay": 0,
+        "programFrom": "21:30"
+    },
+    "45": {
+        "programDay": 0,
+        "programFrom": "22:00"
+    },
+    "46": {
+        "programDay": 0,
+        "programFrom": "22:30"
+    },
+    "47": {
+        "programDay": 0,
+        "programFrom": "23:00"
+    },
+    "48": {
+        "programDay": 0,
+        "programFrom": "23:30"
+    },
+    "49": {
+        "programDay": 1,
+        "programFrom": "00:00"
+    },
+    "50": {
+        "programDay": 1,
+        "programFrom": "00:30"
+    },
+    "51": {
+        "programDay": 1,
+        "programFrom": "01:00"
+    },
+    "52": {
+        "programDay": 1,
+        "programFrom": "01:30"
+    },
+    "53": {
+        "programDay": 1,
+        "programFrom": "02:00"
+    },
+    "54": {
+        "programDay": 1,
+        "programFrom": "02:30"
+    },
+    "55": {
+        "programDay": 1,
+        "programFrom": "03:00"
+    },
+    "56": {
+        "programDay": 1,
+        "programFrom": "03:30"
+    },
+    "57": {
+        "programDay": 1,
+        "programFrom": "04:00"
+    },
+    "58": {
+        "programDay": 1,
+        "programFrom": "04:30"
+    },
+    "59": {
+        "programDay": 1,
+        "programFrom": "05:00"
+    },
+    "60": {
+        "programDay": 1,
+        "programFrom": "05:30"
+    },
+    "61": {
+        "programDay": 1,
+        "programFrom": "06:00"
+    },
+    "62": {
+        "programDay": 1,
+        "programFrom": "06:30"
+    },
+    "63": {
+        "programDay": 1,
+        "programFrom": "07:00"
+    },
+    "64": {
+        "programDay": 1,
+        "programFrom": "07:30"
+    },
+    "65": {
+        "programDay": 1,
+        "programFrom": "08:00"
+    },
+    "66": {
+        "programDay": 1,
+        "programFrom": "08:30"
+    },
+    "67": {
+        "programDay": 1,
+        "programFrom": "09:00"
+    },
+    "68": {
+        "programDay": 1,
+        "programFrom": "09:30"
+    },
+    "69": {
+        "programDay": 1,
+        "programFrom": "10:00"
+    },
+    "70": {
+        "programDay": 1,
+        "programFrom": "10:30"
+    },
+    "71": {
+        "programDay": 1,
+        "programFrom": "11:00"
+    },
+    "72": {
+        "programDay": 1,
+        "programFrom": "11:30"
+    },
+    "73": {
+        "programDay": 1,
+        "programFrom": "12:00"
+    },
+    "74": {
+        "programDay": 1,
+        "programFrom": "12:30"
+    },
+    "75": {
+        "programDay": 1,
+        "programFrom": "13:00"
+    },
+    "76": {
+        "programDay": 1,
+        "programFrom": "13:30"
+    },
+    "77": {
+        "programDay": 1,
+        "programFrom": "14:00"
+    },
+    "78": {
+        "programDay": 1,
+        "programFrom": "14:30"
+    },
+    "79": {
+        "programDay": 1,
+        "programFrom": "15:00"
+    },
+    "80": {
+        "programDay": 1,
+        "programFrom": "15:30"
+    },
+    "81": {
+        "programDay": 1,
+        "programFrom": "16:00"
+    },
+    "82": {
+        "programDay": 1,
+        "programFrom": "16:30"
+    },
+    "83": {
+        "programDay": 1,
+        "programFrom": "17:00"
+    },
+    "84": {
+        "programDay": 1,
+        "programFrom": "17:30"
+    },
+    "85": {
+        "programDay": 1,
+        "programFrom": "18:00"
+    },
+    "86": {
+        "programDay": 1,
+        "programFrom": "18:30"
+    },
+    "87": {
+        "programDay": 1,
+        "programFrom": "19:00"
+    },
+    "88": {
+        "programDay": 1,
+        "programFrom": "19:30"
+    },
+    "89": {
+        "programDay": 1,
+        "programFrom": "20:00"
+    },
+    "90": {
+        "programDay": 1,
+        "programFrom": "20:30"
+    },
+    "91": {
+        "programDay": 1,
+        "programFrom": "21:00"
+    },
+    "92": {
+        "programDay": 1,
+        "programFrom": "21:30"
+    },
+    "93": {
+        "programDay": 1,
+        "programFrom": "22:00"
+    },
+    "94": {
+        "programDay": 1,
+        "programFrom": "22:30"
+    },
+    "95": {
+        "programDay": 1,
+        "programFrom": "23:00"
+    },
+    "96": {
+        "programDay": 1,
+        "programFrom": "23:30"
+    },
+    "97": {
+        "programDay": 2,
+        "programFrom": "00:00"
+    },
+    "98": {
+        "programDay": 2,
+        "programFrom": "00:30"
+    },
+    "99": {
+        "programDay": 2,
+        "programFrom": "01:00"
+    },
+    "100": {
+        "programDay": 2,
+        "programFrom": "01:30"
+    },
+    "101": {
+        "programDay": 2,
+        "programFrom": "02:00"
+    },
+    "102": {
+        "programDay": 2,
+        "programFrom": "02:30"
+    },
+    "103": {
+        "programDay": 2,
+        "programFrom": "03:00"
+    },
+    "104": {
+        "programDay": 2,
+        "programFrom": "03:30"
+    },
+    "105": {
+        "programDay": 2,
+        "programFrom": "04:00"
+    },
+    "106": {
+        "programDay": 2,
+        "programFrom": "04:30"
+    },
+    "107": {
+        "programDay": 2,
+        "programFrom": "05:00"
+    },
+    "108": {
+        "programDay": 2,
+        "programFrom": "05:30"
+    },
+    "109": {
+        "programDay": 2,
+        "programFrom": "06:00"
+    },
+    "110": {
+        "programDay": 2,
+        "programFrom": "06:30"
+    },
+    "111": {
+        "programDay": 2,
+        "programFrom": "07:00"
+    },
+    "112": {
+        "programDay": 2,
+        "programFrom": "07:30"
+    },
+    "113": {
+        "programDay": 2,
+        "programFrom": "08:00"
+    },
+    "114": {
+        "programDay": 2,
+        "programFrom": "08:30"
+    },
+    "115": {
+        "programDay": 2,
+        "programFrom": "09:00"
+    },
+    "116": {
+        "programDay": 2,
+        "programFrom": "09:30"
+    },
+    "117": {
+        "programDay": 2,
+        "programFrom": "10:00"
+    },
+    "118": {
+        "programDay": 2,
+        "programFrom": "10:30"
+    },
+    "119": {
+        "programDay": 2,
+        "programFrom": "11:00"
+    },
+    "120": {
+        "programDay": 2,
+        "programFrom": "11:30"
+    },
+    "121": {
+        "programDay": 2,
+        "programFrom": "12:00"
+    },
+    "122": {
+        "programDay": 2,
+        "programFrom": "12:30"
+    },
+    "123": {
+        "programDay": 2,
+        "programFrom": "13:00"
+    },
+    "124": {
+        "programDay": 2,
+        "programFrom": "13:30"
+    },
+    "125": {
+        "programDay": 2,
+        "programFrom": "14:00"
+    },
+    "126": {
+        "programDay": 2,
+        "programFrom": "14:30"
+    },
+    "127": {
+        "programDay": 2,
+        "programFrom": "15:00"
+    },
+    "128": {
+        "programDay": 2,
+        "programFrom": "15:30"
+    },
+    "129": {
+        "programDay": 2,
+        "programFrom": "16:00"
+    },
+    "130": {
+        "programDay": 2,
+        "programFrom": "16:30"
+    },
+    "131": {
+        "programDay": 2,
+        "programFrom": "17:00"
+    },
+    "132": {
+        "programDay": 2,
+        "programFrom": "17:30"
+    },
+    "133": {
+        "programDay": 2,
+        "programFrom": "18:00"
+    },
+    "134": {
+        "programDay": 2,
+        "programFrom": "18:30"
+    },
+    "135": {
+        "programDay": 2,
+        "programFrom": "19:00"
+    },
+    "136": {
+        "programDay": 2,
+        "programFrom": "19:30"
+    },
+    "137": {
+        "programDay": 2,
+        "programFrom": "20:00"
+    },
+    "138": {
+        "programDay": 2,
+        "programFrom": "20:30"
+    },
+    "139": {
+        "programDay": 2,
+        "programFrom": "21:00"
+    },
+    "140": {
+        "programDay": 2,
+        "programFrom": "21:30"
+    },
+    "141": {
+        "programDay": 2,
+        "programFrom": "22:00"
+    },
+    "142": {
+        "programDay": 2,
+        "programFrom": "22:30"
+    },
+    "143": {
+        "programDay": 2,
+        "programFrom": "23:00"
+    },
+    "144": {
+        "programDay": 2,
+        "programFrom": "23:30"
+    },
+    "145": {
+        "programDay": 3,
+        "programFrom": "00:00"
+    },
+    "146": {
+        "programDay": 3,
+        "programFrom": "00:30"
+    },
+    "147": {
+        "programDay": 3,
+        "programFrom": "01:00"
+    },
+    "148": {
+        "programDay": 3,
+        "programFrom": "01:30"
+    },
+    "149": {
+        "programDay": 3,
+        "programFrom": "02:00"
+    },
+    "150": {
+        "programDay": 3,
+        "programFrom": "02:30"
+    },
+    "151": {
+        "programDay": 3,
+        "programFrom": "03:00"
+    },
+    "152": {
+        "programDay": 3,
+        "programFrom": "03:30"
+    },
+    "153": {
+        "programDay": 3,
+        "programFrom": "04:00"
+    },
+    "154": {
+        "programDay": 3,
+        "programFrom": "04:30"
+    },
+    "155": {
+        "programDay": 3,
+        "programFrom": "05:00"
+    },
+    "156": {
+        "programDay": 3,
+        "programFrom": "05:30"
+    },
+    "157": {
+        "programDay": 3,
+        "programFrom": "06:00"
+    },
+    "158": {
+        "programDay": 3,
+        "programFrom": "06:30"
+    },
+    "159": {
+        "programDay": 3,
+        "programFrom": "07:00"
+    },
+    "160": {
+        "programDay": 3,
+        "programFrom": "07:30"
+    },
+    "161": {
+        "programDay": 3,
+        "programFrom": "08:00"
+    },
+    "162": {
+        "programDay": 3,
+        "programFrom": "08:30"
+    },
+    "163": {
+        "programDay": 3,
+        "programFrom": "09:00"
+    },
+    "164": {
+        "programDay": 3,
+        "programFrom": "09:30"
+    },
+    "165": {
+        "programDay": 3,
+        "programFrom": "10:00"
+    },
+    "166": {
+        "programDay": 3,
+        "programFrom": "10:30"
+    },
+    "167": {
+        "programDay": 3,
+        "programFrom": "11:00"
+    },
+    "168": {
+        "programDay": 3,
+        "programFrom": "11:30"
+    },
+    "169": {
+        "programDay": 3,
+        "programFrom": "12:00"
+    },
+    "170": {
+        "programDay": 3,
+        "programFrom": "12:30"
+    },
+    "171": {
+        "programDay": 3,
+        "programFrom": "13:00"
+    },
+    "172": {
+        "programDay": 3,
+        "programFrom": "13:30"
+    },
+    "173": {
+        "programDay": 3,
+        "programFrom": "14:00"
+    },
+    "174": {
+        "programDay": 3,
+        "programFrom": "14:30"
+    },
+    "175": {
+        "programDay": 3,
+        "programFrom": "15:00"
+    },
+    "176": {
+        "programDay": 3,
+        "programFrom": "15:30"
+    },
+    "177": {
+        "programDay": 3,
+        "programFrom": "16:00"
+    },
+    "178": {
+        "programDay": 3,
+        "programFrom": "16:30"
+    },
+    "179": {
+        "programDay": 3,
+        "programFrom": "17:00"
+    },
+    "180": {
+        "programDay": 3,
+        "programFrom": "17:30"
+    },
+    "181": {
+        "programDay": 3,
+        "programFrom": "18:00"
+    },
+    "182": {
+        "programDay": 3,
+        "programFrom": "18:30"
+    },
+    "183": {
+        "programDay": 3,
+        "programFrom": "19:00"
+    },
+    "184": {
+        "programDay": 3,
+        "programFrom": "19:30"
+    },
+    "185": {
+        "programDay": 3,
+        "programFrom": "20:00"
+    },
+    "186": {
+        "programDay": 3,
+        "programFrom": "20:30"
+    },
+    "187": {
+        "programDay": 3,
+        "programFrom": "21:00"
+    },
+    "188": {
+        "programDay": 3,
+        "programFrom": "21:30"
+    },
+    "189": {
+        "programDay": 3,
+        "programFrom": "22:00"
+    },
+    "190": {
+        "programDay": 3,
+        "programFrom": "22:30"
+    },
+    "191": {
+        "programDay": 3,
+        "programFrom": "23:00"
+    },
+    "192": {
+        "programDay": 3,
+        "programFrom": "23:30"
+    },
+    "193": {
+        "programDay": 4,
+        "programFrom": "00:00"
+    },
+    "194": {
+        "programDay": 4,
+        "programFrom": "00:30"
+    },
+    "195": {
+        "programDay": 4,
+        "programFrom": "01:00"
+    },
+    "196": {
+        "programDay": 4,
+        "programFrom": "01:30"
+    },
+    "197": {
+        "programDay": 4,
+        "programFrom": "02:00"
+    },
+    "198": {
+        "programDay": 4,
+        "programFrom": "02:30"
+    },
+    "199": {
+        "programDay": 4,
+        "programFrom": "03:00"
+    },
+    "200": {
+        "programDay": 4,
+        "programFrom": "03:30"
+    },
+    "201": {
+        "programDay": 4,
+        "programFrom": "04:00"
+    },
+    "202": {
+        "programDay": 4,
+        "programFrom": "04:30"
+    },
+    "203": {
+        "programDay": 4,
+        "programFrom": "05:00"
+    },
+    "204": {
+        "programDay": 4,
+        "programFrom": "05:30"
+    },
+    "205": {
+        "programDay": 4,
+        "programFrom": "06:00"
+    },
+    "206": {
+        "programDay": 4,
+        "programFrom": "06:30"
+    },
+    "207": {
+        "programDay": 4,
+        "programFrom": "07:00"
+    },
+    "208": {
+        "programDay": 4,
+        "programFrom": "07:30"
+    },
+    "209": {
+        "programDay": 4,
+        "programFrom": "08:00"
+    },
+    "210": {
+        "programDay": 4,
+        "programFrom": "08:30"
+    },
+    "211": {
+        "programDay": 4,
+        "programFrom": "09:00"
+    },
+    "212": {
+        "programDay": 4,
+        "programFrom": "09:30"
+    },
+    "213": {
+        "programDay": 4,
+        "programFrom": "10:00"
+    },
+    "214": {
+        "programDay": 4,
+        "programFrom": "10:30"
+    },
+    "215": {
+        "programDay": 4,
+        "programFrom": "11:00"
+    },
+    "216": {
+        "programDay": 4,
+        "programFrom": "11:30"
+    },
+    "217": {
+        "programDay": 4,
+        "programFrom": "12:00"
+    },
+    "218": {
+        "programDay": 4,
+        "programFrom": "12:30"
+    },
+    "219": {
+        "programDay": 4,
+        "programFrom": "13:00"
+    },
+    "220": {
+        "programDay": 4,
+        "programFrom": "13:30"
+    },
+    "221": {
+        "programDay": 4,
+        "programFrom": "14:00"
+    },
+    "222": {
+        "programDay": 4,
+        "programFrom": "14:30"
+    },
+    "223": {
+        "programDay": 4,
+        "programFrom": "15:00"
+    },
+    "224": {
+        "programDay": 4,
+        "programFrom": "15:30"
+    },
+    "225": {
+        "programDay": 4,
+        "programFrom": "16:00"
+    },
+    "226": {
+        "programDay": 4,
+        "programFrom": "16:30"
+    },
+    "227": {
+        "programDay": 4,
+        "programFrom": "17:00"
+    },
+    "228": {
+        "programDay": 4,
+        "programFrom": "17:30"
+    },
+    "229": {
+        "programDay": 4,
+        "programFrom": "18:00"
+    },
+    "230": {
+        "programDay": 4,
+        "programFrom": "18:30"
+    },
+    "231": {
+        "programDay": 4,
+        "programFrom": "19:00"
+    },
+    "232": {
+        "programDay": 4,
+        "programFrom": "19:30"
+    },
+    "233": {
+        "programDay": 4,
+        "programFrom": "20:00"
+    },
+    "234": {
+        "programDay": 4,
+        "programFrom": "20:30"
+    },
+    "235": {
+        "programDay": 4,
+        "programFrom": "21:00"
+    },
+    "236": {
+        "programDay": 4,
+        "programFrom": "21:30"
+    },
+    "237": {
+        "programDay": 4,
+        "programFrom": "22:00"
+    },
+    "238": {
+        "programDay": 4,
+        "programFrom": "22:30"
+    },
+    "239": {
+        "programDay": 4,
+        "programFrom": "23:00"
+    },
+    "240": {
+        "programDay": 4,
+        "programFrom": "23:30"
+    },
+    "241": {
+        "programDay": 5,
+        "programFrom": "00:00"
+    },
+    "242": {
+        "programDay": 5,
+        "programFrom": "00:30"
+    },
+    "243": {
+        "programDay": 5,
+        "programFrom": "01:00"
+    },
+    "244": {
+        "programDay": 5,
+        "programFrom": "01:30"
+    },
+    "245": {
+        "programDay": 5,
+        "programFrom": "02:00"
+    },
+    "246": {
+        "programDay": 5,
+        "programFrom": "02:30"
+    },
+    "247": {
+        "programDay": 5,
+        "programFrom": "03:00"
+    },
+    "248": {
+        "programDay": 5,
+        "programFrom": "03:30"
+    },
+    "249": {
+        "programDay": 5,
+        "programFrom": "04:00"
+    },
+    "250": {
+        "programDay": 5,
+        "programFrom": "04:30"
+    },
+    "251": {
+        "programDay": 5,
+        "programFrom": "05:00"
+    },
+    "252": {
+        "programDay": 5,
+        "programFrom": "05:30"
+    },
+    "253": {
+        "programDay": 5,
+        "programFrom": "06:00"
+    },
+    "254": {
+        "programDay": 5,
+        "programFrom": "06:30"
+    },
+    "255": {
+        "programDay": 5,
+        "programFrom": "07:00"
+    },
+    "256": {
+        "programDay": 5,
+        "programFrom": "07:30"
+    },
+    "257": {
+        "programDay": 5,
+        "programFrom": "08:00"
+    },
+    "258": {
+        "programDay": 5,
+        "programFrom": "08:30"
+    },
+    "259": {
+        "programDay": 5,
+        "programFrom": "09:00"
+    },
+    "260": {
+        "programDay": 5,
+        "programFrom": "09:30"
+    },
+    "261": {
+        "programDay": 5,
+        "programFrom": "10:00"
+    },
+    "262": {
+        "programDay": 5,
+        "programFrom": "10:30"
+    },
+    "263": {
+        "programDay": 5,
+        "programFrom": "11:00"
+    },
+    "264": {
+        "programDay": 5,
+        "programFrom": "11:30"
+    },
+    "265": {
+        "programDay": 5,
+        "programFrom": "12:00"
+    },
+    "266": {
+        "programDay": 5,
+        "programFrom": "12:30"
+    },
+    "267": {
+        "programDay": 5,
+        "programFrom": "13:00"
+    },
+    "268": {
+        "programDay": 5,
+        "programFrom": "13:30"
+    },
+    "269": {
+        "programDay": 5,
+        "programFrom": "14:00"
+    },
+    "270": {
+        "programDay": 5,
+        "programFrom": "14:30"
+    },
+    "271": {
+        "programDay": 5,
+        "programFrom": "15:00"
+    },
+    "272": {
+        "programDay": 5,
+        "programFrom": "15:30"
+    },
+    "273": {
+        "programDay": 5,
+        "programFrom": "16:00"
+    },
+    "274": {
+        "programDay": 5,
+        "programFrom": "16:30"
+    },
+    "275": {
+        "programDay": 5,
+        "programFrom": "17:00"
+    },
+    "276": {
+        "programDay": 5,
+        "programFrom": "17:30"
+    },
+    "277": {
+        "programDay": 5,
+        "programFrom": "18:00"
+    },
+    "278": {
+        "programDay": 5,
+        "programFrom": "18:30"
+    },
+    "279": {
+        "programDay": 5,
+        "programFrom": "19:00"
+    },
+    "280": {
+        "programDay": 5,
+        "programFrom": "19:30"
+    },
+    "281": {
+        "programDay": 5,
+        "programFrom": "20:00"
+    },
+    "282": {
+        "programDay": 5,
+        "programFrom": "20:30"
+    },
+    "283": {
+        "programDay": 5,
+        "programFrom": "21:00"
+    },
+    "284": {
+        "programDay": 5,
+        "programFrom": "21:30"
+    },
+    "285": {
+        "programDay": 5,
+        "programFrom": "22:00"
+    },
+    "286": {
+        "programDay": 5,
+        "programFrom": "22:30"
+    },
+    "287": {
+        "programDay": 5,
+        "programFrom": "23:00"
+    },
+    "288": {
+        "programDay": 5,
+        "programFrom": "23:30"
+    },
+    "289": {
+        "programDay": 6,
+        "programFrom": "00:00"
+    },
+    "290": {
+        "programDay": 6,
+        "programFrom": "00:30"
+    },
+    "291": {
+        "programDay": 6,
+        "programFrom": "01:00"
+    },
+    "292": {
+        "programDay": 6,
+        "programFrom": "01:30"
+    },
+    "293": {
+        "programDay": 6,
+        "programFrom": "02:00"
+    },
+    "294": {
+        "programDay": 6,
+        "programFrom": "02:30"
+    },
+    "295": {
+        "programDay": 6,
+        "programFrom": "03:00"
+    },
+    "296": {
+        "programDay": 6,
+        "programFrom": "03:30"
+    },
+    "297": {
+        "programDay": 6,
+        "programFrom": "04:00"
+    },
+    "298": {
+        "programDay": 6,
+        "programFrom": "04:30"
+    },
+    "299": {
+        "programDay": 6,
+        "programFrom": "05:00"
+    },
+    "300": {
+        "programDay": 6,
+        "programFrom": "05:30"
+    },
+    "301": {
+        "programDay": 6,
+        "programFrom": "06:00"
+    },
+    "302": {
+        "programDay": 6,
+        "programFrom": "06:30"
+    },
+    "303": {
+        "programDay": 6,
+        "programFrom": "07:00"
+    },
+    "304": {
+        "programDay": 6,
+        "programFrom": "07:30"
+    },
+    "305": {
+        "programDay": 6,
+        "programFrom": "08:00"
+    },
+    "306": {
+        "programDay": 6,
+        "programFrom": "08:30"
+    },
+    "307": {
+        "programDay": 6,
+        "programFrom": "09:00"
+    },
+    "308": {
+        "programDay": 6,
+        "programFrom": "09:30"
+    },
+    "309": {
+        "programDay": 6,
+        "programFrom": "10:00"
+    },
+    "310": {
+        "programDay": 6,
+        "programFrom": "10:30"
+    },
+    "311": {
+        "programDay": 6,
+        "programFrom": "11:00"
+    },
+    "312": {
+        "programDay": 6,
+        "programFrom": "11:30"
+    },
+    "313": {
+        "programDay": 6,
+        "programFrom": "12:00"
+    },
+    "314": {
+        "programDay": 6,
+        "programFrom": "12:30"
+    },
+    "315": {
+        "programDay": 6,
+        "programFrom": "13:00"
+    },
+    "316": {
+        "programDay": 6,
+        "programFrom": "13:30"
+    },
+    "317": {
+        "programDay": 6,
+        "programFrom": "14:00"
+    },
+    "318": {
+        "programDay": 6,
+        "programFrom": "14:30"
+    },
+    "319": {
+        "programDay": 6,
+        "programFrom": "15:00"
+    },
+    "320": {
+        "programDay": 6,
+        "programFrom": "15:30"
+    },
+    "321": {
+        "programDay": 6,
+        "programFrom": "16:00"
+    },
+    "322": {
+        "programDay": 6,
+        "programFrom": "16:30"
+    },
+    "323": {
+        "programDay": 6,
+        "programFrom": "17:00"
+    },
+    "324": {
+        "programDay": 6,
+        "programFrom": "17:30"
+    },
+    "325": {
+        "programDay": 6,
+        "programFrom": "18:00"
+    },
+    "326": {
+        "programDay": 6,
+        "programFrom": "18:30"
+    },
+    "327": {
+        "programDay": 6,
+        "programFrom": "19:00"
+    },
+    "328": {
+        "programDay": 6,
+        "programFrom": "19:30"
+    },
+    "329": {
+        "programDay": 6,
+        "programFrom": "20:00"
+    },
+    "330": {
+        "programDay": 6,
+        "programFrom": "20:30"
+    },
+    "331": {
+        "programDay": 6,
+        "programFrom": "21:00"
+    },
+    "332": {
+        "programDay": 6,
+        "programFrom": "21:30"
+    },
+    "333": {
+        "programDay": 6,
+        "programFrom": "22:00"
+    },
+    "334": {
+        "programDay": 6,
+        "programFrom": "22:30"
+    },
+    "335": {
+        "programDay": 6,
+        "programFrom": "23:00"
+    },
+    "336": {
+        "programDay": 6,
+        "programFrom": "23:30"
+    }
+}
