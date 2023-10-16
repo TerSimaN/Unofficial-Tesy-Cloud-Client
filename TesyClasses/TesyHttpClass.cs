@@ -12,7 +12,7 @@ public class TesyHttpClass
     private Dictionary<string, DeviceProgram> deviceProgramsDictionary = new();
     private readonly PayloadSerializer payloadSerializer = new();
     private readonly StreamDeserializer deserializer = new();
-    private readonly TesyFileEditorClass tesyFileEditor = new();
+    private readonly TesyFileEditor tesyFileEditor = new();
 
     private CredentialsContent? credentialsContentResponse;
     private LoginContent? loginContentResponse;

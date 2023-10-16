@@ -20,10 +20,9 @@ if (!tesyHttpClass.HasLoginError)
     TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
 
     ShowTesyCommands showTesyCommands = new(
-        tesyHttpClass, 
-        cn05uvConvector, 
-        createProgram, 
-        tesyWeekProgram, 
+        tesyHttpClass,
+        createProgram,
+        tesyWeekProgram,
         tesyDeviceCommands,
         tesyUserClass,
         tesyDebugClass

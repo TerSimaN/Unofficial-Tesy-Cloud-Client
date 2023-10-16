@@ -5,14 +5,10 @@ public class ShowTesyCommands
     private readonly TesyWeekProgramClass tesyWeekProgram;
     private readonly TesyDeviceCommandsClass tesyDeviceCommands;
     private readonly TesyUserClass tesyUserClass;
-    private readonly Cn05uvConvector cn05uvConvector;
     private readonly TesyDebugClass tesyDebugClass;
-
-    private readonly PayloadSerializer payloadSerializer = new();
 
     public ShowTesyCommands(
         TesyHttpClass tesyHttpClass,
-        Cn05uvConvector cn05uvConvector,
         CreateProgram createProgram,
         TesyWeekProgramClass tesyWeekProgram,
         TesyDeviceCommandsClass tesyDeviceCommands,
@@ -21,7 +17,6 @@ public class ShowTesyCommands
     )
     {
         this.tesyHttpClass = tesyHttpClass;
-        this.cn05uvConvector = cn05uvConvector;
         this.createProgram = createProgram;
         this.tesyWeekProgram = tesyWeekProgram;
         this.tesyDeviceCommands = tesyDeviceCommands;
@@ -421,31 +416,9 @@ public class ShowTesyCommands
                 switch (inputValue)
                 {
                     case "1":
-                        Input.ReadCreateProgramValuesFromConsole(createProgram);
-                        continue;
-                    case "2":
-                        Output.PrintCreateProgramValues(createProgram);
-                        Console.WriteLine(
-                            $"cn05uvConvector.Model: {cn05uvConvector.Model};\n" +
-                            $"cn05uvConvector.Token: {cn05uvConvector.Token};\n" + 
-                            $"cn05uvConvector.MacAddress: {cn05uvConvector.MacAddress};"
-                        );
-                        continue;
-                    case "3":
-                        string programKey = tesyWeekProgram.FindProgramKey(createProgram.DayOfWeek, createProgram.FromTime);
-                        payloadSerializer.SerializeProgramParamsAsJsonPayload(createProgram, programKey);
-                        continue;
-                    case "4":
-                        tesyDeviceCommands.SetTimeZone();
-                        continue;
-                    case "5":
-                        bool isValid = createProgram.IsTimeValid();
-                        Console.WriteLine($"Is program valid: {isValid}");
-                        continue;
-                    case "6":
                         tesyHttpClass.GetTesyMyDevices();
                         continue;
-                    case "7":
+                    case "2":
                         tesyDebugClass.DebugLogin();
                         continue;
                     default:

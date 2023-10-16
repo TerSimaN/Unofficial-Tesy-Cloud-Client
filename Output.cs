@@ -171,13 +171,8 @@ public static class Output
 
         outputBuilder.AppendLine("------------------------------------------------------------");
         outputBuilder.AppendLine(
-            "Input \"1\" to add new program parameters;\n" +
-            "Input \"2\" to view program parameters;\n" +
-            "Input \"3\" to view \"add program\" parameters in JSON format;\n" +
-            "Input \"4\" to view \"world_clock\";\n" +
-            "Input \"5\" to check if time parameters for new program are valid (is_time_valid);\n" +
-            "Input \"6\" to re-get MyDevicesContent;\n" +
-            "Input \"7\" to debug login and debug get LoginContent;\n" +
+            "Input \"1\" to get MyDevicesContent;\n" +
+            "Input \"2\" to debug login and debug get LoginContent;\n" +
             "Input \"back\" to go back."
         );
         outputBuilder.AppendLine("------------------------------------------------------------");

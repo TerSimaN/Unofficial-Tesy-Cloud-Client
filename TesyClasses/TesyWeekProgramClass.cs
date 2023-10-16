@@ -8,7 +8,7 @@ public class TesyWeekProgramClass
     private readonly TesyDeviceSettingsClass tesyDeviceSettings;
     private readonly StreamDeserializer deserializer = new();
     private readonly PayloadSerializer payloadSerializer = new();
-    private readonly TesyFileEditorClass tesyFileEditor = new();
+    private readonly TesyFileEditor tesyFileEditor = new();
     private Dictionary<string, DeviceProgramDataContent> deviceProgramDataContentResponse = new();
 
     public TesyWeekProgramClass(TesyHttpClass tesyHttpClass, Cn05uvConvector convector, TesyDeviceSettingsClass tesyDeviceSettings)

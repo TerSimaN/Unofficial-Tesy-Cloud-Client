@@ -2,7 +2,7 @@ public static class MqttApplicationMessage
 {
     private readonly static string formatedResponseMessagesFilePath = TesyConstants.PathToFormatedResponseMessagesFile;
     private static string contentToWrite = "";
-    private readonly static TesyFileEditorClass tesyFileEditor = new();
+    private readonly static TesyFileEditor tesyFileEditor = new();
     private readonly static ResponseDeserializer responseDeserializer = new();
 
     private static GetStatusContent? getStatusContentResponse;
