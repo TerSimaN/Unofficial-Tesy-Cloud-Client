@@ -2,9 +2,34 @@ using System.Text;
 
 public class TesyFileEditor
 {
+    private readonly StreamDeserializer deserializer = new();
+    private readonly PayloadSerializer payloadSerializer = new();
     private StringBuilder? builder;
 
     public TesyFileEditor() { }
+
+    /// <summary>
+    /// Reads user email and password from a json file.
+    /// </summary>
+    /// <param name="filePath">The file to read from.</param>
+    public CredentialsContent ReadUserCredentialsFromFile(string filePath)
+    {
+        string readContent = ReadFromFile(filePath);
+        var credentialsContentResponse = deserializer.GetUserCredentialsContent(readContent);
+        return credentialsContentResponse;
+    }
+
+    /// <summary>
+    /// Writes serialized credentials to a json file.
+    /// </summary>
+    /// <param name="email">The <c>email</c> to write.</param>
+    /// <param name="password">The <c>password</c> to write.</param>
+    /// <param name="filePath">The file to write to.</param>
+    public void WriteUserCredentialsToFile(string email, string password, string filePath)
+    {
+        string serializedCredentials = payloadSerializer.SerializeCredentialsAsJsonString(email, password);
+        OverwriteExistingFile(filePath, serializedCredentials);
+    }
 
     /// <summary>
     /// Opens an existing file on the given path and reads from it.

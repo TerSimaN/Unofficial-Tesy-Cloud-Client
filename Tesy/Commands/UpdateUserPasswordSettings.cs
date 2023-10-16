@@ -33,7 +33,7 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("success"))
             {
-                // TODO: Add WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword);
+                tesyFileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
                 var updateUserPasswordSettingsContentResponse = deserializer.GetUpdateUserPasswordSettingsContent(stream);
                 contentToWrite = ContentBuilder.BuildUpdateUserPasswordSettingsContentString(updateUserPasswordSettingsContentResponse);
             }

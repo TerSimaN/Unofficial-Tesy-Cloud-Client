@@ -20,11 +20,6 @@ public class TesyDeviceCommandsClass
         timeZonesFileContent = tesyWorldClock.TimeZonesFileContentResponse;
     }
 
-    /* public async void RefreshDevicesInfo()
-    {
-        myDevicesContent = await tesyHttpClass.GetTesyMyDevices()
-    } */
-
     public void ResetDevice()
     {
         string command = "reset";

@@ -10,11 +10,9 @@ public class TesyHttpClass
     private Dictionary<string, string> inputQueryParams = new();
     private Dictionary<string, string> updateDeviceSettingsQueryParams = new();
     private Dictionary<string, DeviceProgram> deviceProgramsDictionary = new();
-    private readonly PayloadSerializer payloadSerializer = new();
     private readonly StreamDeserializer deserializer = new();
     private readonly TesyFileEditor tesyFileEditor = new();
 
-    private CredentialsContent? credentialsContentResponse;
     private LoginContent? loginContentResponse;
     private UpdateDeviceSettingsContent? updateDeviceSettingsContentResponse;
     private UpdateUserAccountSettingsContent? updateUserAccountSettingsContentResponse;
@@ -37,41 +35,20 @@ public class TesyHttpClass
     private Dictionary<string, PasswordDetailsError>? passwordDetailsErrorResponse;
     private Dictionary<string, ConfirmPasswordError>? confirmPasswordErrorResponse;
 
-    /// <summary>
-    /// Reads user email and password from a json file.
-    /// </summary>
-    private void ReadUserCredentialsFromFile()
-    {
-        string readContent = tesyFileEditor.ReadFromFile(credentialsJsonFilePath);
-
-        credentialsContentResponse = deserializer.GetUserCredentialsContent(readContent);
-        userEmail = credentialsContentResponse.Email;
-        userPassword = credentialsContentResponse.Password;
-    }
-
-    /// <summary>
-    /// Writes serialized credentials to a json file.
-    /// </summary>
-    /// <param name="email">The <c>email</c> to write.</param>
-    /// <param name="password">The <c>password</c> to write.</param>
-    private void WriteUserCredentialsToFile(string email, string password)
-    {
-        string serializedCredentials = payloadSerializer.SerializeCredentialsAsJsonString(email, password);
-        tesyFileEditor.OverwriteExistingFile(credentialsJsonFilePath, serializedCredentials);
-    }
-
     public void Login()
     {
         if (File.Exists(credentialsJsonFilePath))
         {
-            ReadUserCredentialsFromFile();
+            var credentials = tesyFileEditor.ReadUserCredentialsFromFile(credentialsJsonFilePath);
+            userEmail = credentials.Email;
+            userPassword = credentials.Password;
         }
         else
         {
             userEmail = Input.ReadEmailFromConsole();
             userPassword = Input.ReadPasswordFromConsole();
 
-            WriteUserCredentialsToFile(userEmail, userPassword);
+            tesyFileEditor.WriteUserCredentialsToFile(userEmail, userPassword, credentialsJsonFilePath);
         }
 
         tesyHttpClient = new(userEmail, userPassword);
@@ -190,7 +167,7 @@ public class TesyHttpClass
 
         if (responseMessageContent.Contains("success"))
         {
-            WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword);
+            tesyFileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, credentialsJsonFilePath);
             updateUserAccountSettingsContentResponse = deserializer.GetUpdateUserAccountSettingsContent(stream);
             // Output.PrintUpdateUserAccountSettingsContent(updateUserAccountSettingsContentResponse);
             contentToWrite = ContentBuilder.BuildUpdateUserAccountSettingsContentString(updateUserAccountSettingsContentResponse);
@@ -246,7 +223,7 @@ public class TesyHttpClass
 
         if (responseMessageContent.Contains("success"))
         {
-            WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword);
+            tesyFileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, credentialsJsonFilePath);
             updateUserPasswordSettingsContentResponse = deserializer.GetUpdateUserPasswordSettingsContent(stream);
             // Output.PrintUpdateUserPasswordSettingsContent(updateUserPasswordSettingsContentResponse);
             contentToWrite = ContentBuilder.BuildUpdateUserPasswordSettingsContentString(updateUserPasswordSettingsContentResponse);

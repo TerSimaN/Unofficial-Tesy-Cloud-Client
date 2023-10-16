@@ -1,4 +1,6 @@
-﻿// Connect client ConsoleApplication to MQTT Server
+﻿using Tesy.Commands;
+
+// Connect client ConsoleApplication to MQTT Server
 await TesyMqttClient.ConnectClient();
 
 Generator.GenerateMqttResponseMessagesFile();
@@ -8,32 +10,44 @@ Generator.GenerateHttpResponseMessagesFile();
 TesyHttpClass tesyHttpClass = new();
 tesyHttpClass.Login();
 
-if (!tesyHttpClass.HasLoginError)
-{
-    Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
-    CreateProgram createProgram = new(tesyHttpClass);
+TesyUserClass tesyUserClass = new(tesyHttpClass);
 
-    TesyDebugClass tesyDebugClass = new();
-    TesyUserClass tesyUserClass = new(tesyHttpClass);
-    TesyDeviceSettingsClass tesyDeviceSettings = new();
-    TesyWeekProgramClass tesyWeekProgram = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
-    TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
+TesyHttpClient tesyHttpClient = new();
+DevicePowerStat devicePowerStat = new(tesyHttpClient);
+DeviceTempStat deviceTempStat = new(tesyHttpClient);
+TesyDocuments documents = new(tesyHttpClient);
+LoginData loginData = new(tesyHttpClient);
+MyDevices myDevices = new(tesyHttpClient);
+MyGroups myGroups = new(tesyHttpClient);
+MyMessages myMessages = new(tesyHttpClient);
+TestDevices testDevices = new(tesyHttpClient);
+UpdateDeviceSettings updateDeviceSettings = new(tesyHttpClient);
+UpdateUserAccountSettings updateUserAccountSettings = new(tesyHttpClient, tesyUserClass);
+UpdateUserPasswordSettings updateUserPasswordSettings = new(tesyHttpClient, tesyUserClass);
+UserHasAccessToCloud userHasAccessToCloud = new(tesyHttpClient);
+UserInfo userInfo = new(tesyHttpClient);
 
-    ShowTesyCommands showTesyCommands = new(
-        tesyHttpClass,
-        createProgram,
-        tesyWeekProgram,
-        tesyDeviceCommands,
-        tesyUserClass,
-        tesyDebugClass
-    );
+Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
+CreateProgram createProgram = new(tesyHttpClass);
 
-    await TesyMqttClient.SubscribeForDevice(cn05uvConvector.MacAddress);
-    TesyMqttClient.HandleRecievedMessages();
+TesyDebugClass tesyDebugClass = new();
+TesyDeviceSettingsClass tesyDeviceSettings = new();
+TesyWeekProgramClass tesyWeekProgram = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
+TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
 
-    showTesyCommands.ShowListOfAllCommands();
+ShowTesyCommands showTesyCommands = new(
+    tesyHttpClass,
+    createProgram,
+    tesyWeekProgram,
+    tesyDeviceCommands,
+    tesyUserClass,
+    tesyDebugClass
+);
 
-    await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
-}
+await TesyMqttClient.SubscribeForDevice(cn05uvConvector.MacAddress);
+TesyMqttClient.HandleRecievedMessages();
 
+showTesyCommands.ShowListOfAllCommands();
+
+await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
 await TesyMqttClient.DisconnectClient();
