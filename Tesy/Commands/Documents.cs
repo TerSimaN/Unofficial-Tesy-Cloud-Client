@@ -1,22 +1,35 @@
-/* namespace Tesy.Commands;
+using System.Text.Json;
 
-class Documents
+namespace Tesy.Commands
 {
-  private readonly TesyHttpClient httpClient;
-  private readonly Dictionary<string, string> inputQueryParams = new();
+    public class Documents
+    {
+        private string contentToWrite = "";
+        private readonly TesyHttpClient tesyHttpClient;
+        private readonly StreamDeserializer deserializer = new();
+        private readonly TesyFileEditor tesyFileEditor = new();
+        private Dictionary<string, string> inputQueryParams = new();
 
-  public Documents(TesyHttpClient httpClient)
-  {
-    this.httpClient = httpClient;
-  }
+        public Documents(TesyHttpClient tesyHttpClient)
+        {
+            this.tesyHttpClient = tesyHttpClient;
+        }
 
-  void getDocuments()
-  {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.DocumentsUrl, inputQueryParams);
-        Stream stream = responseMessage.Content.ReadAsStream();
+        public void GetDocuments()
+        {
+            HttpResponseMessage responseMessage = tesyHttpClient.Get(TesyConstants.DocumentsUrl, inputQueryParams);
+            Stream stream = responseMessage.Content.ReadAsStream();
 
-        documentsResponse = deserializer.GetTesyDocumentsContent(stream);
-        contentToWrite = ContentBuilder.BuildTesyDocumentsContentString(documentsResponse);
-        tesyFileEditor.WriteToFile(httpResponseMessagesFilePath, contentToWrite);
-  }
-} */
+            try
+            {
+                var documentsResponse = deserializer.GetTesyDocumentsContent(stream);
+                contentToWrite = ContentBuilder.BuildTesyDocumentsContentString(documentsResponse);
+            }
+            catch (JsonException jsonErr)
+            {
+                contentToWrite = jsonErr.Message;
+            }
+            tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+        }
+    }
+}
