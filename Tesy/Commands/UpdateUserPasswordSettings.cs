@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace Tesy.Commands
 {
     public class UpdateUserPasswordSettings
@@ -5,7 +7,6 @@ namespace Tesy.Commands
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
         private readonly TesyUserClass tesyUserClass;
-        private readonly StreamDeserializer deserializer = new();
         private readonly TesyFileEditor tesyFileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
@@ -34,22 +35,22 @@ namespace Tesy.Commands
             if (responseMessageContent.Contains("success"))
             {
                 tesyFileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
-                var updateUserPasswordSettingsContentResponse = deserializer.GetUpdateUserPasswordSettingsContent(stream);
+                var updateUserPasswordSettingsContentResponse = JsonSerializer.Deserialize<UpdateUserPasswordSettingsContent>(stream) ?? new(false);
                 contentToWrite = ContentBuilder.BuildUpdateUserPasswordSettingsContentString(updateUserPasswordSettingsContentResponse);
             }
             else if (responseMessageContent.Contains("error"))
             {
-                var noMatchFoundInRecordsErrorResponse = deserializer.GetNoMatchFoundInRecordsError(stream);
+                var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
             }
             else if (!responseMessageContent.Contains("newPassword") && responseMessageContent.Contains("confirmPassword"))
             {
-                var confirmPasswordErrorResponse = deserializer.GetConfirmPasswordError(stream);
+                var confirmPasswordErrorResponse = JsonSerializer.Deserialize<Dictionary<string, ConfirmPasswordError>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildConfirmPasswordErrorString(confirmPasswordErrorResponse);
             }
             else if (responseMessageContent.Contains("newPassword") && responseMessageContent.Contains("confirmPassword"))
             {
-                var passwordDetailsErrorResponse = deserializer.GetPasswordDetailsError(stream);
+                var passwordDetailsErrorResponse = JsonSerializer.Deserialize<Dictionary<string, PasswordDetailsError>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildPasswordDetailsErrorString(passwordDetailsErrorResponse);
             }
             tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);

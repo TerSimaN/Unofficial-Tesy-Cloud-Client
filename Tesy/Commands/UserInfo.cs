@@ -1,10 +1,11 @@
+using System.Text.Json;
+
 namespace Tesy.Commands
 {
     public class UserInfo
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly StreamDeserializer deserializer = new();
         private readonly TesyFileEditor tesyFileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
@@ -21,13 +22,13 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("error"))
             {
-                var noMatchFoundInRecordsErrorResponse = deserializer.GetNoMatchFoundInRecordsError(stream);
+                var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
                 tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
             }
             else
             {
-                var userInfoContentResponse = deserializer.GetUserInfoContent(stream);
+                var userInfoContentResponse = JsonSerializer.Deserialize<UserInfoContent>(stream) ?? new("Email not found", "FirstName not found", "LastName not found", "Lang not found");
                 contentToWrite = ContentBuilder.BuildUserInfoContentString(userInfoContentResponse);
                 tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
 

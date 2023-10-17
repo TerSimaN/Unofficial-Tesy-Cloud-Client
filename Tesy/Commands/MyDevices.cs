@@ -1,10 +1,11 @@
+using System.Text.Json;
+
 namespace Tesy.Commands
 {
     public class MyDevices
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly StreamDeserializer deserializer = new();
         private readonly TesyFileEditor tesyFileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
@@ -21,16 +22,16 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("error"))
             {
-                var noMatchFoundInRecordsErrorResponse = deserializer.GetNoMatchFoundInRecordsError(stream);
+                var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
                 tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
             }
             else
             {
-                var myDevicesContentResponse = deserializer.GetMyDevicesContent(stream);
+                var myDevicesContentResponse = JsonSerializer.Deserialize<Dictionary<string, MyDevicesContent>>(stream) ?? new();
                 foreach (var deviceParam in myDevicesContentResponse)
                 {
-                    var deviceTimeContentResponse = deserializer.GetDeviceTimeContent(deviceParam.Value.Time);
+                    var deviceTimeContentResponse = JsonSerializer.Deserialize<DeviceTime>(deviceParam.Value.Time) ?? new("Date not found", "Time not found");
                     contentToWrite = ContentBuilder.BuildMyDevicesContentString(myDevicesContentResponse, deviceTimeContentResponse);
                 }
                 tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);

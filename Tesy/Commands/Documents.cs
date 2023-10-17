@@ -6,7 +6,6 @@ namespace Tesy.Commands
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly StreamDeserializer deserializer = new();
         private readonly TesyFileEditor tesyFileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
@@ -22,7 +21,7 @@ namespace Tesy.Commands
 
             try
             {
-                var documentsResponse = deserializer.GetTesyDocumentsContent(stream);
+                var documentsResponse = JsonSerializer.Deserialize<Dictionary<string, Documents>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildTesyDocumentsContentString(documentsResponse);
             }
             catch (JsonException jsonErr)

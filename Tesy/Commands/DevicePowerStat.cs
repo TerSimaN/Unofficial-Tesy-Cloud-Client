@@ -1,10 +1,11 @@
+using System.Text.Json;
+
 namespace Tesy.Commands
 {
     public class DevicePowerStat
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly StreamDeserializer deserializer = new();
         private readonly TesyFileEditor tesyFileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
@@ -39,12 +40,12 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("error"))
             {
-                var noMatchFoundInRecordsErrorResponse = deserializer.GetNoMatchFoundInRecordsError(stream);
+                var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
             }
             else
             {
-                var devicePowerStatContentResponse = deserializer.GetDevicePowerStatContent(stream);
+                var devicePowerStatContentResponse = JsonSerializer.Deserialize<DevicePowerStatContent[]>(stream) ?? new DevicePowerStatContent[] {};
                 contentToWrite = ContentBuilder.BuildDevicePowerStatContentString(devicePowerStatContentResponse);
             }
             tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
