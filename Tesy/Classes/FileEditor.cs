@@ -1,10 +1,10 @@
 using System.Text;
+using System.Text.Json;
 
 namespace Tesy.Classes
 {
     public class FileEditor
     {
-        private readonly StreamDeserializer deserializer = new();
         private readonly PayloadSerializer payloadSerializer = new();
         private StringBuilder? builder;
 
@@ -17,7 +17,9 @@ namespace Tesy.Classes
         public CredentialsContent ReadUserCredentialsFromFile(string filePath)
         {
             string readContent = ReadFromFile(filePath);
-            var credentialsContentResponse = deserializer.GetUserCredentialsContent(readContent);
+            var credentialsContentResponse = JsonSerializer.Deserialize<CredentialsContent>(readContent) ?? new(
+                "Email not found", "Password not found"
+            );
             return credentialsContentResponse;
         }
 
