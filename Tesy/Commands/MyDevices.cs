@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Tesy.Classes;
 
 namespace Tesy.Commands
 {
@@ -6,7 +7,7 @@ namespace Tesy.Commands
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly TesyFileEditor tesyFileEditor = new();
+        private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
         public MyDevices(TesyHttpClient tesyHttpClient)
@@ -24,7 +25,7 @@ namespace Tesy.Commands
             {
                 var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
-                tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
             }
             else
             {
@@ -34,12 +35,24 @@ namespace Tesy.Commands
                     var deviceTimeContentResponse = JsonSerializer.Deserialize<DeviceTime>(deviceParam.Value.Time) ?? new("Date not found", "Time not found");
                     contentToWrite = ContentBuilder.BuildMyDevicesContentString(myDevicesContentResponse, deviceTimeContentResponse);
                 }
-                tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
 
                 return myDevicesContentResponse;
             }
 
             return new();
+        }
+
+        public async Task<Dictionary<string, DeviceProgram>> GetDevicePrograms()
+        {
+            Dictionary<string, DeviceProgram> deviceProgramsDictionary = new();
+            var myDevicesContent = await GetMyDevices();
+            foreach (var deviceParam in myDevicesContent)
+            {
+                deviceProgramsDictionary = deviceParam.Value.State.DeviceProgram;
+            }
+
+            return deviceProgramsDictionary;
         }
     }
 }
