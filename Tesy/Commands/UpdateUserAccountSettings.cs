@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Tesy.Classes;
 
 namespace Tesy.Commands
 {
@@ -7,7 +8,7 @@ namespace Tesy.Commands
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
         private readonly TesyUserClass tesyUserClass;
-        private readonly TesyFileEditor tesyFileEditor = new();
+        private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
         public UpdateUserAccountSettings(TesyHttpClient tesyHttpClient, TesyUserClass tesyUserClass)
@@ -36,7 +37,7 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("success"))
             {
-                tesyFileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
+                fileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
                 var updateUserAccountSettingsContentResponse = JsonSerializer.Deserialize<UpdateUserAccountSettingsContent>(stream) ?? new(false);
                 contentToWrite = ContentBuilder.BuildUpdateUserAccountSettingsContentString(updateUserAccountSettingsContentResponse);
             }
@@ -65,7 +66,7 @@ namespace Tesy.Commands
                 var accountDetailsErrorResponse = JsonSerializer.Deserialize<Dictionary<string, AccountDetailsError>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildAccountDetailsErrorString(accountDetailsErrorResponse);
             }
-            tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

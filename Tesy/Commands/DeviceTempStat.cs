@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Tesy.Classes;
 
 namespace Tesy.Commands
 {
@@ -6,7 +7,7 @@ namespace Tesy.Commands
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly TesyFileEditor tesyFileEditor = new();
+        private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
         public DeviceTempStat(TesyHttpClient tesyHttpClient)
@@ -48,7 +49,7 @@ namespace Tesy.Commands
                 var deviceTempStatContentResponse = JsonSerializer.Deserialize<DeviceTempStatContent>(stream) ?? new(new DataContent[] {}, new string[] {});
                 contentToWrite = ContentBuilder.BuildDeviceTempStatContentString(deviceTempStatContentResponse);
             }
-            tesyFileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }
