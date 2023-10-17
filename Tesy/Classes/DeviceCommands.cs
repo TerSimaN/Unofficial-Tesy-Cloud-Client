@@ -8,50 +8,50 @@ namespace Tesy.Classes
         private readonly UpdateDeviceSettings updateDeviceSettings;
         private readonly TesyHttpClass tesyHttpClass;
         private readonly Cn05uvConvector convector;
-        private readonly TesyDeviceSettingsClass tesyDeviceSettings;
-        private readonly TesyWorldClockClass tesyWorldClock = new();
+        private readonly DeviceSettings deviceSettings;
+        private readonly WorldClock worldClock = new();
         private readonly PayloadSerializer payloadSerializer = new();
         private readonly Dictionary<string, TimeZonesFileContent> timeZonesFileContent;
         private Dictionary<string, string> queryParams = new();
         private DeviceTime deviceTimeContent;
 
-        public DeviceCommands(MyDevices myDevices, UpdateDeviceSettings updateDeviceSettings, TesyHttpClass tesyHttpClass, Cn05uvConvector convector, TesyDeviceSettingsClass tesyDeviceSettings)
+        public DeviceCommands(MyDevices myDevices, UpdateDeviceSettings updateDeviceSettings, TesyHttpClass tesyHttpClass, Cn05uvConvector convector, DeviceSettings deviceSettings)
         {
             this.myDevices = myDevices;
             this.updateDeviceSettings = updateDeviceSettings;
             this.tesyHttpClass = tesyHttpClass;
             this.convector = convector;
-            this.tesyDeviceSettings = tesyDeviceSettings;
-            deviceTimeContent = tesyHttpClass.DeviceTimeContentResponse;
-            timeZonesFileContent = tesyWorldClock.TimeZonesFileContentResponse;
+            this.deviceSettings = deviceSettings;
+            deviceTimeContent = tesyHttpClass.DeviceTimeContentResponse;    // TODO: Implement differently
+            timeZonesFileContent = worldClock.ReadTimeZonesFileContent();
         }
 
         public void ResetDevice()
         {
             string command = "reset";
             string payloadContent = payloadSerializer.SerializeNoParamsAsJsonPayload();
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public void DeleteAllDevicePrograms()
         {
             string command = "deleteAllPrograms";
             string payloadContent = payloadSerializer.SerializeNoParamsAsJsonPayload();
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public void GetSSID()
         {
             string command = "getSSID";
             string payloadContent = payloadSerializer.SerializeNoParamsAsJsonPayload();
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public void GetStatus()
         {
             string command = "getStatus";
             string payloadContent = payloadSerializer.SerializeNoParamsAsJsonPayload();
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnOnOff()
@@ -64,7 +64,7 @@ namespace Tesy.Classes
                 onOffValue = ((deviceParam.Value.State.Status != null) && (deviceParam.Value.State.Status == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeOnOffParamsAsJsonPayload(onOffValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnUVOnOff()
@@ -77,7 +77,7 @@ namespace Tesy.Classes
                 UVValue = ((deviceParam.Value.State.UV != null) && (deviceParam.Value.State.UV == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeUVParamsAsJsonPayload(UVValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnLockDeviceOnOff()
@@ -90,7 +90,7 @@ namespace Tesy.Classes
                 lockedDeviceValue = ((deviceParam.Value.State.LockedDevice != null) && (deviceParam.Value.State.LockedDevice == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeLockedDeviceParamsAsJsonPayload(lockedDeviceValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnOpenedWindowOnOff()
@@ -103,7 +103,7 @@ namespace Tesy.Classes
                 openedWindowValue = ((deviceParam.Value.State.OpenedWindow != null) && (deviceParam.Value.State.OpenedWindow == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeOpenedWindowParamsAsJsonPayload(openedWindowValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnAntiFrostOnOff()
@@ -116,7 +116,7 @@ namespace Tesy.Classes
                 antiFrostValue = ((deviceParam.Value.State.AntiFrost != null) && (deviceParam.Value.State.AntiFrost == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeAntiFrostParamsAsJsonPayload(antiFrostValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void TurnAdaptiveStartOnOff()
@@ -129,7 +129,7 @@ namespace Tesy.Classes
                 adaptiveStartValue = ((deviceParam.Value.State.AdaptiveStart != null) && (deviceParam.Value.State.AdaptiveStart == "on")) ? "off" : "on";
             }
             string payloadContent = payloadSerializer.SerializeAdaptiveStartParamsAsJsonPayload(adaptiveStartValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetDeviceTemp()
@@ -146,7 +146,7 @@ namespace Tesy.Classes
             short temperatureValue = newDeviceTempValue != 0 ? newDeviceTempValue : oldDeviceTempValue;
 
             string payloadContent = payloadSerializer.SerializeDeviceTempParamsAsJsonPayload(temperatureValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetMode()
@@ -163,7 +163,7 @@ namespace Tesy.Classes
             string nameValue = newModeNameValue != "" ? newModeNameValue : oldModeNameValue;
 
             string payloadContent = payloadSerializer.SerializeModeParamsAsJsonPayload(nameValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetEcoTemp()
@@ -184,7 +184,7 @@ namespace Tesy.Classes
             int timeValue = newEcoTempTimeValue != 0 ? newEcoTempTimeValue : oldEcoTempTimeValue;
             
             string payloadContent = payloadSerializer.SerializeEcoTempParamsAsJsonPayload(temperatureValue, timeValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetComfortTemp()
@@ -201,7 +201,7 @@ namespace Tesy.Classes
             short temperatureValue = newComfortTempTemperatureValue != 0 ? newComfortTempTemperatureValue : oldComfortTempTemperatureValue;
 
             string payloadContent = payloadSerializer.SerializeComfortTempParamsAsJsonPayload(temperatureValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetSleepMode()
@@ -218,7 +218,7 @@ namespace Tesy.Classes
             int timeValue = newSleepModeTimeValue != 0 ? newSleepModeTimeValue : oldSleepModeTimeValue;
 
             string payloadContent = payloadSerializer.SerializeSleepModeParamsAsJsonPayload(timeValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetDelayedStart()
@@ -239,7 +239,7 @@ namespace Tesy.Classes
             short temperatureValue = newDelayedStartTempValue != 0 ? newDelayedStartTempValue : oldDelayedStartTemperatureValue;
 
             string payloadContent = payloadSerializer.SerializeDelayedStartParamsAsJsonPayload(timeValue, temperatureValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetDeviceName()
@@ -283,7 +283,7 @@ namespace Tesy.Classes
             string wifiPass = newDeviceWifiPassValue != "" ? newDeviceWifiPassValue : oldDeviceWifiPassValue;
 
             string payloadContent = payloadSerializer.SerializeDeviceWifiParamsAsJsonPayload(wifiSSID, wifiPass);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetTCorrection()
@@ -300,13 +300,13 @@ namespace Tesy.Classes
             short temperatureValue = ((newTCorrectionTemperatureValue > -4) || (newTCorrectionTemperatureValue < 4)) ? newTCorrectionTemperatureValue : oldTCorrectionTemperatureValue;
 
             string payloadContent = payloadSerializer.SerializeTCorrectionParamsAsJsonPayload(temperatureValue);
-            tesyDeviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
         }
 
         public async void SetTimeZone()
         {
             var myDevicesContent = await myDevices.GetMyDevices();
-            deviceTimeContent = tesyHttpClass.DeviceTimeContentResponse;
+            deviceTimeContent = tesyHttpClass.DeviceTimeContentResponse;    // TODO: Implement differently
             string macAddress = "";
             string command = "timeResponse";
             string requestType = "timeResponse";
@@ -319,9 +319,9 @@ namespace Tesy.Classes
             string newTimeZoneValue = Input.ReadIanaTimeZoneIdFromConsole(timeZonesFileContent);
             if (newTimeZoneValue != "")
             {
-                newDateValue = tesyWorldClock.GetNewTimeZoneDate(newTimeZoneValue);
-                newTimeValue = tesyWorldClock.GetNewTimeZoneTime(newTimeZoneValue);
-                newWeekdayValue = tesyWorldClock.GetNewWeekday(newTimeZoneValue);
+                newDateValue = worldClock.GetNewTimeZoneDate(newTimeZoneValue);
+                newTimeValue = worldClock.GetNewTimeZoneTime(newTimeZoneValue);
+                newWeekdayValue = worldClock.GetNewWeekday(newTimeZoneValue);
             }
             
             string oldTimeZoneValue = "";
@@ -332,7 +332,7 @@ namespace Tesy.Classes
             }
             string oldDateValue = deviceTimeContent.Date;
             string oldTimeValue = deviceTimeContent.Time;
-            short oldWeekdayValue = tesyWorldClock.GetNewWeekday(oldTimeZoneValue);
+            short oldWeekdayValue = worldClock.GetNewWeekday(oldTimeZoneValue);
             
             string timeZoneValue = newTimeZoneValue != "" ? newTimeZoneValue : oldTimeZoneValue;
             string dateValue = newDateValue != "" ? newDateValue : oldDateValue;
@@ -351,7 +351,7 @@ namespace Tesy.Classes
             }
 
             string payloadContent = payloadSerializer.SerializeTimeZoneParamsAsJsonPayload(weekdayValue, timeValue, timeZoneValue, dateValue);
-            tesyDeviceSettings.PublishMessage(convector, requestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, requestType, command, payloadContent);
         }
     }
 }
