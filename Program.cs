@@ -13,10 +13,12 @@ tesyHttpClass.Login();
 TesyUserClass tesyUserClass = new(tesyHttpClass);
 
 TesyHttpClient tesyHttpClient = new();
+LoginData loginData = new(tesyHttpClient);
+var inputQueryParams = loginData.PostLoginData("", "");
+
 DevicePowerStat devicePowerStat = new(tesyHttpClient);
 DeviceTempStat deviceTempStat = new(tesyHttpClient);
 TesyDocuments documents = new(tesyHttpClient);
-LoginData loginData = new(tesyHttpClient);
 MyDevices myDevices = new(tesyHttpClient);
 MyGroups myGroups = new(tesyHttpClient);
 MyMessages myMessages = new(tesyHttpClient);
