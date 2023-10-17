@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Text;
 using System.Text.Json;
+using Tesy.Enums;
 
 namespace Tesy.Classes
 {
@@ -89,25 +90,25 @@ namespace Tesy.Classes
                 switch (dateTime.DayOfWeek)
                 {
                     case DayOfWeek.Monday:
-                        day = (short)WeekDaysEnum.Monday;
+                        day = (short)WeekDays.Monday;
                         break;
                     case DayOfWeek.Tuesday:
-                        day = (short)WeekDaysEnum.Tuesday;
+                        day = (short)WeekDays.Tuesday;
                         break;
                     case DayOfWeek.Wednesday:
-                        day = (short)WeekDaysEnum.Wednesday;
+                        day = (short)WeekDays.Wednesday;
                         break;
                     case DayOfWeek.Thursday:
-                        day = (short)WeekDaysEnum.Thursday;
+                        day = (short)WeekDays.Thursday;
                         break;
                     case DayOfWeek.Friday:
-                        day = (short)WeekDaysEnum.Friday;
+                        day = (short)WeekDays.Friday;
                         break;
                     case DayOfWeek.Saturday:
-                        day = (short)WeekDaysEnum.Saturday;
+                        day = (short)WeekDays.Saturday;
                         break;
                     case DayOfWeek.Sunday:
-                        day = (short)WeekDaysEnum.Sunday;
+                        day = (short)WeekDays.Sunday;
                         break;
                     default:
                         break;
