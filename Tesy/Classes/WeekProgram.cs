@@ -1,5 +1,8 @@
 using System.Text.Json;
+using Tesy.Commands;
 using Tesy.Convectors;
+using Tesy.Programs;
+using Tesy.Serializers;
 
 namespace Tesy.Classes
 {
@@ -8,15 +11,16 @@ namespace Tesy.Classes
         private readonly string deviceProgramDataJsonFilePath = TesyConstants.PathToCorrectDeviceProgramDataJsonFile;
         private string textToShow = "";
         
-        private readonly TesyHttpClass tesyHttpClass;
+        private readonly MyDevices myDevices;
         private readonly Cn05uv convector;
         private readonly DeviceSettings deviceSettings;
         private readonly PayloadSerializer payloadSerializer = new();
+        private readonly WeekProgramPayload weekProgramPayload = new();
         private readonly FileEditor fileEditor = new();
 
-        public WeekProgram(TesyHttpClass tesyHttpClass, Cn05uv convector, DeviceSettings deviceSettings)
+        public WeekProgram(MyDevices myDevices, Cn05uv convector, DeviceSettings deviceSettings)
         {
-            this.tesyHttpClass = tesyHttpClass;
+            this.myDevices = myDevices;
             this.convector = convector;
             this.deviceSettings = deviceSettings;
         }
@@ -48,17 +52,17 @@ namespace Tesy.Classes
             return programKey;
         }
 
-        public void AddWeekProgram(CreateProgram createProgram)
+        public async void AddWeekProgram(CreateWeekProgram weekProgram)
         {
             string command = "setProgram";
             Console.WriteLine("Enter values for new week program:");
-            Input.ReadCreateProgramValuesFromConsole(createProgram);
+            weekProgram.ReadCreateProgramValues();
             
-            bool isValid = createProgram.IsTimeValid();
+            bool isValid = await weekProgram.IsTimeValid();
             if (isValid)
             {
-                string programKey = FindProgramKey(createProgram.DayOfWeek, createProgram.FromTime);
-                string payloadContent = payloadSerializer.SerializeProgramParamsAsJsonPayload(createProgram, programKey);
+                string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
+                string payloadContent = weekProgramPayload.SerializeWeekProgramParamsAsJsonPayload(weekProgram, programKey);
 
                 deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
             }
@@ -68,17 +72,18 @@ namespace Tesy.Classes
             }
         }
 
-        public void EditWeekProgram(CreateProgram createProgram)
+        public async void EditWeekProgram(CreateWeekProgram weekProgram)
         {
             textToShow = "edit";
             string command = "setProgram";
             string programId = Input.ReadProgramIdFromConsole(textToShow);
             Dictionary<string, DeviceProgram> programToEdit = new();
-            foreach (var programKey in tesyHttpClass.DeviceProgramsDictionary)
+            var devicePrograms = await myDevices.GetDevicePrograms();
+            foreach (var programKey in devicePrograms)
             {
                 if (programId == programKey.Key)
                 {
-                    createProgram.DayOfWeek = programKey.Value.Day;
+                    weekProgram.DayOfWeek = programKey.Value.Day;
                     programToEdit.Add(programKey.Key, programKey.Value);
                 }
             }
@@ -86,13 +91,13 @@ namespace Tesy.Classes
             
             Output.PrintEditWeekProgramByProgramIdContent(programToEdit, programId);
             Console.WriteLine("Enter new values for selected week program:");
-            Input.ReadEditProgramValuesFromConsole(createProgram);
+            weekProgram.ReadEditProgramValues();
             
-            bool isValid = createProgram.IsTimeValid();
+            bool isValid = await weekProgram.IsTimeValid();
             if (isValid)
             {
-                string programKey = FindProgramKey(createProgram.DayOfWeek, createProgram.FromTime);
-                string payloadContent = payloadSerializer.SerializeProgramParamsAsJsonPayload(createProgram, programKey);
+                string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
+                string payloadContent = weekProgramPayload.SerializeWeekProgramParamsAsJsonPayload(weekProgram, programKey);
 
                 deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
             }
@@ -102,7 +107,7 @@ namespace Tesy.Classes
             }
         }
         
-        public void DeleteWeekProgram(string? programId = default)
+        public async void DeleteWeekProgram(string? programId = default)
         {
             textToShow = "delete";
             string command = "deleteProgram";
@@ -112,7 +117,8 @@ namespace Tesy.Classes
                 programId = Input.ReadProgramIdFromConsole(textToShow);
             }
             
-            foreach (var programKey in tesyHttpClass.DeviceProgramsDictionary)
+            var devicePrograms = await myDevices.GetDevicePrograms();
+            foreach (var programKey in devicePrograms)
             {
                 if (programId == programKey.Key)
                 {
