@@ -1,4 +1,5 @@
 using Tesy.Commands;
+using Tesy.Convectors;
 
 namespace Tesy.Classes
 {
@@ -7,7 +8,7 @@ namespace Tesy.Classes
         private readonly MyDevices myDevices;
         private readonly UpdateDeviceSettings updateDeviceSettings;
         private readonly TesyHttpClass tesyHttpClass;
-        private readonly Cn05uvConvector convector;
+        private readonly Cn05uv convector;
         private readonly DeviceSettings deviceSettings;
         private readonly WorldClock worldClock = new();
         private readonly PayloadSerializer payloadSerializer = new();
@@ -15,7 +16,7 @@ namespace Tesy.Classes
         private Dictionary<string, string> queryParams = new();
         private DeviceTime deviceTimeContent;
 
-        public DeviceCommands(MyDevices myDevices, UpdateDeviceSettings updateDeviceSettings, TesyHttpClass tesyHttpClass, Cn05uvConvector convector, DeviceSettings deviceSettings)
+        public DeviceCommands(MyDevices myDevices, UpdateDeviceSettings updateDeviceSettings, TesyHttpClass tesyHttpClass, Cn05uv convector, DeviceSettings deviceSettings)
         {
             this.myDevices = myDevices;
             this.updateDeviceSettings = updateDeviceSettings;

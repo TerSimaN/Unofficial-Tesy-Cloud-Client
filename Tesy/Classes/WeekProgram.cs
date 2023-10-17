@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Tesy.Convectors;
 
 namespace Tesy.Classes
 {
@@ -8,12 +9,12 @@ namespace Tesy.Classes
         private string textToShow = "";
         
         private readonly TesyHttpClass tesyHttpClass;
-        private readonly Cn05uvConvector convector;
+        private readonly Cn05uv convector;
         private readonly DeviceSettings deviceSettings;
         private readonly PayloadSerializer payloadSerializer = new();
         private readonly FileEditor fileEditor = new();
 
-        public WeekProgram(TesyHttpClass tesyHttpClass, Cn05uvConvector convector, DeviceSettings deviceSettings)
+        public WeekProgram(TesyHttpClass tesyHttpClass, Cn05uv convector, DeviceSettings deviceSettings)
         {
             this.tesyHttpClass = tesyHttpClass;
             this.convector = convector;

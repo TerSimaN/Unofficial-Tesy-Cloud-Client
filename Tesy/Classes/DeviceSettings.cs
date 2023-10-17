@@ -1,10 +1,12 @@
+using Tesy.Convectors;
+
 namespace Tesy.Classes
 {
     public class DeviceSettings
     {
         public DeviceSettings() { }
         
-        public async void PublishMessage(Cn05uvConvector convector, string requestType, string command, string payloadContent)
+        public async void PublishMessage(Cn05uv convector, string requestType, string command, string payloadContent)
         {
             Task task;
 
