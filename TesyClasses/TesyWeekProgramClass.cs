@@ -1,3 +1,6 @@
+using Tesy.Content;
+using Tesy.Content.MyDevices;
+
 public class TesyWeekProgramClass
 {
     private readonly string deviceProgramDataJsonFilePath = TesyConstants.PathToCorrectDeviceProgramDataJsonFile;

@@ -1,5 +1,7 @@
 using System.Text.Json;
 using Tesy.Commands;
+using Tesy.Content;
+using Tesy.Content.MyDevices;
 using Tesy.Convectors;
 using Tesy.Programs;
 using Tesy.Serializers;

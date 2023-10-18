@@ -1,4 +1,7 @@
 using System.Text.Json;
+using Tesy.Content;
+using Tesy.Content.Documents;
+using Tesy.Content.MyDevices;
 
 public class StreamDeserializer
 {

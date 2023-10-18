@@ -1,3 +1,5 @@
+using Tesy.Content.MyDevices;
+
 public class Cn05uvConvector
 {
     private string token = "";

@@ -1,5 +1,7 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Content;
+using Tesy.Content.MyDevices;
 
 namespace Tesy.Commands
 {
