@@ -6,7 +6,20 @@ namespace Tesy.Classes
 {
     public class Commander
     {
+        private readonly DevicePowerStat devicePowerStat;
+        private readonly DeviceTempStat deviceTempStat;
+        private readonly TesyDocuments tesyDocuments;
+        private readonly LoginData loginData;
         private readonly MyDevices myDevices;
+        private readonly MyGroups myGroups;
+        private readonly MyMessages myMessages;
+        private readonly TestDevices testDevices;
+        private readonly UpdateUserAccountSettings updateUserAccountSettings;
+        private readonly UpdateUserPasswordSettings updateUserPasswordSettings;
+        private readonly UserHasAccessToCloud userHasAccessToCloud;
+        private readonly UserInfo userInfo;
+
+        private readonly User user;
         private readonly WeekProgram weekProgram;
         private readonly CreateWeekProgram createWeekProgram;
 
@@ -32,34 +45,39 @@ namespace Tesy.Classes
         private readonly DeviceTimeZone deviceTimeZone;
 
         public Commander(
-            MyDevices myDevices,
-            WeekProgram weekProgram,
-            CreateWeekProgram createWeekProgram,
-            Reset reset,
-            DeleteAllDevicePrograms deleteAllDevicePrograms,
-            DeviceSSID deviceSSID,
-            DeviceStatus deviceStatus,
-            OnOff onOff,
-            UV uv,
-            LockDevice lockDevice,
-            OpenedWindow openedWindow,
-            AntiFrost antiFrost,
-            AdaptiveStart adaptiveStart,
-            DeviceTemp deviceTemp,
-            Mode mode,
-            EcoTemp ecoTemp,
-            ComfortTemp comfortTemp,
-            SleepTemp sleepTemp,
-            DelayedStart delayedStart,
-            DeviceName deviceName,
-            WifiData wifiData,
-            TCorrection tCorrection,
-            DeviceTimeZone deviceTimeZone
+            DevicePowerStat devicePowerStat, DeviceTempStat deviceTempStat,
+            TesyDocuments tesyDocuments, LoginData loginData, MyDevices myDevices,
+            MyGroups myGroups, MyMessages myMessages, TestDevices testDevices,
+            UpdateUserAccountSettings updateUserAccountSettings,
+            UpdateUserPasswordSettings updateUserPasswordSettings,
+            UserHasAccessToCloud userHasAccessToCloud, UserInfo userInfo,
+            User user, WeekProgram weekProgram, CreateWeekProgram createWeekProgram,
+            Reset reset, DeleteAllDevicePrograms deleteAllDevicePrograms,
+            DeviceSSID deviceSSID, DeviceStatus deviceStatus, OnOff onOff,
+            UV uv, LockDevice lockDevice, OpenedWindow openedWindow,
+            AntiFrost antiFrost, AdaptiveStart adaptiveStart, DeviceTemp deviceTemp,
+            Mode mode, EcoTemp ecoTemp, ComfortTemp comfortTemp, SleepTemp sleepTemp,
+            DelayedStart delayedStart, DeviceName deviceName, WifiData wifiData,
+            TCorrection tCorrection, DeviceTimeZone deviceTimeZone
         )
         {
+            this.devicePowerStat = devicePowerStat;
+            this.deviceTempStat = deviceTempStat;
+            this.tesyDocuments = tesyDocuments;
+            this.loginData = loginData;
             this.myDevices = myDevices;
+            this.myGroups = myGroups;
+            this.myMessages = myMessages;
+            this.testDevices = testDevices;
+            this.updateUserAccountSettings = updateUserAccountSettings;
+            this.updateUserPasswordSettings = updateUserPasswordSettings;
+            this.userHasAccessToCloud = userHasAccessToCloud;
+            this.userInfo = userInfo;
+
+            this.user = user;
             this.weekProgram = weekProgram;
             this.createWeekProgram = createWeekProgram;
+
             this.reset = reset;
             this.deleteAllDevicePrograms = deleteAllDevicePrograms;
             this.deviceSSID = deviceSSID;
@@ -82,7 +100,42 @@ namespace Tesy.Classes
             this.deviceTimeZone = deviceTimeZone;
         }
 
-        public async void ShowDeviceCommands()
+        public void ShowAllCommands()
+        {
+            do
+            {
+                Output.PrintListOfAllCommands();
+
+                Console.Write("Input: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    inputValue = inputValue.Trim();
+                    if (inputValue.Equals("exit"))
+                    {
+                        break;
+                    }
+
+                    switch (inputValue)
+                    {
+                        case "commands":
+                            ShowDeviceCommands();
+                            continue;
+                        case "settings":
+                            ShowCommandsForAvailableSettings();
+                            continue;
+                        case "tesy_data":
+                            ShowCommandsForAvailableData();
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+            } while (true);
+        }
+
+        private async void ShowDeviceCommands()
         {
             do
             {
@@ -246,6 +299,171 @@ namespace Tesy.Classes
                             weekProgram.DeleteWeekProgram();
                             continue;
                         case "reload":
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+            } while (true);
+        }
+
+        private async void ShowCommandsForAvailableSettings()
+        {
+            do
+            {
+                Output.PrintListOfSettingsCommands();
+
+                Console.Write("Input: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    inputValue = inputValue.Trim();
+                    if (inputValue.Equals("back"))
+                    {
+                        break;
+                    }
+                    
+                    switch (inputValue)
+                    {
+                        case "account":
+                            var userInfoContent = await userInfo.GetUserInfo();
+                            Output.PrintUserAccountDetails(userInfoContent);
+                            ShowAccountDetailsCommands();
+                            continue;
+                        case "password":
+                            ShowPasswordDetailsCommands();
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+            } while (true);
+        }
+
+        private void ShowAccountDetailsCommands()
+        {
+            do
+            {
+                Output.PrintListOfAccountDetailsCommands();
+
+                Console.Write("Input: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    inputValue = inputValue.Trim();
+                    if (inputValue.Equals("back"))
+                    {
+                        break;
+                    }
+
+                    switch (inputValue)
+                    {
+                        case "change_email":
+                            user.ChangeUserEmail();
+                            continue;
+                        case "change_first_name":
+                            user.ChangeUserFirstName();
+                            continue;
+                        case "change_last_name":
+                            user.ChangeUserLastName();
+                            continue;
+                        case "change_lang":
+                            user.ChangeUserLang();
+                            continue;
+                        case "confirm":
+                            updateUserAccountSettings.PostUpdateUserAccountSettings(user);
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+            } while (true);
+        }
+
+        private void ShowPasswordDetailsCommands()
+        {
+            do
+            {
+                Output.PrintListOfPasswordDetailsCommands();
+
+                Console.Write("Input: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    inputValue = inputValue.Trim();
+                    if (inputValue.Equals("back"))
+                    {
+                        break;
+                    }
+
+                    switch (inputValue)
+                    {
+                        case "change_password":
+                            user.ChangeUserPassword();
+                            continue;
+                        case "confirm":
+                            updateUserPasswordSettings.PostUpdateUserPasswordSettings(user);
+                            continue;
+                        default:
+                            continue;
+                    }
+                }
+            } while (true);
+        }
+
+        private async void ShowCommandsForAvailableData()
+        {
+            do
+            {
+                Output.PrintListOfTesyHttpClassCommands();
+
+                Console.Write("Input: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    inputValue = inputValue.Trim();
+                    if (inputValue.Equals("back"))
+                    {
+                        break;
+                    }
+
+                    switch (inputValue)
+                    {
+                        case "login_data":
+                            await loginData.PostLoginData("", "");
+                            continue;
+                        case "user_has_access_to_cloud":
+                            userHasAccessToCloud.GetUserHasAccessToCloud();
+                            continue;
+                        case "user_info":
+                            await userInfo.GetUserInfo();
+                            continue;
+                        case "my_devices":
+                            await myDevices.GetMyDevices();
+                            continue;
+                        case "my_groups":
+                            myGroups.GetMyGroups();
+                            continue;
+                        case "my_messages":
+                            myMessages.GetMyMessages();
+                            continue;
+                        case "test_devices":
+                            testDevices.GetTestDevices();
+                            continue;
+                        case "device_temp_stat":
+                            var myDevicesTempStatContent = await myDevices.GetMyDevices();
+                            deviceTempStat.GetDeviceTempStat(myDevicesTempStatContent);
+                            continue;
+                        case "device_power_stat":
+                            var myDevicesPowerStatContent = await myDevices.GetMyDevices();
+                            devicePowerStat.GetDevicePowerStat(myDevicesPowerStatContent);
+                            continue;
+                        case "documents":
+                            tesyDocuments.GetTesyDocuments();
                             continue;
                         default:
                             continue;
