@@ -14,8 +14,8 @@ namespace Tesy.Classes
         private readonly MyDevices myDevices;
         private readonly Cn05uv convector;
         private readonly DeviceSettings deviceSettings;
-        private readonly PayloadSerializer payloadSerializer = new();
         private readonly WeekProgramPayload weekProgramPayload = new();
+        private readonly ProgramKeyPayload programKeyPayload = new();
         private readonly FileEditor fileEditor = new();
 
         public WeekProgram(MyDevices myDevices, Cn05uv convector, DeviceSettings deviceSettings)
@@ -62,7 +62,7 @@ namespace Tesy.Classes
             if (isValid)
             {
                 string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
-                string payloadContent = weekProgramPayload.SerializeWeekProgramParamsAsJsonPayload(weekProgram, programKey);
+                string payloadContent = weekProgramPayload.SerializeParamsAsJsonPayload(weekProgram, programKey);
 
                 deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
             }
@@ -97,7 +97,7 @@ namespace Tesy.Classes
             if (isValid)
             {
                 string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
-                string payloadContent = weekProgramPayload.SerializeWeekProgramParamsAsJsonPayload(weekProgram, programKey);
+                string payloadContent = weekProgramPayload.SerializeParamsAsJsonPayload(weekProgram, programKey);
 
                 deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
             }
@@ -122,7 +122,7 @@ namespace Tesy.Classes
             {
                 if (programId == programKey.Key)
                 {
-                    payloadContent = payloadSerializer.SerializeProgramKeyAsJsonPayload(programKey.Key);
+                    payloadContent = programKeyPayload.SerializeParamsAsJsonPayload(programKey.Key);
                     break;
                 }
             }
