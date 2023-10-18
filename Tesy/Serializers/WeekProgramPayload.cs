@@ -14,12 +14,13 @@ namespace Tesy.Serializers
 
     public class WeekProgramPayload
     {
-        private readonly JsonSerializerOptions serializerOptions = new() {
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-            WriteIndented = true
-        };
-
-        public string SerializeWeekProgramParamsAsJsonPayload(CreateWeekProgram weekProgram, string programKey)
+        /// <summary>
+        /// Serializes Add and Edit Week Program parameters as JSON string.
+        /// </summary>
+        /// <param name="weekProgram">Week Program parameters to serialize.</param>
+        /// <param name="programKey">Week Program <c>program_number</c> parameter to serialize.</param>
+        /// <returns>Serialized JSON string.</returns>
+        public string SerializeParamsAsJsonPayload(CreateWeekProgram weekProgram, string programKey)
         {
             var @params = new WeekProgramParams
             {
@@ -30,7 +31,7 @@ namespace Tesy.Serializers
                 Program_number = programKey
             };
 
-            string payload = JsonSerializer.Serialize(@params, serializerOptions);
+            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;
