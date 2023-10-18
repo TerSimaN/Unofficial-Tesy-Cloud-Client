@@ -31,8 +31,6 @@ public static class TesyMqttClient
     {
         var connectResponse = await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
         Console.WriteLine("\nThe MQTT client is connected.");
-        // connectResponse.DumpToConsole();
-        // connectResponse.DumpToFile(filePath);
     }
 
     /// <summary>
@@ -85,8 +83,6 @@ public static class TesyMqttClient
         
         var subscribeResponse = await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
         Console.WriteLine($"\nMQTT client subscribed for {macAddress}.");
-        // subscribeResponse.DumpToConsole();
-        // subscribeResponse.DumpToFile(filePath);
     }
 
     /// <summary>
@@ -104,8 +100,6 @@ public static class TesyMqttClient
         
         var unsubscribeResponse = await mqttClient.UnsubscribeAsync(mqttUnsubscribeOptions, CancellationToken.None);
         Console.WriteLine($"\nMQTT client unsubscribed for {macAddress}.");
-        // unsubscribeResponse.DumpToConsole();
-        // unsubscribeResponse.DumpToFile(filePath);
     }
 
     /// <summary>
@@ -120,7 +114,6 @@ public static class TesyMqttClient
     public static async Task PublishMessage(string macAddress, string requestType, string model, string token, string command, string payload)
     {
         string topic = $"{appMqttVersion}/{macAddress}/{requestType}/{model}/{token}/{command}";
-        // Console.WriteLine($"Message topic: {topic}");
 
         var applicationMessage = new MqttApplicationMessageBuilder()
             .WithTopic(topic)
@@ -129,8 +122,6 @@ public static class TesyMqttClient
         
         var publishResponse = await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
         Console.WriteLine("\nMQTT application message is published.");
-        // publishResponse.DumpToConsole();
-        // publishResponse.DumpToFile(filePath);
     }
 
     /// <summary>
@@ -146,19 +137,12 @@ public static class TesyMqttClient
             string currentSecond = (currentTime.Second < 10) ? $"0{currentTime.Second}" : $"{currentTime.Second}";
             string applicationMessagePayload = Encoding.UTF8.GetString(e.ApplicationMessage.PayloadSegment);
 
-            // Console.WriteLine("\nRecieved application message.");
-            // e.DumpToConsole();
-            // Console.WriteLine($"\nApplicationMessage.PayloadSegment: {applicationMessagePayload}");
-
-            // e.DumpToFile(filePath);
             using (StreamWriter sw = File.AppendText(filePath))
             {
                 sw.Write($"{currentHour}:{currentMinute}:{currentSecond}.{currentTime.Millisecond} ");
                 sw.WriteLine($"ApplicationMessage.PayloadSegment: {applicationMessagePayload}");
                 sw.WriteLine("------------------------------------------------------------");
             }
-
-            // MqttApplicationMessage.DeserializeApplicationMessagePayload(applicationMessagePayload);
 
             return Task.CompletedTask;
         };

@@ -4,7 +4,6 @@ public static class Generator
 {
     private static readonly string mqttResponseMessagesFilePath = TesyConstants.PathToMqttResponseMessagesFile;
     private static readonly string httpResponseMessagesFilePath = TesyConstants.PathToHttpResponseMessagesFile;
-    private readonly static string formatedResponseMessagesFilePath = TesyConstants.PathToFormatedResponseMessagesFile;
     private static readonly Random random = new();
 
     private static readonly char[] smallLetters = {
@@ -69,27 +68,6 @@ public static class Generator
         else
         {
             using (StreamWriter sw = File.AppendText(httpResponseMessagesFilePath))
-            {
-                sw.WriteLine($"{TesyConstants.CurrentTime}");
-            }
-        }
-    }
-
-    /// <summary>
-    /// Generates a new FormatedResponseMessagesFile.
-    /// </summary>
-    public static void GenerateFormatedResponseMessagesFile()
-    {
-        if (!File.Exists(formatedResponseMessagesFilePath))
-        {
-            using (StreamWriter sw = File.CreateText(formatedResponseMessagesFilePath))
-            {
-                sw.WriteLine($"{TesyConstants.CurrentTime}");
-            }
-        }
-        else
-        {
-            using (StreamWriter sw = File.AppendText(formatedResponseMessagesFilePath))
             {
                 sw.WriteLine($"{TesyConstants.CurrentTime}");
             }

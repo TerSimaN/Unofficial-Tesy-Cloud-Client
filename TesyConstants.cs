@@ -9,7 +9,6 @@ public static class TesyConstants
     private static readonly string currentTime = $"{currentTimeOnly.Hour}:{currentTimeOnly.Minute}:{currentTimeOnly.Second}.{currentTimeOnly.Millisecond}";
     private static readonly string MqttResponseMessagesFilePath = @$".\TesyResponseMessages\MqttResponseMessages\Mqtt-Response-Messages-{currentDate}.txt";
     private static readonly string HttpResponseMessagesFilePath = @$".\TesyResponseMessages\HttpResponseMessages\Http-Response-Messages-{currentDate}.txt";
-    private static readonly string FormatedResponseMessagesFilePath = @$".\TesyResponseMessages\FormatedResponseMessages\Formated-Response-Messages-{currentDate}.txt";
     private const string TesyLoginUrl = "app-user-login";
     private const string TesyUpdateDeviceSettingsUrl = "update-device-settings";
     private const string TesyAppUserAccountSettingsUrl = "app-user-account-settings";
@@ -75,11 +74,6 @@ public static class TesyConstants
     public static string PathToHttpResponseMessagesFile
     {
         get { return HttpResponseMessagesFilePath; }
-    }
-
-    public static string PathToFormatedResponseMessagesFile
-    {
-        get { return FormatedResponseMessagesFilePath; }
     }
 
     public static string LoginUrl

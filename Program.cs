@@ -9,7 +9,6 @@ await TesyMqttClient.ConnectClient();
 
 Generator.GenerateMqttResponseMessagesFile();
 Generator.GenerateHttpResponseMessagesFile();
-// Generator.GenerateFormatedResponseMessagesFile();
 
 TesyHttpClass tesyHttpClass = new();
 tesyHttpClass.Login();
