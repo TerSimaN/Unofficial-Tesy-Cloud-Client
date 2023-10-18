@@ -1,7 +1,8 @@
-using Tesy.Classes;
+using Tesy.Commands;
+using Tesy.Commands.DeviceCommands;
 using Tesy.Programs;
 
-namespace Tesy.Commands.DeviceCommands
+namespace Tesy.Classes
 {
     public class Commander
     {
