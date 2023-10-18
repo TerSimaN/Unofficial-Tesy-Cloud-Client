@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 public static class TesyConstants
 {
     private static readonly DateTime currentDateAndTime = DateTime.Now;
@@ -54,6 +56,11 @@ public static class TesyConstants
             KeyValuePair.Create("Hebrew", "he")
         }
     );
+
+    private static readonly JsonSerializerOptions JsonSerializerOptions = new() {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+        WriteIndented = true
+    };
 
     public static string CurrentTime
     {
@@ -173,5 +180,10 @@ public static class TesyConstants
     public static Dictionary<string, string> Languages
     {
         get { return LanguageDictionary; }
+    }
+
+    public static JsonSerializerOptions SerializerOptions
+    {
+        get { return JsonSerializerOptions; }
     }
 }
