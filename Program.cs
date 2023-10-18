@@ -27,15 +27,17 @@ MyGroups myGroups = new(tesyHttpClient);
 MyMessages myMessages = new(tesyHttpClient);
 TestDevices testDevices = new(tesyHttpClient);
 UpdateDeviceSettings updateDeviceSettings = new(tesyHttpClient);
-UpdateUserAccountSettings updateUserAccountSettings = new(tesyHttpClient, tesyUserClass);
-UpdateUserPasswordSettings updateUserPasswordSettings = new(tesyHttpClient, tesyUserClass);
+UpdateUserAccountSettings updateUserAccountSettings = new(tesyHttpClient);
+UpdateUserPasswordSettings updateUserPasswordSettings = new(tesyHttpClient);
 UserHasAccessToCloud userHasAccessToCloud = new(tesyHttpClient);
 UserInfo userInfo = new(tesyHttpClient);
 
+User user = new(userInfo);
 DeviceSettings deviceSettings = new();
 Cn05uv convector = new(myDevices);
 WeekProgram weekProgram = new(myDevices, convector, deviceSettings);
 CreateWeekProgram createWeekProgram = new(myDevices);
+
 Reset reset = new(deviceSettings, convector);
 DeleteAllDevicePrograms deleteAllDevicePrograms = new(deviceSettings, convector);
 DeviceSSID deviceSSID = new(deviceSettings, convector);
@@ -58,11 +60,14 @@ TCorrection tCorrection = new(deviceSettings, convector, myDevices);
 DeviceTimeZone deviceTimeZone = new(deviceSettings, convector, myDevices, updateDeviceSettings, tesyHttpClass);
 
 Commander commander = new(
-    myDevices, weekProgram, createWeekProgram,
-    reset, deleteAllDevicePrograms, deviceSSID, deviceStatus,
-    onOff, uv, lockDevice, openedWindow, antiFrost,
-    adaptiveStart, deviceTemp, mode, ecoTemp,
-    comfortTemp, sleepTemp, delayedStart,
+    devicePowerStat, deviceTempStat, documents, loginData,
+    myDevices, myGroups, myMessages, testDevices,
+    updateUserAccountSettings, updateUserPasswordSettings,
+    userHasAccessToCloud, userInfo, user, weekProgram,
+    createWeekProgram, reset, deleteAllDevicePrograms,
+    deviceSSID, deviceStatus, onOff, uv, lockDevice,
+    openedWindow, antiFrost, adaptiveStart, deviceTemp,
+    mode, ecoTemp, comfortTemp, sleepTemp, delayedStart,
     deviceName, wifiData, tCorrection, deviceTimeZone
 );
 

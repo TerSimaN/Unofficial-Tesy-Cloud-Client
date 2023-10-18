@@ -8,24 +8,22 @@ namespace Tesy.Commands
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly TesyUserClass tesyUserClass;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public UpdateUserPasswordSettings(TesyHttpClient tesyHttpClient, TesyUserClass tesyUserClass)
+        public UpdateUserPasswordSettings(TesyHttpClient tesyHttpClient)
         {
             this.tesyHttpClient = tesyHttpClient;
-            this.tesyUserClass = tesyUserClass;
         }
 
-        public async void PostUpdateUserPasswordSettings()
+        public async void PostUpdateUserPasswordSettings(User user)
         {
             HttpResponseMessage responseMessage = tesyHttpClient.Post(
                 TesyConstants.AppUserPasswordSettingsUrl,
                 new Dictionary<string, string>(
                     new[] {
-                        KeyValuePair.Create("newPassword", tesyUserClass.NewPassword),
-                        KeyValuePair.Create("confirmPassword", tesyUserClass.ConfirmPassword),
+                        KeyValuePair.Create("newPassword", user.NewPassword),
+                        KeyValuePair.Create("confirmPassword", user.ConfirmPassword),
                         KeyValuePair.Create("userID", inputQueryParams["userID"])
                     }
                 )
@@ -36,7 +34,7 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("success"))
             {
-                fileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
+                fileEditor.WriteUserCredentialsToFile(user.Email, user.NewPassword, TesyConstants.PathToCredentialsJsonFile);
                 var updateUserPasswordSettingsContentResponse = JsonSerializer.Deserialize<UpdateUserPasswordSettingsContent>(stream) ?? new(false);
                 contentToWrite = ContentBuilder.BuildUpdateUserPasswordSettingsContentString(updateUserPasswordSettingsContentResponse);
             }

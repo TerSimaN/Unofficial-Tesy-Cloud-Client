@@ -8,26 +8,24 @@ namespace Tesy.Commands
     {
         private string contentToWrite = "";
         private readonly TesyHttpClient tesyHttpClient;
-        private readonly TesyUserClass tesyUserClass;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public UpdateUserAccountSettings(TesyHttpClient tesyHttpClient, TesyUserClass tesyUserClass)
+        public UpdateUserAccountSettings(TesyHttpClient tesyHttpClient)
         {
             this.tesyHttpClient = tesyHttpClient;
-            this.tesyUserClass = tesyUserClass;
         }
 
-        public async void PostUpdateUserAccountSettings()
+        public async void PostUpdateUserAccountSettings(User user)
         {
             HttpResponseMessage responseMessage = tesyHttpClient.Post(
                 TesyConstants.AppUserAccountSettingsUrl,
                 new Dictionary<string, string>(
                     new[] {
-                        KeyValuePair.Create("email", tesyUserClass.Email),
-                        KeyValuePair.Create("name", tesyUserClass.FirstName),
-                        KeyValuePair.Create("lastName", tesyUserClass.LastName),
-                        KeyValuePair.Create("newLang", tesyUserClass.Lang),
+                        KeyValuePair.Create("email", user.Email),
+                        KeyValuePair.Create("name", user.FirstName),
+                        KeyValuePair.Create("lastName", user.LastName),
+                        KeyValuePair.Create("newLang", user.Lang),
                         KeyValuePair.Create("userID", inputQueryParams["userID"])
                     }
                 )
@@ -38,7 +36,7 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("success"))
             {
-                fileEditor.WriteUserCredentialsToFile(tesyUserClass.Email, tesyUserClass.NewPassword, TesyConstants.PathToCredentialsJsonFile);
+                fileEditor.WriteUserCredentialsToFile(user.Email, user.NewPassword, TesyConstants.PathToCredentialsJsonFile);
                 var updateUserAccountSettingsContentResponse = JsonSerializer.Deserialize<UpdateUserAccountSettingsContent>(stream) ?? new(false);
                 contentToWrite = ContentBuilder.BuildUpdateUserAccountSettingsContentString(updateUserAccountSettingsContentResponse);
             }
