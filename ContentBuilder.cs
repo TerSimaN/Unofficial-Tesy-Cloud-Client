@@ -1,4 +1,7 @@
 using System.Text;
+using Tesy.Content;
+using Tesy.Content.Documents;
+using Tesy.Content.MyDevices;
 
 public static class ContentBuilder
 {

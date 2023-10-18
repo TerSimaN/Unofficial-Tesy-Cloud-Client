@@ -1,4 +1,6 @@
 using Tesy.Commands;
+using Tesy.Content;
+using Tesy.Content.MyDevices;
 using Tesy.Convectors;
 
 namespace Tesy.Classes

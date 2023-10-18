@@ -1,3 +1,5 @@
+using Tesy.Content;
+
 public static class Input
 {
     private static readonly Dictionary<string, string> languages = TesyConstants.Languages;

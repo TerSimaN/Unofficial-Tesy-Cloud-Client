@@ -1,3 +1,7 @@
+using Tesy.Content;
+using Tesy.Content.Documents;
+using Tesy.Content.MyDevices;
+
 public class TesyHttpClass
 {
     private readonly string credentialsJsonFilePath = TesyConstants.PathToCredentialsJsonFile;

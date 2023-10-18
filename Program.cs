@@ -1,4 +1,8 @@
-﻿using Tesy.Commands;
+﻿using Tesy.Classes;
+using Tesy.Commands;
+using Tesy.Commands.DeviceCommands;
+using Tesy.Convectors;
+using Tesy.Programs;
 
 // Connect client ConsoleApplication to MQTT Server
 await TesyMqttClient.ConnectClient();
@@ -28,6 +32,40 @@ UpdateUserAccountSettings updateUserAccountSettings = new(tesyHttpClient, tesyUs
 UpdateUserPasswordSettings updateUserPasswordSettings = new(tesyHttpClient, tesyUserClass);
 UserHasAccessToCloud userHasAccessToCloud = new(tesyHttpClient);
 UserInfo userInfo = new(tesyHttpClient);
+
+DeviceSettings deviceSettings = new();
+Cn05uv convector = new(myDevices);
+WeekProgram weekProgram = new(myDevices, convector, deviceSettings);
+CreateWeekProgram createWeekProgram = new(myDevices);
+Reset reset = new(deviceSettings, convector);
+DeleteAllDevicePrograms deleteAllDevicePrograms = new(deviceSettings, convector);
+DeviceSSID deviceSSID = new(deviceSettings, convector);
+DeviceStatus deviceStatus = new(deviceSettings, convector);
+OnOff onOff = new(deviceSettings, convector, myDevices);
+UV uv = new(deviceSettings, convector, myDevices);
+LockDevice lockDevice = new(deviceSettings, convector, myDevices);
+OpenedWindow openedWindow = new(deviceSettings, convector, myDevices);
+AntiFrost antiFrost = new(deviceSettings, convector, myDevices);
+AdaptiveStart adaptiveStart = new(deviceSettings, convector, myDevices);
+DeviceTemp deviceTemp = new(deviceSettings, convector, myDevices);
+Mode mode = new(deviceSettings, convector, myDevices);
+Tesy.Commands.DeviceCommands.EcoTemp ecoTemp = new(deviceSettings, convector, myDevices);
+Tesy.Commands.DeviceCommands.ComfortTemp comfortTemp = new(deviceSettings, convector, myDevices);
+SleepTemp sleepTemp = new(deviceSettings, convector, myDevices);
+Tesy.Commands.DeviceCommands.DelayedStart delayedStart = new(deviceSettings, convector, myDevices);
+DeviceName deviceName = new(myDevices, updateDeviceSettings);
+WifiData wifiData = new(deviceSettings, convector, myDevices);
+TCorrection tCorrection = new(deviceSettings, convector, myDevices);
+DeviceTimeZone deviceTimeZone = new(deviceSettings, convector, myDevices, updateDeviceSettings, tesyHttpClass);
+
+Commander commander = new(
+    myDevices, weekProgram, createWeekProgram,
+    reset, deleteAllDevicePrograms, deviceSSID, deviceStatus,
+    onOff, uv, lockDevice, openedWindow, antiFrost,
+    adaptiveStart, deviceTemp, mode, ecoTemp,
+    comfortTemp, sleepTemp, delayedStart,
+    deviceName, wifiData, tCorrection, deviceTimeZone
+);
 
 Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
 CreateProgram createProgram = new(tesyHttpClass);
