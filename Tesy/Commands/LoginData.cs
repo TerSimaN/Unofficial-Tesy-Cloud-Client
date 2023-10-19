@@ -8,16 +8,20 @@ namespace Tesy.Commands
     public class LoginData
     {
         private string contentToWrite = "";
+        private string userEmail = "";
+        private string userPasswword = "";
         private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public LoginData(Http httpClient)
+        public LoginData(Http httpClient, string userEmail, string userPasswword)
         {
             this.httpClient = httpClient;
+            this.userEmail = userEmail;
+            this.userPasswword = userPasswword;
         }
 
-        public async Task<Dictionary<string, string>> PostLoginData(string userEmail, string userPasswword)
+        public async Task<Dictionary<string, string>> PostLoginData()
         {
             HttpResponseMessage responseMessage = httpClient.Post(
                 TesyConstants.LoginUrl,

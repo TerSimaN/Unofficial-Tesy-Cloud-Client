@@ -17,29 +17,27 @@ namespace Tesy.Commands.DeviceCommands
         private readonly Cn05uv convector;
         private readonly MyDevices myDevices;
         private readonly UpdateDeviceSettings updateDeviceSettings;
-        private readonly TesyHttpClass tesyHttpClass;
         private readonly WorldClock worldClock = new();
 
         public DeviceTimeZone(
             DeviceSettings deviceSettings,
             Cn05uv convector,
             MyDevices myDevices,
-            UpdateDeviceSettings updateDeviceSettings,
-            TesyHttpClass tesyHttpClass
+            UpdateDeviceSettings updateDeviceSettings
         )
         {
             this.deviceSettings = deviceSettings;
             this.convector = convector;
             this.myDevices = myDevices;
             this.updateDeviceSettings = updateDeviceSettings;
-            this.tesyHttpClass = tesyHttpClass;
         }
 
         public async void SetTimeZone()
         {
             var myDevicesContent = await myDevices.GetMyDevices();
-            var deviceTimeContent = tesyHttpClass.DeviceTimeContentResponse;    // TODO: Implement differently
+            var deviceTimeContent = await myDevices.GetDeviceTime();
             var timeZonesFileContent = worldClock.ReadTimeZonesFileContent();
+            
             Dictionary<string, string> queryParams;
             string macAddress = "";
             string command = "timeResponse";

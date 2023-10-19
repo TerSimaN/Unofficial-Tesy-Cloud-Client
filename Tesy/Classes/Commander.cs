@@ -434,7 +434,7 @@ namespace Tesy.Classes
                     switch (inputValue)
                     {
                         case "login_data":
-                            await loginData.PostLoginData("", "");
+                            await loginData.PostLoginData();
                             continue;
                         case "user_has_access_to_cloud":
                             userHasAccessToCloud.GetUserHasAccessToCloud();
