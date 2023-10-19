@@ -8,7 +8,10 @@ namespace Tesy.Classes
         private static readonly DateOnly currentDateOnly = DateOnly.FromDateTime(currentDateAndTime);
         private static readonly TimeOnly currentTimeOnly = TimeOnly.FromDateTime(currentDateAndTime);
         private static readonly string currentDate = $"{currentDateOnly.Day}-{currentDateOnly.Month}-{currentDateOnly.Year}";
-        private static readonly string currentTime = $"{currentTimeOnly.Hour}:{currentTimeOnly.Minute}:{currentTimeOnly.Second}.{currentTimeOnly.Millisecond}";
+        private static readonly string currentTime = $"{((currentTimeOnly.Hour < 10) ? $"0{currentTimeOnly.Hour}" : $"{currentTimeOnly.Hour}")}:" +
+            $"{((currentTimeOnly.Minute < 10) ? $"0{currentTimeOnly.Minute}" : $"{currentTimeOnly.Minute}")}:" +
+            $"{((currentTimeOnly.Second < 10) ? $"0{currentTimeOnly.Second}" : $"{currentTimeOnly.Second}")}." +
+            $"{currentTimeOnly.Millisecond}";
         private static readonly string MqttResponseMessagesFilePath = @$".\Tesy\ResponseMessages\MqttResponseMessages\Mqtt-Response-Messages-{currentDate}.txt";
         private static readonly string HttpResponseMessagesFilePath = @$".\Tesy\ResponseMessages\HttpResponseMessages\Http-Response-Messages-{currentDate}.txt";
         private const string TesyLoginUrl = "app-user-login";
@@ -62,6 +65,11 @@ namespace Tesy.Classes
             PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
             WriteIndented = true
         };
+
+        public static string CurrentDate
+        {
+            get { return currentDate; }
+        }
 
         public static string CurrentTime
         {
