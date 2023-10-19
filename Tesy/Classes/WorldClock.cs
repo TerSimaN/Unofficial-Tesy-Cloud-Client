@@ -8,7 +8,7 @@ namespace Tesy.Classes
 {
     public class WorldClock
     {
-        private readonly string timeZonesFilePath = TesyConstants.PathToTimeZonesFile;
+        private readonly string timeZonesFilePath = Constants.PathToTimeZonesFile;
         private readonly CultureInfo cultureInfo = CultureInfo.CreateSpecificCulture("en-US");
         private readonly DateTimeFormatInfo dateTimeFormatInfo;
         private DateTime dateTime = new();

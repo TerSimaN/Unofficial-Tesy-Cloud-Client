@@ -10,7 +10,7 @@ namespace Tesy.Classes
 {
     public class WeekProgram
     {
-        private readonly string deviceProgramDataJsonFilePath = TesyConstants.PathToCorrectDeviceProgramDataJsonFile;
+        private readonly string deviceProgramDataJsonFilePath = Constants.PathToCorrectDeviceProgramDataJsonFile;
         private string textToShow = "";
         
         private readonly MyDevices myDevices;
@@ -66,7 +66,7 @@ namespace Tesy.Classes
                 string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
                 string payloadContent = weekProgramPayload.SerializeParamsAsJsonPayload(weekProgram, programKey);
 
-                deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+                deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
             }
             else
             {
@@ -101,7 +101,7 @@ namespace Tesy.Classes
                 string programKey = FindProgramKey(weekProgram.DayOfWeek, weekProgram.FromTime);
                 string payloadContent = weekProgramPayload.SerializeParamsAsJsonPayload(weekProgram, programKey);
 
-                deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+                deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
             }
             else
             {
@@ -129,7 +129,7 @@ namespace Tesy.Classes
                 }
             }
 
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
 
         private string ReadProgramIdFromConsole(string textToShow)

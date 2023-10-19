@@ -418,7 +418,7 @@ namespace Tesy.Classes
         {
             do
             {
-                Output.PrintListOfTesyHttpClassCommands();
+                Output.PrintListOfCommandsForAvailableData();
 
                 Console.Write("Input: ");
                 var inputValue = Console.ReadLine();

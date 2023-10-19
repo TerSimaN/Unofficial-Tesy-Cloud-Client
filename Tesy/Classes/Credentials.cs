@@ -2,7 +2,7 @@ namespace Tesy.Classes
 {
     public static class Credentials
     {
-        private static readonly string credentialsJsonFilePath = TesyConstants.PathToCredentialsJsonFile;
+        private static readonly string credentialsJsonFilePath = Constants.PathToCredentialsJsonFile;
         private static readonly FileEditor fileEditor = new();
 
         public static string[] GetCredentials()

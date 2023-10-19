@@ -127,7 +127,7 @@ namespace Tesy.Classes
                 Password = password
             };
 
-            string jsonString = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string jsonString = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
 
             return jsonString;
         }

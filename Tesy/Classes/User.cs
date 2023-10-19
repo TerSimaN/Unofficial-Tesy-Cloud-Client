@@ -11,7 +11,7 @@ namespace Tesy.Classes
         private string userNewPassword = "";
         private string userConfirmPassword = "";
         private readonly UserInfo userInfo;
-        private readonly Dictionary<string, string> languages = TesyConstants.Languages;
+        private readonly Dictionary<string, string> languages = Constants.Languages;
 
         public User(UserInfo userInfo)
         {
