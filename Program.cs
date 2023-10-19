@@ -5,7 +5,7 @@ using Tesy.Commands.DeviceCommands;
 using Tesy.Convectors;
 using Tesy.Programs;
 
-// Refactored project using namespaces
+// Connect client ConsoleApplication to MQTT Server
 await Mqtt.ConnectClient();
 
 Generator.GenerateMqttResponseMessagesFile();
