@@ -47,6 +47,18 @@ namespace Tesy.Commands
             return new();
         }
 
+        public async Task<DeviceTime> GetDeviceTime()
+        {
+            DeviceTime deviceTime = new("", "");
+            var myDevicesContent = await GetMyDevices();
+            foreach (var deviceParam in myDevicesContent)
+            {
+                deviceTime = JsonSerializer.Deserialize<DeviceTime>(deviceParam.Value.Time) ?? new("Date not found", "Time not found");
+            }
+
+            return deviceTime;
+        }
+
         public async Task<Dictionary<string, DeviceProgram>> GetDevicePrograms()
         {
             Dictionary<string, DeviceProgram> deviceProgramsDictionary = new();
