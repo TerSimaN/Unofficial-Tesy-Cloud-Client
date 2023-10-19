@@ -27,7 +27,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setComfortTemp";
 
-            short newComfortTempTemperatureValue = Input.ReadTemperatureFromConsole();
+            short newComfortTempTemperatureValue = ReadTemperatureFromConsole();
             short oldComfortTempTemperatureValue = 0;
             foreach (var deviceParam in myDevicesContent)
             {
@@ -55,6 +55,23 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private short ReadTemperatureFromConsole()
+        {
+            short temperature = 0;
+            do
+            {
+                Console.Write("Enter temperature [10, 30]: ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && (inputValue != ""))
+                {
+                    temperature = short.Parse(inputValue);
+                }
+            } while ((temperature < 10) || (temperature > 30));
+
+            return temperature;
         }
     }
 }

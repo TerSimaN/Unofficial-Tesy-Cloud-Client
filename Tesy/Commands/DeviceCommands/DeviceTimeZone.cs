@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Content;
 using Tesy.Convectors;
 
 namespace Tesy.Commands.DeviceCommands
@@ -48,7 +49,7 @@ namespace Tesy.Commands.DeviceCommands
             short newWeekdayValue = -1;
 
             Output.PrintIanaTimeZoneIds(timeZonesFileContent);
-            string newTimeZoneValue = Input.ReadIanaTimeZoneIdFromConsole(timeZonesFileContent);
+            string newTimeZoneValue = ReadIanaTimeZoneIdFromConsole(timeZonesFileContent);
             if (newTimeZoneValue != "")
             {
                 newTimeValue = worldClock.GetNewTimeZoneTime(newTimeZoneValue);
@@ -100,6 +101,28 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private string ReadIanaTimeZoneIdFromConsole(Dictionary<string, TimeZonesFileContent> timeZonesFileContent)
+        {
+            string ianaId = "";
+            do
+            {
+                Console.Write("Enter IANA ID number for new TimeZone (or leave empty for default TimeZone): ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue == "")
+                {
+                    break;
+                }
+
+                if ((inputValue != null) && timeZonesFileContent.ContainsKey(inputValue))
+                {
+                    ianaId = timeZonesFileContent[inputValue.Trim()].IanaId;
+                }
+            } while (ianaId.Length < 1);
+
+            return ianaId;
         }
     }
 }

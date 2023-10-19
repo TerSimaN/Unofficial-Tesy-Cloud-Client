@@ -28,8 +28,8 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setDelayedStart";
 
-            int newDelayedStartTimeValue = Input.ReadDelayedStartTimeInMinutesFromConsole();
-            short newDelayedStartTempValue = Input.ReadTemperatureFromConsole();
+            int newDelayedStartTimeValue = ReadDelayedStartTimeInMinutesFromConsole();
+            short newDelayedStartTempValue = ReadTemperatureFromConsole();
             int oldDelayedStartTimeValue = 0;
             short oldDelayedStartTemperatureValue = 0;
             foreach (var deviceParam in myDevicesContent)
@@ -62,6 +62,40 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private int ReadDelayedStartTimeInMinutesFromConsole()
+        {
+            int hoursInMinutes = 0;
+            do
+            {
+                Console.Write("Enter DelayedStart hours [0, 96] (if \"0\" is entered, uses default settings): ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && (inputValue != ""))
+                {
+                    hoursInMinutes = int.Parse(inputValue) * 60;
+                }
+            } while ((hoursInMinutes < 0) || (hoursInMinutes > 5760));
+
+            return hoursInMinutes;
+        }
+
+        private short ReadTemperatureFromConsole()
+        {
+            short temperature = 0;
+            do
+            {
+                Console.Write("Enter temperature [10, 30]: ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && (inputValue != ""))
+                {
+                    temperature = short.Parse(inputValue);
+                }
+            } while ((temperature < 10) || (temperature > 30));
+
+            return temperature;
         }
     }
 }

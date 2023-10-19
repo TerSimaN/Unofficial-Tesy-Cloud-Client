@@ -28,8 +28,8 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setWifiData";
 
-            string newDeviceWifiSSIDValue = Input.ReadDeviceWifiSSIDFromConsole();
-            string newDeviceWifiPassValue = Input.ReadDeviceWifiPassFromConsole();
+            string newDeviceWifiSSIDValue = ReadDeviceWifiSSIDFromConsole();
+            string newDeviceWifiPassValue = ReadDeviceWifiPassFromConsole();
             string oldDeviceWifiSSIDValue = "";
             string oldDeviceWifiPassValue = "";
             foreach (var deviceParam in myDevicesContent)
@@ -62,6 +62,40 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private string ReadDeviceWifiSSIDFromConsole()
+        {
+            string selectedWifiSSID = "";
+            do
+            {
+                Console.Write("Entet Wifi Network Name: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    selectedWifiSSID = inputValue.Trim();
+                }
+            } while (selectedWifiSSID.Length < 1);
+
+            return selectedWifiSSID;
+        }
+
+        private string ReadDeviceWifiPassFromConsole()
+        {
+            string selectedWifiPass = "";
+            do
+            {
+                Console.Write("Enter Wifi Network Password: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    selectedWifiPass = inputValue.Trim();
+                }
+            } while (selectedWifiPass.Length < 1);
+
+            return selectedWifiPass;
         }
     }
 }

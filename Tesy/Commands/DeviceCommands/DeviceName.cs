@@ -16,7 +16,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             Dictionary<string, string> queryParams;
             string macAddress = "";
-            string newDeviceName = Input.ReadDeviceNameFromConsole();
+            string newDeviceName = ReadDeviceNameFromConsole();
 
             string oldDeviceName = "";
             foreach (var deviceParam in myDevicesContent)
@@ -33,6 +33,23 @@ namespace Tesy.Commands.DeviceCommands
                 }
             );
             updateDeviceSettings.PostUpdateDeviceSettings(queryParams);
+        }
+
+        private string ReadDeviceNameFromConsole()
+        {
+            string deviceName = "";
+            do
+            {
+                Console.Write("Enter device name: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    deviceName = inputValue.Trim();
+                }
+            } while (deviceName.Length < 1);
+
+            return deviceName;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Tesy.Commands
 
         public async void GetDevicePowerStat(Dictionary<string, MyDevicesContent> myDevicesContent)
         {
-            string activity = Input.ReadActivityFromConsole();
+            string activity = ReadActivityFromConsole();
 
             foreach (var deviceParam in myDevicesContent)
             {
@@ -54,6 +54,24 @@ namespace Tesy.Commands
                 contentToWrite = ContentBuilder.BuildDevicePowerStatContentString(devicePowerStatContentResponse);
             }
             fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+        }
+
+        private string ReadActivityFromConsole()
+        {
+            string activity = "";
+            string[] activities = {"daily", "monthly", "annual"};
+            do
+            {
+                Console.Write("Enter activity [daily, monthly, annual]: ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && activities.Contains(inputValue))
+                {
+                    activity = inputValue.Trim();
+                }
+            } while (activity.Length < 1);
+
+            return activity;
         }
     }
 }

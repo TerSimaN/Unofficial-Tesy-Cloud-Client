@@ -27,7 +27,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setSleepTemp";
 
-            int newSleepModeTimeValue = Input.ReadSleepModeTimeInMinutesFromConsole();
+            int newSleepModeTimeValue = ReadSleepModeTimeInMinutesFromConsole();
             int oldSleepModeTimeValue = 0;
             foreach (var deviceParam in myDevicesContent)
             {
@@ -55,6 +55,42 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private int ReadSleepModeTimeInMinutesFromConsole()
+        {
+            int timeInMinutes;
+            do
+            {
+                int hours = 0;
+                do
+                {
+                    Console.Write("Enter SleepMode hours [0, 23]: ");
+                    var inputValue = Console.ReadLine();
+
+                    if ((inputValue != null) && (inputValue != ""))
+                    {
+                        hours = int.Parse(inputValue) * 60;
+                    }
+                } while ((hours < 0) || (hours > 1380));
+
+                int minutes = 0;
+                do
+                {
+                    Console.Write("Enter SleepMode minutes [0, 59]: ");
+                    var inputValue = Console.ReadLine();
+
+                    if ((inputValue != null) && (inputValue != ""))
+                    {
+                        minutes = int.Parse(inputValue);
+                    }
+                } while ((minutes < 0) || (minutes > 59));
+
+                timeInMinutes = hours + minutes;
+
+            } while ((timeInMinutes < 0) || (timeInMinutes > 1439));
+
+            return timeInMinutes;
         }
     }
 }

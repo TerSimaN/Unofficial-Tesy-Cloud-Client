@@ -27,7 +27,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setTCorrection";
 
-            short newTCorrectionTemperatureValue = Input.ReadTCorrectionTemperatureFromConsole();
+            short newTCorrectionTemperatureValue = ReadTCorrectionTemperatureFromConsole();
             short oldTCorrectionTemperatureValue = 0;
             foreach (var deviceParam in myDevicesContent)
             {
@@ -55,6 +55,23 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private short ReadTCorrectionTemperatureFromConsole()
+        {
+            short temperature = 0;
+            do
+            {
+                Console.Write("Enter TCorrection temperature [-4, 4]: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    temperature = short.Parse(inputValue);
+                }
+            } while ((temperature < -4) || (temperature > 4));
+
+            return temperature;
         }
     }
 }

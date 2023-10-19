@@ -78,7 +78,7 @@ namespace Tesy.Classes
         {
             textToShow = "edit";
             string command = "setProgram";
-            string programId = Input.ReadProgramIdFromConsole(textToShow);
+            string programId = ReadProgramIdFromConsole(textToShow);
             Dictionary<string, DeviceProgram> programToEdit = new();
             var devicePrograms = await myDevices.GetDevicePrograms();
             foreach (var programKey in devicePrograms)
@@ -116,7 +116,7 @@ namespace Tesy.Classes
             string payloadContent = "";
             if (programId == default)
             {
-                programId = Input.ReadProgramIdFromConsole(textToShow);
+                programId = ReadProgramIdFromConsole(textToShow);
             }
             
             var devicePrograms = await myDevices.GetDevicePrograms();
@@ -130,6 +130,23 @@ namespace Tesy.Classes
             }
 
             deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+        }
+
+        private string ReadProgramIdFromConsole(string textToShow)
+        {
+            string selectedId = "";
+            do
+            {
+                Console.Write($"Enter \"Id\" of the week program you wish to {textToShow}: ");
+                var inputValue = Console.ReadLine();
+
+                if (inputValue != null)
+                {
+                    selectedId = inputValue.Trim();
+                }
+            } while (selectedId.Length < 1);
+
+            return selectedId;
         }
     }
 }

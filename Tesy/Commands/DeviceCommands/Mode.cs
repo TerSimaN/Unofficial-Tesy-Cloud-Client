@@ -27,7 +27,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setMode";
 
-            string newModeNameValue = Input.ReadModeNameFromConsole();
+            string newModeNameValue = ReadModeNameFromConsole();
             string oldModeNameValue = "";
             foreach (var deviceParam in myDevicesContent)
             {
@@ -55,6 +55,24 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private string ReadModeNameFromConsole()
+        {
+            string modeName = "";
+            string[] modes = {"off", "heating", "comfort", "eco", "sleep", "delay start", "program"};
+            do
+            {
+                Console.Write("Enter mode name [off, heating, comfort, eco, sleep, delay start, program]: ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && modes.Contains(inputValue))
+                {
+                    modeName = inputValue.Trim();
+                }
+            } while (modeName.Length < 1);
+
+            return modeName;
         }
     }
 }

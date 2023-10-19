@@ -28,8 +28,8 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             string command = "setEcoTemp";
 
-            short newEcoTempTemperatureValue = Input.ReadTemperatureFromConsole();
-            int newEcoTempTimeValue = Input.ReadEcoTempTimeInMinutesFromConsole();
+            short newEcoTempTemperatureValue = ReadTemperatureFromConsole();
+            int newEcoTempTimeValue = ReadEcoTempTimeInMinutesFromConsole();
             short oldEcoTempTemperatureValue = 0;
             int oldEcoTempTimeValue = 0;
             foreach (var deviceParam in myDevicesContent)
@@ -62,6 +62,59 @@ namespace Tesy.Commands.DeviceCommands
             Console.WriteLine(payload);
 
             return payload;
+        }
+
+        private short ReadTemperatureFromConsole()
+        {
+            short temperature = 0;
+            do
+            {
+                Console.Write("Enter temperature [10, 30]: ");
+                var inputValue = Console.ReadLine();
+
+                if ((inputValue != null) && (inputValue != ""))
+                {
+                    temperature = short.Parse(inputValue);
+                }
+            } while ((temperature < 10) || (temperature > 30));
+
+            return temperature;
+        }
+
+        private int ReadEcoTempTimeInMinutesFromConsole()
+        {
+            int timeInMinutes;
+            do
+            {
+                int hours = 0;
+                do
+                {
+                    Console.Write("Enter EcoTemp hours [0, 23]: ");
+                    var inputValue = Console.ReadLine();
+
+                    if ((inputValue != null) && (inputValue != ""))
+                    {
+                        hours = int.Parse(inputValue) * 60;
+                    }
+                } while ((hours < 0) || (hours > 1380));
+
+                int minutes = 0;
+                do
+                {
+                    Console.Write("Enter EcoTemp minutes [0, 59]: ");
+                    var inputValue = Console.ReadLine();
+
+                    if ((inputValue != null) && (inputValue != ""))
+                    {
+                        minutes = int.Parse(inputValue);
+                    }
+                } while ((minutes < 0) || (minutes > 59));
+
+                timeInMinutes = hours + minutes;
+
+            } while ((timeInMinutes < 0) || (timeInMinutes > 1439));
+
+            return timeInMinutes;
         }
     }
 }
