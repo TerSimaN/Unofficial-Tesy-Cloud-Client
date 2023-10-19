@@ -142,7 +142,7 @@ namespace Tesy.Clients
 
                 using (StreamWriter sw = File.AppendText(filePath))
                 {
-                    sw.Write($"{currentHour}:{currentMinute}:{currentSecond}.{currentTime.Millisecond} ");
+                    sw.Write($"[{currentHour}:{currentMinute}:{currentSecond}.{currentTime.Millisecond}] ");
                     sw.WriteLine($"ApplicationMessage.PayloadSegment: {applicationMessagePayload}");
                     sw.WriteLine("------------------------------------------------------------");
                 }
