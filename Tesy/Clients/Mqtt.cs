@@ -1,12 +1,13 @@
 using System.Text;
 using MQTTnet;
 using MQTTnet.Client;
+using Tesy.Classes;
 
 namespace Tesy.Clients
 {
     public static class Mqtt
     {
-        private static readonly string filePath = TesyConstants.PathToMqttResponseMessagesFile;
+        private static readonly string filePath = Constants.PathToMqttResponseMessagesFile;
         private static readonly string webSocketServer = "mqtt.tesy.com:8083";
         private static readonly string mqttUsername = "client1";
         private static readonly string mqttPassword = "123";

@@ -1,4 +1,4 @@
 bin/
 obj/
-TesyResponseMessages/**/*.txt
-TesyJsonFiles/CredentialsFile.json
+Tesy/ResponseMessages/**/*.txt
+Tesy/JsonFiles/CredentialsFile.json
