@@ -18,7 +18,6 @@ namespace Tesy.Classes
             ReadTimeZonesFileContent();
 
             dateTimeFormatInfo = cultureInfo.DateTimeFormat;
-            // dateTimeFormatInfo.LongDatePattern = "MMMM dd, yyyy";
             dateTimeFormatInfo.LongDatePattern = "yyyy-MM-dd";
             dateTimeFormatInfo.LongTimePattern = "HH:mm";
         }

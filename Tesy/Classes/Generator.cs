@@ -43,14 +43,14 @@ namespace Tesy.Classes
             {
                 using (StreamWriter sw = File.CreateText(mqttResponseMessagesFilePath))
                 {
-                    sw.WriteLine($"{Constants.CurrentTime}");
+                    sw.WriteLine($"[{Constants.CurrentTime}]");
                 }
             }
             else
             {
                 using (StreamWriter sw = File.AppendText(mqttResponseMessagesFilePath))
                 {
-                    sw.WriteLine($"{Constants.CurrentTime}");
+                    sw.WriteLine($"[{Constants.CurrentTime}]");
                 }
             }
         }
@@ -64,14 +64,14 @@ namespace Tesy.Classes
             {
                 using (StreamWriter sw = File.CreateText(httpResponseMessagesFilePath))
                 {
-                    sw.WriteLine($"{Constants.CurrentTime}");
+                    sw.WriteLine($"[{Constants.CurrentTime}]");
                 }
             }
             else
             {
                 using (StreamWriter sw = File.AppendText(httpResponseMessagesFilePath))
                 {
-                    sw.WriteLine($"{Constants.CurrentTime}");
+                    sw.WriteLine($"[{Constants.CurrentTime}]");
                 }
             }
         }
@@ -97,9 +97,6 @@ namespace Tesy.Classes
                 }
             }
 
-            // string generatedClientId = clientIdBuilder.ToString();
-            // Console.WriteLine($"generatedClientId: {generatedClientId}");
-
             return clientIdBuilder.ToString();
         }
 
@@ -123,9 +120,6 @@ namespace Tesy.Classes
                     appIdBuilder.Append(numbers[random.Next(lengthOfNumbersArray)]);
                 }
             }
-
-            // string generatedAppId = appIdBulder.ToString();
-            // Console.WriteLine($"generatedAppId: {generatedAppId}");
 
             return appIdBuilder.ToString();
         }

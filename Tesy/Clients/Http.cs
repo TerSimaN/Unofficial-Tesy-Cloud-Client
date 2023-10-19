@@ -60,7 +60,6 @@ namespace Tesy.Clients
             string queryString = BuildQueryString(queryParams);
             
             Uri requestUri = new Uri(BaseUrl, new Uri(path + queryString, UriKind.Relative));
-            // Console.WriteLine($"RequestUri: {requestUri}");
             HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, requestUri);
             HttpResponseMessage httpResponseMessage = httpClient.Send(httpRequestMessage);
             
@@ -79,7 +78,6 @@ namespace Tesy.Clients
             string queryString = BuildQueryString(queryParams);
 
             Uri requestUri = new Uri(BaseUrl, new Uri(path + queryString, UriKind.Relative));
-            // Console.WriteLine($"RequestUri: {requestUri}");
             HttpRequestMessage httpRequestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri);
             HttpResponseMessage httpResponseMessage = httpClient.Send(httpRequestMessage);
 
