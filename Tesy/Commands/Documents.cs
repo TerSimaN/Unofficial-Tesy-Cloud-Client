@@ -10,11 +10,12 @@ namespace Tesy.Commands
         private string contentToWrite = "";
         private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
-        private Dictionary<string, string> inputQueryParams = new();
+        private readonly Dictionary<string, string> inputQueryParams;
 
-        public TesyDocuments(Http httpClient)
+        public TesyDocuments(Http httpClient, Dictionary<string, string> inputQueryParams)
         {
             this.httpClient = httpClient;
+            this.inputQueryParams = inputQueryParams;
         }
 
         public void GetTesyDocuments()

@@ -12,9 +12,10 @@ namespace Tesy.Commands
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> updateDeviceSettingsQueryParams = new();
 
-        public UpdateDeviceSettings(Http httpClient)
+        public UpdateDeviceSettings(Http httpClient, Dictionary<string, string> inputQueryParams)
         {
             this.httpClient = httpClient;
+            updateDeviceSettingsQueryParams.TryAdd("userID", inputQueryParams["userID"]);
         }
 
         public async void PostUpdateDeviceSettings(Dictionary<string, string> queryParams)

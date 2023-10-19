@@ -10,11 +10,12 @@ namespace Tesy.Commands
         private string contentToWrite = "";
         private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
-        private Dictionary<string, string> inputQueryParams = new();
+        private readonly Dictionary<string, string> inputQueryParams;
 
-        public UpdateUserAccountSettings(Http httpClient)
+        public UpdateUserAccountSettings(Http httpClient, Dictionary<string, string> inputQueryParams)
         {
             this.httpClient = httpClient;
+            this.inputQueryParams = inputQueryParams;
         }
 
         public async void PostUpdateUserAccountSettings(User user)
