@@ -9,8 +9,8 @@ namespace Tesy.Classes
         private static readonly TimeOnly currentTimeOnly = TimeOnly.FromDateTime(currentDateAndTime);
         private static readonly string currentDate = $"{currentDateOnly.Day}-{currentDateOnly.Month}-{currentDateOnly.Year}";
         private static readonly string currentTime = $"{currentTimeOnly.Hour}:{currentTimeOnly.Minute}:{currentTimeOnly.Second}.{currentTimeOnly.Millisecond}";
-        private static readonly string MqttResponseMessagesFilePath = @$".\TesyResponseMessages\MqttResponseMessages\Mqtt-Response-Messages-{currentDate}.txt";
-        private static readonly string HttpResponseMessagesFilePath = @$".\TesyResponseMessages\HttpResponseMessages\Http-Response-Messages-{currentDate}.txt";
+        private static readonly string MqttResponseMessagesFilePath = @$".\Tesy\ResponseMessages\MqttResponseMessages\Mqtt-Response-Messages-{currentDate}.txt";
+        private static readonly string HttpResponseMessagesFilePath = @$".\Tesy\ResponseMessages\HttpResponseMessages\Http-Response-Messages-{currentDate}.txt";
         private const string TesyLoginUrl = "app-user-login";
         private const string TesyUpdateDeviceSettingsUrl = "update-device-settings";
         private const string TesyAppUserAccountSettingsUrl = "app-user-account-settings";
@@ -25,11 +25,11 @@ namespace Tesy.Classes
         private const string TesyDevicePowerStatUrl = "get-device-power-stat";
         private const string TesyDocumentsUrl = "documents";
         private const string RequestType = "request";
-        private const string CredentialsJsonFilePath = @".\TesyJsonFiles\CredentialsFile.json";
-        private const string CorrectDeviceProgramDataJsonFilePath = @".\TesyJsonFiles\DeviceProgramDataCorrect.json";
-        private const string BrokenDeviceProgramDataJsonFilePath = @".\TesyJsonFiles\DeviceProgramDataBroken.json";
-        private const string MoreBrokenDeviceProgramDataJsonFilePath = @".\TesyJsonFiles\DeviceProgramDataMoreBroken.json";
-        private const string TimeZonesFilePath = @".\TesyJsonFiles\TimeZonesFile.json";
+        private const string CredentialsJsonFilePath = @".\Tesy\JsonFiles\CredentialsFile.json";
+        private const string CorrectDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataCorrect.json";
+        private const string BrokenDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataBroken.json";
+        private const string MoreBrokenDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataMoreBroken.json";
+        private const string TimeZonesFilePath = @".\Tesy\JsonFiles\TimeZonesFile.json";
         private static readonly Dictionary<string, string> LanguageDictionary = new(
             new[] {
                 KeyValuePair.Create("Bulgarian", "bg"),
