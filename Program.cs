@@ -5,42 +5,6 @@ using Tesy.Commands.DeviceCommands;
 using Tesy.Convectors;
 using Tesy.Programs;
 
-// Connect client ConsoleApplication to MQTT Server
-await TesyMqttClient.ConnectClient();
-
-Generator.GenerateMqttResponseMessagesFile();
-Generator.GenerateHttpResponseMessagesFile();
-
-TesyHttpClass tesyHttpClass = new();
-tesyHttpClass.Login();
-
-TesyUserClass tesyUserClass = new(tesyHttpClass);
-Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
-CreateProgram createProgram = new(tesyHttpClass);
-
-TesyDebugClass tesyDebugClass = new();
-TesyDeviceSettingsClass tesyDeviceSettings = new();
-TesyWeekProgramClass tesyWeekProgram = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
-TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
-
-ShowTesyCommands showTesyCommands = new(
-    tesyHttpClass,
-    createProgram,
-    tesyWeekProgram,
-    tesyDeviceCommands,
-    tesyUserClass,
-    tesyDebugClass
-);
-
-await TesyMqttClient.SubscribeForDevice(cn05uvConvector.MacAddress);
-TesyMqttClient.HandleRecievedMessages();
-
-showTesyCommands.ShowListOfAllCommands();
-
-await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
-await TesyMqttClient.DisconnectClient();
-
-
 // Refactored project using namespaces
 await Mqtt.ConnectClient();
 
@@ -50,8 +14,8 @@ Generator.GenerateHttpResponseMessagesFile();
 string[] userCredentials = Credentials.GetCredentials();
 Http httpClient = Login.SignIn(userCredentials[0], userCredentials[1]);
 
-LoginData loginData = new(httpClient);
-var inputQueryParams = await loginData.PostLoginData(userCredentials[0], userCredentials[1]);
+LoginData loginData = new(httpClient, userCredentials[0], userCredentials[1]);
+var inputQueryParams = await loginData.PostLoginData();
 
 DevicePowerStat devicePowerStat = new(httpClient, inputQueryParams);
 DeviceTempStat deviceTempStat = new(httpClient, inputQueryParams);
@@ -91,7 +55,7 @@ DelayedStart delayedStart = new(deviceSettings, convector, myDevices);
 DeviceName deviceName = new(myDevices, updateDeviceSettings);
 WifiData wifiData = new(deviceSettings, convector, myDevices);
 TCorrection tCorrection = new(deviceSettings, convector, myDevices);
-DeviceTimeZone deviceTimeZone = new(deviceSettings, convector, myDevices, updateDeviceSettings, tesyHttpClass);
+DeviceTimeZone deviceTimeZone = new(deviceSettings, convector, myDevices, updateDeviceSettings);
 
 Commander commander = new(
     devicePowerStat, deviceTempStat, documents, loginData,
@@ -112,5 +76,3 @@ commander.ShowAllCommands();
 
 await Mqtt.UnsubscribeForDevice(convector.MacAddress);
 await Mqtt.DisconnectClient();
-// Refactored project using namespaces
-
