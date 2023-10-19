@@ -41,7 +41,7 @@ namespace Tesy.Commands.DeviceCommands
             int timeValue = newEcoTempTimeValue != 0 ? newEcoTempTimeValue : oldEcoTempTimeValue;
             
             string payloadContent = SerializeParamsAsJsonPayload(temperatureValue, timeValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
         
         /// <summary>
@@ -58,7 +58,7 @@ namespace Tesy.Commands.DeviceCommands
                 Time = time
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

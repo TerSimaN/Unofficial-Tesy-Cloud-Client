@@ -32,7 +32,7 @@ namespace Tesy.Commands.DeviceCommands
                 UVValue = ((deviceParam.Value.State.UV != null) && (deviceParam.Value.State.UV == "on")) ? "off" : "on";
             }
             string payloadContent = SerializeParamsAsJsonPayload(UVValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Tesy.Commands.DeviceCommands
                 Status = uv
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

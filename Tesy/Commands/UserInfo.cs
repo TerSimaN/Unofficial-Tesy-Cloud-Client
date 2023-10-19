@@ -20,7 +20,7 @@ namespace Tesy.Commands
 
         public async Task<UserInfoContent> GetUserInfo()
         {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.UserInfoUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.UserInfoUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 
@@ -28,13 +28,13 @@ namespace Tesy.Commands
             {
                 var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
-                fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
             }
             else
             {
                 var userInfoContentResponse = JsonSerializer.Deserialize<UserInfoContent>(stream) ?? new("Email not found", "FirstName not found", "LastName not found", "Lang not found");
                 contentToWrite = ContentBuilder.BuildUserInfoContentString(userInfoContentResponse);
-                fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
 
                 return userInfoContentResponse;
             }

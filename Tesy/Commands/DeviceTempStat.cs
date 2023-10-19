@@ -39,7 +39,7 @@ namespace Tesy.Commands
                 inputQueryParams["activity"] = activity;
             }
 
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.DeviceTempStatUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.DeviceTempStatUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 
@@ -53,7 +53,7 @@ namespace Tesy.Commands
                 var deviceTempStatContentResponse = JsonSerializer.Deserialize<DeviceTempStatContent>(stream) ?? new(new DataContent[] {}, new string[] {});
                 contentToWrite = ContentBuilder.BuildDeviceTempStatContentString(deviceTempStatContentResponse);
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
 
         private string ReadActivityFromConsole()

@@ -20,7 +20,7 @@ namespace Tesy.Commands.DeviceCommands
         {
             string command = "reset";
             string payloadContent = noParamsPayload.SerializeParamsAsJsonPayload();
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
     }
 }

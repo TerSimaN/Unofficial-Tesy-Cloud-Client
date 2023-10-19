@@ -37,7 +37,7 @@ namespace Tesy.Commands.DeviceCommands
             var myDevicesContent = await myDevices.GetMyDevices();
             var deviceTimeContent = await myDevices.GetDeviceTime();
             var timeZonesFileContent = worldClock.ReadTimeZonesFileContent();
-            
+
             Dictionary<string, string> queryParams;
             string macAddress = "";
             string command = "timeResponse";
@@ -95,7 +95,7 @@ namespace Tesy.Commands.DeviceCommands
                 Time = time
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

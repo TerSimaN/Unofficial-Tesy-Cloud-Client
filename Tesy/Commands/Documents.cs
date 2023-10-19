@@ -20,7 +20,7 @@ namespace Tesy.Commands
 
         public void GetTesyDocuments()
         {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.DocumentsUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.DocumentsUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
 
             try
@@ -32,7 +32,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = jsonErr.Message;
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

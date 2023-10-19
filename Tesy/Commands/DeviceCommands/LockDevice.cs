@@ -32,7 +32,7 @@ namespace Tesy.Commands.DeviceCommands
                 lockedDeviceValue = ((deviceParam.Value.State.LockedDevice != null) && (deviceParam.Value.State.LockedDevice == "on")) ? "off" : "on";
             }
             string payloadContent = SerializeParamsAsJsonPayload(lockedDeviceValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Tesy.Commands.DeviceCommands
                 Status = lockedDevice
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

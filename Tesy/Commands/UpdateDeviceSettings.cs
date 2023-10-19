@@ -33,7 +33,7 @@ namespace Tesy.Commands
             }
 
             HttpResponseMessage responseMessage = httpClient.Post(
-                TesyConstants.UpdateDeviceSettingsUrl,
+                Constants.UpdateDeviceSettingsUrl,
                 updateDeviceSettingsQueryParams
             );
 
@@ -50,7 +50,7 @@ namespace Tesy.Commands
                 var updateDeviceSettingsContentResponse = JsonSerializer.Deserialize<UpdateDeviceSettingsContent>(stream) ?? new(false, "Message not found");
                 contentToWrite = ContentBuilder.BuildUpdateDeviceSettingsContentString(updateDeviceSettingsContentResponse);
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

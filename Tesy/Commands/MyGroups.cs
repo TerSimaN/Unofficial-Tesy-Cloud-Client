@@ -20,7 +20,7 @@ namespace Tesy.Commands
 
         public async void GetMyGroups()
         {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.MyGroupsUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.MyGroupsUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 
@@ -33,7 +33,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = $"MyGroupsResponse: {responseMessageContent}\n\n";
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

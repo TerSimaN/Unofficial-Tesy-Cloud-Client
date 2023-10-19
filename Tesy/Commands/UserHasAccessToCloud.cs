@@ -20,7 +20,7 @@ namespace Tesy.Commands
 
         public async void GetUserHasAccessToCloud()
         {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.UserHasAccessToCloud, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.UserHasAccessToCloud, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 
@@ -33,7 +33,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = $"UserHasAccessToCloud: {responseMessageContent}\n\n";
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

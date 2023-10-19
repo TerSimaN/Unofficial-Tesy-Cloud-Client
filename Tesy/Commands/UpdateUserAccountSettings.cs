@@ -21,7 +21,7 @@ namespace Tesy.Commands
         public async void PostUpdateUserAccountSettings(User user)
         {
             HttpResponseMessage responseMessage = httpClient.Post(
-                TesyConstants.AppUserAccountSettingsUrl,
+                Constants.AppUserAccountSettingsUrl,
                 new Dictionary<string, string>(
                     new[] {
                         KeyValuePair.Create("email", user.Email),
@@ -38,7 +38,7 @@ namespace Tesy.Commands
 
             if (responseMessageContent.Contains("success"))
             {
-                fileEditor.WriteUserCredentialsToFile(user.Email, user.NewPassword, TesyConstants.PathToCredentialsJsonFile);
+                fileEditor.WriteUserCredentialsToFile(user.Email, user.NewPassword, Constants.PathToCredentialsJsonFile);
                 var updateUserAccountSettingsContentResponse = JsonSerializer.Deserialize<UpdateUserAccountSettingsContent>(stream) ?? new(false);
                 contentToWrite = ContentBuilder.BuildUpdateUserAccountSettingsContentString(updateUserAccountSettingsContentResponse);
             }
@@ -67,7 +67,7 @@ namespace Tesy.Commands
                 var accountDetailsErrorResponse = JsonSerializer.Deserialize<Dictionary<string, AccountDetailsError>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildAccountDetailsErrorString(accountDetailsErrorResponse);
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

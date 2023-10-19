@@ -41,7 +41,7 @@ namespace Tesy.Commands.DeviceCommands
             string wifiPass = newDeviceWifiPassValue != "" ? newDeviceWifiPassValue : oldDeviceWifiPassValue;
 
             string payloadContent = SerializeParamsAsJsonPayload(wifiSSID, wifiPass);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
         
         /// <summary>
@@ -58,7 +58,7 @@ namespace Tesy.Commands.DeviceCommands
                 WifiPass = wifi_pass
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

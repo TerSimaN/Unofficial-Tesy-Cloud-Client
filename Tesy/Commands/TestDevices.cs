@@ -20,7 +20,7 @@ namespace Tesy.Commands
 
         public async void GetTestDevices()
         {
-            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.TestDevicesUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(Constants.TestDevicesUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 
@@ -33,7 +33,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = $"TestDevicesResponse: {responseMessageContent}\n\n";
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
     }
 }

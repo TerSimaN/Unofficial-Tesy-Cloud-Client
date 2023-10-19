@@ -24,7 +24,7 @@ namespace Tesy.Commands
         public async Task<Dictionary<string, string>> PostLoginData()
         {
             HttpResponseMessage responseMessage = httpClient.Post(
-                TesyConstants.LoginUrl,
+                Constants.LoginUrl,
                 new Dictionary<string, string>(
                     new[] {
                         KeyValuePair.Create("email", userEmail),
@@ -44,7 +44,7 @@ namespace Tesy.Commands
                 );
                 inputQueryParams.TryAdd("userID", loginContentResponse.UserID.ToString());
                 contentToWrite = ContentBuilder.BuildLoginContentString(loginContentResponse);
-                fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
 
                 return inputQueryParams;
             }
@@ -72,7 +72,7 @@ namespace Tesy.Commands
                 Output.PrintCredentialsError(credentialsErrorResponse);
                 contentToWrite = ContentBuilder.BuildCredentialsErrorString(credentialsErrorResponse);
             }
-            fileEditor.WriteToFile(TesyConstants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
 
             return new();
         }

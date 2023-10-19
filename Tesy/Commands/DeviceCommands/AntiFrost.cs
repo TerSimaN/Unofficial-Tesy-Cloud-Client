@@ -32,7 +32,7 @@ namespace Tesy.Commands.DeviceCommands
                 antiFrostValue = ((deviceParam.Value.State.AntiFrost != null) && (deviceParam.Value.State.AntiFrost == "on")) ? "off" : "on";
             }
             string payloadContent = SerializeParamsAsJsonPayload(antiFrostValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace Tesy.Commands.DeviceCommands
                 Status = antiFrost
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

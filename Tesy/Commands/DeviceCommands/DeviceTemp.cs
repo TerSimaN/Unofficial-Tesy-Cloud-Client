@@ -36,7 +36,7 @@ namespace Tesy.Commands.DeviceCommands
             short temperatureValue = newDeviceTempValue != 0 ? newDeviceTempValue : oldDeviceTempValue;
 
             string payloadContent = SerializeParamsAsJsonPayload(temperatureValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
         
         /// <summary>
@@ -51,7 +51,7 @@ namespace Tesy.Commands.DeviceCommands
                 Temp = temperature
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;

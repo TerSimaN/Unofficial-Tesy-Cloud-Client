@@ -32,7 +32,7 @@ namespace Tesy.Commands.DeviceCommands
                 adaptiveStartValue = ((deviceParam.Value.State.AdaptiveStart != null) && (deviceParam.Value.State.AdaptiveStart == "on")) ? "off" : "on";
             }
             string payloadContent = SerializeParamsAsJsonPayload(adaptiveStartValue);
-            deviceSettings.PublishMessage(convector, TesyConstants.MessageRequestType, command, payloadContent);
+            deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace Tesy.Commands.DeviceCommands
                 Status = adaptiveStart
             };
 
-            string payload = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+            string payload = JsonSerializer.Serialize(@params, Constants.SerializerOptions);
             Console.WriteLine(payload);
 
             return payload;
