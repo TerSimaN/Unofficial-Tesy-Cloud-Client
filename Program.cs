@@ -41,27 +41,24 @@ await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
 await TesyMqttClient.DisconnectClient();
 
 // Refactored project using namespaces
-Credentials credentials = new();
-string[] userCredentials = credentials.GetCredentials();
-
-Login login = new(userCredentials[0], userCredentials[1]);
-Http httpClient = login.SignIn();
+string[] userCredentials = Credentials.GetCredentials();
+Http httpClient = Login.SignIn(userCredentials[0], userCredentials[1]);
 
 LoginData loginData = new(httpClient);
-var inputQueryParams = loginData.PostLoginData(userCredentials[0], userCredentials[1]);
+var inputQueryParams = await loginData.PostLoginData(userCredentials[0], userCredentials[1]);
 
-DevicePowerStat devicePowerStat = new(httpClient);
-DeviceTempStat deviceTempStat = new(httpClient);
-TesyDocuments documents = new(httpClient);
-MyDevices myDevices = new(httpClient);
-MyGroups myGroups = new(httpClient);
-MyMessages myMessages = new(httpClient);
-TestDevices testDevices = new(httpClient);
-UpdateDeviceSettings updateDeviceSettings = new(httpClient);
-UpdateUserAccountSettings updateUserAccountSettings = new(httpClient);
-UpdateUserPasswordSettings updateUserPasswordSettings = new(httpClient);
-UserHasAccessToCloud userHasAccessToCloud = new(httpClient);
-UserInfo userInfo = new(httpClient);
+DevicePowerStat devicePowerStat = new(httpClient, inputQueryParams);
+DeviceTempStat deviceTempStat = new(httpClient, inputQueryParams);
+TesyDocuments documents = new(httpClient, inputQueryParams);
+MyDevices myDevices = new(httpClient, inputQueryParams);
+MyGroups myGroups = new(httpClient, inputQueryParams);
+MyMessages myMessages = new(httpClient, inputQueryParams);
+TestDevices testDevices = new(httpClient, inputQueryParams);
+UpdateDeviceSettings updateDeviceSettings = new(httpClient, inputQueryParams);
+UpdateUserAccountSettings updateUserAccountSettings = new(httpClient, inputQueryParams);
+UpdateUserPasswordSettings updateUserPasswordSettings = new(httpClient, inputQueryParams);
+UserHasAccessToCloud userHasAccessToCloud = new(httpClient, inputQueryParams);
+UserInfo userInfo = new(httpClient, inputQueryParams);
 
 User user = new(userInfo);
 DeviceSettings deviceSettings = new();
