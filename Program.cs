@@ -41,9 +41,14 @@ await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
 await TesyMqttClient.DisconnectClient();
 
 // Refactored project using namespaces
-Http httpClient = new();
+Credentials credentials = new();
+string[] userCredentials = credentials.GetCredentials();
+
+Login login = new(userCredentials[0], userCredentials[1]);
+Http httpClient = login.SignIn();
+
 LoginData loginData = new(httpClient);
-var inputQueryParams = loginData.PostLoginData("", "");
+var inputQueryParams = loginData.PostLoginData(userCredentials[0], userCredentials[1]);
 
 DevicePowerStat devicePowerStat = new(httpClient);
 DeviceTempStat deviceTempStat = new(httpClient);
