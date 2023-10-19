@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content;
 using Tesy.Content.MyDevices;
 
@@ -8,13 +9,13 @@ namespace Tesy.Commands
     public class DevicePowerStat
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public DevicePowerStat(TesyHttpClient tesyHttpClient)
+        public DevicePowerStat(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public async void GetDevicePowerStat(Dictionary<string, MyDevicesContent> myDevicesContent)
@@ -37,7 +38,7 @@ namespace Tesy.Commands
                 inputQueryParams["activity"] = activity;
             }
 
-            HttpResponseMessage responseMessage = tesyHttpClient.Get(TesyConstants.DevicePowerStatUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.DevicePowerStatUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 

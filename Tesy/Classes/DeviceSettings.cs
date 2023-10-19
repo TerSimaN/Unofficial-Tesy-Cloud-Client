@@ -1,3 +1,4 @@
+using Tesy.Clients;
 using Tesy.Convectors;
 
 namespace Tesy.Classes
@@ -10,7 +11,7 @@ namespace Tesy.Classes
         {
             Task task;
 
-            await TesyMqttClient.PublishMessage(
+            await Mqtt.PublishMessage(
                 convector.MacAddress,
                 requestType,
                 convector.Model,

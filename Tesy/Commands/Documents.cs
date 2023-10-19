@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content.Documents;
 
 namespace Tesy.Commands
@@ -7,18 +8,18 @@ namespace Tesy.Commands
     public class TesyDocuments
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public TesyDocuments(TesyHttpClient tesyHttpClient)
+        public TesyDocuments(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public void GetTesyDocuments()
         {
-            HttpResponseMessage responseMessage = tesyHttpClient.Get(TesyConstants.DocumentsUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.DocumentsUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
 
             try

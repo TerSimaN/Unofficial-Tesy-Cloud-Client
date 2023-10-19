@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content;
 
 namespace Tesy.Commands
@@ -7,18 +8,18 @@ namespace Tesy.Commands
     public class MyGroups
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public MyGroups(TesyHttpClient tesyHttpClient)
+        public MyGroups(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public async void GetMyGroups()
         {
-            HttpResponseMessage responseMessage = tesyHttpClient.Get(TesyConstants.MyGroupsUrl, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.MyGroupsUrl, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 

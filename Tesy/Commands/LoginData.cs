@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content;
 
 namespace Tesy.Commands
@@ -7,18 +8,18 @@ namespace Tesy.Commands
     public class LoginData
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public LoginData(TesyHttpClient tesyHttpClient)
+        public LoginData(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public async Task<Dictionary<string, string>> PostLoginData(string userEmail, string userPasswword)
         {
-            HttpResponseMessage responseMessage = tesyHttpClient.Post(
+            HttpResponseMessage responseMessage = httpClient.Post(
                 TesyConstants.LoginUrl,
                 new Dictionary<string, string>(
                     new[] {

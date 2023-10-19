@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content;
 
 namespace Tesy.Commands
@@ -7,18 +8,18 @@ namespace Tesy.Commands
     public class UserHasAccessToCloud
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public UserHasAccessToCloud(TesyHttpClient tesyHttpClient)
+        public UserHasAccessToCloud(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public async void GetUserHasAccessToCloud()
         {
-            HttpResponseMessage responseMessage = tesyHttpClient.Get(TesyConstants.UserHasAccessToCloud, inputQueryParams);
+            HttpResponseMessage responseMessage = httpClient.Get(TesyConstants.UserHasAccessToCloud, inputQueryParams);
             Stream stream = responseMessage.Content.ReadAsStream();
             string responseMessageContent = await responseMessage.Content.ReadAsStringAsync();
 

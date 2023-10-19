@@ -1,5 +1,6 @@
 using System.Text.Json;
 using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Content;
 
 namespace Tesy.Commands
@@ -7,18 +8,18 @@ namespace Tesy.Commands
     public class UpdateUserPasswordSettings
     {
         private string contentToWrite = "";
-        private readonly TesyHttpClient tesyHttpClient;
+        private readonly Http httpClient;
         private readonly FileEditor fileEditor = new();
         private Dictionary<string, string> inputQueryParams = new();
 
-        public UpdateUserPasswordSettings(TesyHttpClient tesyHttpClient)
+        public UpdateUserPasswordSettings(Http httpClient)
         {
-            this.tesyHttpClient = tesyHttpClient;
+            this.httpClient = httpClient;
         }
 
         public async void PostUpdateUserPasswordSettings(User user)
         {
-            HttpResponseMessage responseMessage = tesyHttpClient.Post(
+            HttpResponseMessage responseMessage = httpClient.Post(
                 TesyConstants.AppUserPasswordSettingsUrl,
                 new Dictionary<string, string>(
                     new[] {
