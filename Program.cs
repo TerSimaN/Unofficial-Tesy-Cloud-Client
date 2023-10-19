@@ -40,7 +40,13 @@ showTesyCommands.ShowListOfAllCommands();
 await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
 await TesyMqttClient.DisconnectClient();
 
+
 // Refactored project using namespaces
+await Mqtt.ConnectClient();
+
+Generator.GenerateMqttResponseMessagesFile();
+Generator.GenerateHttpResponseMessagesFile();
+
 string[] userCredentials = Credentials.GetCredentials();
 Http httpClient = Login.SignIn(userCredentials[0], userCredentials[1]);
 
@@ -98,4 +104,13 @@ Commander commander = new(
     mode, ecoTemp, comfortTemp, sleepTemp, delayedStart,
     deviceName, wifiData, tCorrection, deviceTimeZone
 );
+
+await Mqtt.SubscribeForDevice(convector.MacAddress);
+Mqtt.HandleRecievedMessages();
+
+commander.ShowAllCommands();
+
+await Mqtt.UnsubscribeForDevice(convector.MacAddress);
+await Mqtt.DisconnectClient();
 // Refactored project using namespaces
+
