@@ -235,7 +235,7 @@ namespace Tesy.Classes
             string currentMinute = (currentTime.Minute < 10) ? $"0{currentTime.Minute}" : $"{currentTime.Minute}";
             string currentSecond = (currentTime.Second < 10) ? $"0{currentTime.Second}" : $"{currentTime.Second}";
             
-            builder.AppendLine($"{currentHour}:{currentMinute}:{currentSecond}.{currentTime.Millisecond}");
+            builder.AppendLine($"[{currentHour}:{currentMinute}:{currentSecond}.{currentTime.Millisecond}]");
             builder.AppendLine("TesyMyDevicesResponse:\n{");
             foreach (var deviceParam in myDevicesContent)
             {
