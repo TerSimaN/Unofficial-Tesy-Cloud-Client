@@ -57,6 +57,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads TCorrection <c>newTemperature</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>temperature</c>.</returns>
         private short ReadTCorrectionTemperatureFromConsole()
         {
             short temperature = 0;

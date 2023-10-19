@@ -64,6 +64,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads Device <c>newWifiName</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>newWifiName</c>.</returns>
         private string ReadDeviceWifiSSIDFromConsole()
         {
             string selectedWifiSSID = "";
@@ -81,6 +85,10 @@ namespace Tesy.Commands.DeviceCommands
             return selectedWifiSSID;
         }
 
+        /// <summary>
+        /// Reads Device <c>newWifiPassword</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>newWifiPassword</c>.</returns>
         private string ReadDeviceWifiPassFromConsole()
         {
             string selectedWifiPass = "";

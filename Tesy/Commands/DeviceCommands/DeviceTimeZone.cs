@@ -101,6 +101,11 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads the TimeZone IANA ID number from the Console.
+        /// </summary>
+        /// <param name="timeZonesFileContent">The file of TimeZones to search.</param>
+        /// <returns>The read <c>ianaId</c>.</returns>
         private string ReadIanaTimeZoneIdFromConsole(Dictionary<string, TimeZonesFileContent> timeZonesFileContent)
         {
             string ianaId = "";

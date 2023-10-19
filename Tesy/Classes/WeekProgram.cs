@@ -132,6 +132,11 @@ namespace Tesy.Classes
             deviceSettings.PublishMessage(convector, Constants.MessageRequestType, command, payloadContent);
         }
 
+        /// <summary>
+        /// Reads <c>programId</c> value from the Console.
+        /// </summary>
+        /// <param name="textToShow"><c>edit</c> or <c>delete</c> text to show.</param>
+        /// <returns>The read <c>programId</c>.</returns>
         private string ReadProgramIdFromConsole(string textToShow)
         {
             string selectedId = "";

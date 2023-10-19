@@ -57,6 +57,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads Mode <c>name</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>modeName</c>.</returns>
         private string ReadModeNameFromConsole()
         {
             string modeName = "";

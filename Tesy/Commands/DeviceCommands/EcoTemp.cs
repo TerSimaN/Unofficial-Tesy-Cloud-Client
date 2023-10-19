@@ -64,6 +64,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads <c>newTemperature</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>temperature</c>.</returns>
         private short ReadTemperatureFromConsole()
         {
             short temperature = 0;
@@ -81,6 +85,10 @@ namespace Tesy.Commands.DeviceCommands
             return temperature;
         }
 
+        /// <summary>
+        /// Reads EcoTemp <c>newTime</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>timeInMinutes</c>.</returns>
         private int ReadEcoTempTimeInMinutesFromConsole()
         {
             int timeInMinutes;

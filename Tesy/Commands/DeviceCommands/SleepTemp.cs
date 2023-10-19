@@ -57,6 +57,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads SleepMode <c>newTime</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>timeInMinutes</c>.</returns>
         private int ReadSleepModeTimeInMinutesFromConsole()
         {
             int timeInMinutes;

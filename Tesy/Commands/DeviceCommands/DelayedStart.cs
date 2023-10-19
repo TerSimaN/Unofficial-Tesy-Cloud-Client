@@ -64,6 +64,10 @@ namespace Tesy.Commands.DeviceCommands
             return payload;
         }
 
+        /// <summary>
+        /// Reads DelayedStart <c>newTime</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>timeInMinutes</c>.</returns>
         private int ReadDelayedStartTimeInMinutesFromConsole()
         {
             int hoursInMinutes = 0;
@@ -81,6 +85,10 @@ namespace Tesy.Commands.DeviceCommands
             return hoursInMinutes;
         }
 
+        /// <summary>
+        /// Reads <c>newTemperature</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>temperature</c>.</returns>
         private short ReadTemperatureFromConsole()
         {
             short temperature = 0;

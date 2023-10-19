@@ -56,6 +56,10 @@ namespace Tesy.Commands
             fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
         }
 
+        /// <summary>
+        /// Reads DeviceTempStat <c>activity</c> value from Console.
+        /// </summary>
+        /// <returns>The read <c>activity</c>.</returns>
         private string ReadActivityFromConsole()
         {
             string activity = "";

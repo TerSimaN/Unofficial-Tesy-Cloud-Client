@@ -35,6 +35,10 @@ namespace Tesy.Commands.DeviceCommands
             updateDeviceSettings.PostUpdateDeviceSettings(queryParams);
         }
 
+        /// <summary>
+        /// Reads Device <c>deviceName</c> value from the Console.
+        /// </summary>
+        /// <returns>The read <c>deviceName</c>.</returns>
         private string ReadDeviceNameFromConsole()
         {
             string deviceName = "";
