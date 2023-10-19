@@ -266,7 +266,7 @@ namespace Tesy.Programs
                     program "frpm": "00:00"
                     program "to": "06:00"
                     if (param "day" == program "day")
-                    then if ("00:01" > "00:00" && "00:01" < "06:00") then isValid = false */                
+                    then if ("00:01" > "00:00" && "00:01" < "06:00") then isValid = false */
                     if ((time > programFromInMinutes) && (time < programToInMinutes))
                     {
                         Console.WriteLine($"Error! \"from\" time and/or \"to\" time values cannot be between {programFrom} and {programTo}!");
@@ -364,19 +364,16 @@ namespace Tesy.Programs
         public short ProgramTemp
         {
             get { return programTemp; }
-            set { programTemp = value; }
         }
 
         public string FromTime
         {
             get { return fromTime; }
-            set { fromTime = value; }
         }
 
         public string ToTime
         {
             get { return toTime; }
-            set { toTime = value; }
         }
     }
 }
