@@ -4,9 +4,14 @@ using Tesy.Content;
 
 namespace Tesy.Classes
 {
+    class CredentialsParams
+    {
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+    }
+
     public class FileEditor
     {
-        private readonly PayloadSerializer payloadSerializer = new();
         private StringBuilder? builder;
 
         public FileEditor() { }
@@ -32,7 +37,7 @@ namespace Tesy.Classes
         /// <param name="filePath">The file to write to.</param>
         public void WriteUserCredentialsToFile(string email, string password, string filePath)
         {
-            string serializedCredentials = payloadSerializer.SerializeCredentialsAsJsonString(email, password);
+            string serializedCredentials = SerializeParamsAsJsonString(email, password);
             OverwriteExistingFile(filePath, serializedCredentials);
         }
 
@@ -106,6 +111,25 @@ namespace Tesy.Classes
                     sw.Write(content);
                 }
             }
+        }
+
+        /// <summary>
+        /// Serializes credentials as JSON string.
+        /// </summary>
+        /// <param name="email">The <c>email</c> to serialize.</param>
+        /// <param name="password">The <c>password</c> to serialize.</param>
+        /// <returns>Serialized JSON string.</returns>
+        private string SerializeParamsAsJsonString(string email, string password)
+        {
+            var @params = new CredentialsParams
+            {
+                Email = email,
+                Password = password
+            };
+
+            string jsonString = JsonSerializer.Serialize(@params, TesyConstants.SerializerOptions);
+
+            return jsonString;
         }
     }
 }
