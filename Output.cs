@@ -2,6 +2,7 @@ using System.Text;
 using Tesy.Content;
 using Tesy.Content.Documents;
 using Tesy.Content.MyDevices;
+using Tesy.Programs;
 
 public static class Output
 {
@@ -235,14 +236,14 @@ public static class Output
         Console.WriteLine(outputBuilder.ToString());
     }
 
-    public static void PrintCreateProgramValues(CreateProgram createProgram)
+    public static void PrintCreateWeekProgramValues(CreateWeekProgram createWeekProgram)
     {
         outputBuilder = new();
 
-        outputBuilder.AppendLine($"Program day of week: {createProgram.DayOfWeek}");
-        outputBuilder.AppendLine($"From time: {createProgram.FromTime}");
-        outputBuilder.AppendLine($"To time: {createProgram.ToTime}");
-        outputBuilder.AppendLine($"Program temperature: {createProgram.ProgramTemp}");
+        outputBuilder.AppendLine($"Program day of week: {createWeekProgram.DayOfWeek}");
+        outputBuilder.AppendLine($"From time: {createWeekProgram.FromTime}");
+        outputBuilder.AppendLine($"To time: {createWeekProgram.ToTime}");
+        outputBuilder.AppendLine($"Program temperature: {createWeekProgram.ProgramTemp}");
 
         Console.Write(outputBuilder.ToString());
     }
