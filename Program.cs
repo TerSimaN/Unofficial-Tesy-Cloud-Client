@@ -1,4 +1,5 @@
 ﻿using Tesy.Classes;
+using Tesy.Clients;
 using Tesy.Commands;
 using Tesy.Commands.DeviceCommands;
 using Tesy.Convectors;
@@ -14,23 +15,48 @@ TesyHttpClass tesyHttpClass = new();
 tesyHttpClass.Login();
 
 TesyUserClass tesyUserClass = new(tesyHttpClass);
+Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
+CreateProgram createProgram = new(tesyHttpClass);
 
-TesyHttpClient tesyHttpClient = new();
-LoginData loginData = new(tesyHttpClient);
+TesyDebugClass tesyDebugClass = new();
+TesyDeviceSettingsClass tesyDeviceSettings = new();
+TesyWeekProgramClass tesyWeekProgram = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
+TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
+
+ShowTesyCommands showTesyCommands = new(
+    tesyHttpClass,
+    createProgram,
+    tesyWeekProgram,
+    tesyDeviceCommands,
+    tesyUserClass,
+    tesyDebugClass
+);
+
+await TesyMqttClient.SubscribeForDevice(cn05uvConvector.MacAddress);
+TesyMqttClient.HandleRecievedMessages();
+
+showTesyCommands.ShowListOfAllCommands();
+
+await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
+await TesyMqttClient.DisconnectClient();
+
+// Refactored project using namespaces
+Http httpClient = new();
+LoginData loginData = new(httpClient);
 var inputQueryParams = loginData.PostLoginData("", "");
 
-DevicePowerStat devicePowerStat = new(tesyHttpClient);
-DeviceTempStat deviceTempStat = new(tesyHttpClient);
-TesyDocuments documents = new(tesyHttpClient);
-MyDevices myDevices = new(tesyHttpClient);
-MyGroups myGroups = new(tesyHttpClient);
-MyMessages myMessages = new(tesyHttpClient);
-TestDevices testDevices = new(tesyHttpClient);
-UpdateDeviceSettings updateDeviceSettings = new(tesyHttpClient);
-UpdateUserAccountSettings updateUserAccountSettings = new(tesyHttpClient);
-UpdateUserPasswordSettings updateUserPasswordSettings = new(tesyHttpClient);
-UserHasAccessToCloud userHasAccessToCloud = new(tesyHttpClient);
-UserInfo userInfo = new(tesyHttpClient);
+DevicePowerStat devicePowerStat = new(httpClient);
+DeviceTempStat deviceTempStat = new(httpClient);
+TesyDocuments documents = new(httpClient);
+MyDevices myDevices = new(httpClient);
+MyGroups myGroups = new(httpClient);
+MyMessages myMessages = new(httpClient);
+TestDevices testDevices = new(httpClient);
+UpdateDeviceSettings updateDeviceSettings = new(httpClient);
+UpdateUserAccountSettings updateUserAccountSettings = new(httpClient);
+UpdateUserPasswordSettings updateUserPasswordSettings = new(httpClient);
+UserHasAccessToCloud userHasAccessToCloud = new(httpClient);
+UserInfo userInfo = new(httpClient);
 
 User user = new(userInfo);
 DeviceSettings deviceSettings = new();
@@ -70,28 +96,4 @@ Commander commander = new(
     mode, ecoTemp, comfortTemp, sleepTemp, delayedStart,
     deviceName, wifiData, tCorrection, deviceTimeZone
 );
-
-Cn05uvConvector cn05uvConvector = new(tesyHttpClass);
-CreateProgram createProgram = new(tesyHttpClass);
-
-TesyDebugClass tesyDebugClass = new();
-TesyDeviceSettingsClass tesyDeviceSettings = new();
-TesyWeekProgramClass tesyWeekProgram = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
-TesyDeviceCommandsClass tesyDeviceCommands = new(tesyHttpClass, cn05uvConvector, tesyDeviceSettings);
-
-ShowTesyCommands showTesyCommands = new(
-    tesyHttpClass,
-    createProgram,
-    tesyWeekProgram,
-    tesyDeviceCommands,
-    tesyUserClass,
-    tesyDebugClass
-);
-
-await TesyMqttClient.SubscribeForDevice(cn05uvConvector.MacAddress);
-TesyMqttClient.HandleRecievedMessages();
-
-showTesyCommands.ShowListOfAllCommands();
-
-await TesyMqttClient.UnsubscribeForDevice(cn05uvConvector.MacAddress);
-await TesyMqttClient.DisconnectClient();
+// Refactored project using namespaces
