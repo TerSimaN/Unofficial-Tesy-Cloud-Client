@@ -147,8 +147,9 @@ namespace Tesy.Classes
         public static void PrintListOfCommandsForAvailableData()
         {
             outputBuilder = new();
-            int indexOfLastSlash = Constants.PathToHttpResponseMessagesFile.LastIndexOf("\\") + 1;
-            string fileName = Constants.PathToHttpResponseMessagesFile.Substring(indexOfLastSlash);
+            string httpResponseMessagesFilePath = Constants.PathToHttpResponseMessagesFile;
+            int indexOfLastSlash = httpResponseMessagesFilePath.LastIndexOf("\\") + 1;
+            string fileName = httpResponseMessagesFilePath.Substring(indexOfLastSlash);
 
             outputBuilder.AppendLine("------------------------------------------------------------");
             outputBuilder.AppendLine(
@@ -183,7 +184,7 @@ namespace Tesy.Classes
             Console.Write(outputBuilder.ToString());
         }
 
-        public static void PrintIanaTimeZoneIds(Dictionary<string, TimeZonesFileContent> timeZonesFileContent)
+        public static void PrintIanaTimeZoneIds(Dictionary<string, TimeZoneContent> timeZonesFileContent)
         {
             outputBuilder = new();
             int numberToCount = 1;
@@ -294,7 +295,7 @@ namespace Tesy.Classes
             Console.Write(outputBuilder.ToString());
         }
         
-        public static void PrintTimeZonesFileContent(Dictionary<string, TimeZonesFileContent> timeZonesFileContent)
+        public static void PrintTimeZonesFileContent(Dictionary<string, TimeZoneContent> timeZonesFileContent)
         {
             outputBuilder = new();
 

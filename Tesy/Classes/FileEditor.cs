@@ -13,6 +13,7 @@ namespace Tesy.Classes
     public class FileEditor
     {
         private StringBuilder? builder;
+        private readonly string httpResponseMessagesFilePath = Constants.PathToHttpResponseMessagesFile;
 
         public FileEditor() { }
 
@@ -39,6 +40,29 @@ namespace Tesy.Classes
         {
             string serializedCredentials = SerializeParamsAsJsonString(email, password);
             OverwriteExistingFile(filePath, serializedCredentials);
+        }
+
+        /// <summary>
+        /// Creates a new HttpResponseMessagesFile on the given path if no file exists
+        /// or writes to the already existing file.
+        /// </summary>
+        /// <param name="content">The content to write.</param>
+        public void WriteContentToHttpResponseMessagesFile(string content)
+        {
+            if (!File.Exists(httpResponseMessagesFilePath))
+            {
+                using (StreamWriter sw = File.CreateText(httpResponseMessagesFilePath))
+                {
+                    sw.Write(content);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText(httpResponseMessagesFilePath))
+                {
+                    sw.Write(content);
+                }
+            }
         }
 
         /// <summary>

@@ -28,13 +28,13 @@ namespace Tesy.Commands
             {
                 var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
-                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
             }
             else
             {
                 var userInfoContentResponse = JsonSerializer.Deserialize<UserInfoContent>(stream) ?? new("Email not found", "FirstName not found", "LastName not found", "Lang not found");
                 contentToWrite = ContentBuilder.BuildUserInfoContentString(userInfoContentResponse);
-                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
 
                 return userInfoContentResponse;
             }

@@ -50,7 +50,7 @@ namespace Tesy.Commands
                 var updateDeviceSettingsContentResponse = JsonSerializer.Deserialize<UpdateDeviceSettingsContent>(stream) ?? new(false, "Message not found");
                 contentToWrite = ContentBuilder.BuildUpdateDeviceSettingsContentString(updateDeviceSettingsContentResponse);
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
         }
     }
 }

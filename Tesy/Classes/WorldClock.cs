@@ -1,51 +1,19 @@
 using System.Globalization;
-using System.Text;
-using System.Text.Json;
-using Tesy.Content;
 using Tesy.Enums;
 
 namespace Tesy.Classes
 {
     public class WorldClock
     {
-        private readonly string timeZonesFilePath = Constants.PathToTimeZonesFile;
         private readonly CultureInfo cultureInfo = CultureInfo.CreateSpecificCulture("en-US");
         private readonly DateTimeFormatInfo dateTimeFormatInfo;
         private DateTime dateTime = new();
 
         public WorldClock()
         {
-            ReadTimeZonesFileContent();
-
             dateTimeFormatInfo = cultureInfo.DateTimeFormat;
             dateTimeFormatInfo.LongDatePattern = "yyyy-MM-dd";
             dateTimeFormatInfo.LongTimePattern = "HH:mm";
-        }
-
-        public Dictionary<string, TimeZonesFileContent> ReadTimeZonesFileContent()
-        {
-            StringBuilder builder = new();
-
-            if (!File.Exists(timeZonesFilePath))
-            {
-                Console.WriteLine("File does not exist!");
-            }
-            else
-            {
-                using (StreamReader sr = File.OpenText(timeZonesFilePath))
-                {
-                    var readLine = "";
-                    while ((readLine = sr.ReadLine()) != null)
-                    {
-                        builder.Append(readLine);
-                    }
-                }
-
-                var timeZonesFileContent = JsonSerializer.Deserialize<Dictionary<string, TimeZonesFileContent>>(builder.ToString());
-                return timeZonesFileContent ?? new();
-            }
-
-            return new();
         }
 
         public string GetNewTimeZoneTime(string timeZoneIanaId)

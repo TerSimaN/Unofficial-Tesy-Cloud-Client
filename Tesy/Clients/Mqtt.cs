@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Text;
 using MQTTnet;
 using MQTTnet.Client;
@@ -32,7 +33,7 @@ namespace Tesy.Clients
         /// </summary>
         public static async Task ConnectClient()
         {
-            var connectResponse = await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
+            await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
             Console.WriteLine("\nThe MQTT client is connected.");
         }
 
@@ -84,7 +85,7 @@ namespace Tesy.Clients
                 )
                 .Build();
             
-            var subscribeResponse = await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
+            await mqttClient.SubscribeAsync(mqttSubscribeOptions, CancellationToken.None);
             Console.WriteLine($"\nMQTT client subscribed for {macAddress}.");
         }
 
@@ -101,7 +102,7 @@ namespace Tesy.Clients
                 .WithTopicFilter($"{appMqttVersion}/{macAddress}/pingRequest/#")
                 .Build();
             
-            var unsubscribeResponse = await mqttClient.UnsubscribeAsync(mqttUnsubscribeOptions, CancellationToken.None);
+            await mqttClient.UnsubscribeAsync(mqttUnsubscribeOptions, CancellationToken.None);
             Console.WriteLine($"\nMQTT client unsubscribed for {macAddress}.");
         }
 
@@ -123,7 +124,7 @@ namespace Tesy.Clients
                 .WithPayload(payload)
                 .Build();
             
-            var publishResponse = await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
+            await mqttClient.PublishAsync(applicationMessage, CancellationToken.None);
             Console.WriteLine("\nMQTT application message is published.");
         }
 

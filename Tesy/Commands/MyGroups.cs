@@ -33,7 +33,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = $"MyGroupsResponse: {responseMessageContent}\n\n";
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
         }
     }
 }

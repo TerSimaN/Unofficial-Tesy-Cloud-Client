@@ -29,10 +29,6 @@ namespace Tesy.Classes
         private const string TesyDocumentsUrl = "documents";
         private const string RequestType = "request";
         private const string CredentialsJsonFilePath = @".\Tesy\JsonFiles\CredentialsFile.json";
-        private const string CorrectDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataCorrect.json";
-        private const string BrokenDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataBroken.json";
-        private const string MoreBrokenDeviceProgramDataJsonFilePath = @".\Tesy\JsonFiles\DeviceProgramDataMoreBroken.json";
-        private const string TimeZonesFilePath = @".\Tesy\JsonFiles\TimeZonesFile.json";
         private static readonly Dictionary<string, string> LanguageDictionary = new(
             new[] {
                 KeyValuePair.Create("Bulgarian", "bg"),
@@ -159,26 +155,6 @@ namespace Tesy.Classes
         public static string PathToCredentialsJsonFile
         {
             get { return CredentialsJsonFilePath; }
-        }
-
-        public static string PathToCorrectDeviceProgramDataJsonFile
-        {
-            get { return CorrectDeviceProgramDataJsonFilePath; }
-        }
-
-        public static string PathToBrokenDeviceProgramDataJsonFile
-        {
-            get { return BrokenDeviceProgramDataJsonFilePath; }
-        }
-
-        public static string PathToMoreBrokenDeviceProgramDataJsonFile
-        {
-            get { return MoreBrokenDeviceProgramDataJsonFilePath; }
-        }
-
-        public static string PathToTimeZonesFile
-        {
-            get { return TimeZonesFilePath; }
         }
 
         public static Dictionary<string, string> Languages

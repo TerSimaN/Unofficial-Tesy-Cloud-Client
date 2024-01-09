@@ -53,7 +53,7 @@ namespace Tesy.Commands
                 var devicePowerStatContentResponse = JsonSerializer.Deserialize<DevicePowerStatContent[]>(stream) ?? new DevicePowerStatContent[] {};
                 contentToWrite = ContentBuilder.BuildDevicePowerStatContentString(devicePowerStatContentResponse);
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
         }
 
         /// <summary>

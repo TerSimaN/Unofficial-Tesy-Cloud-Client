@@ -32,7 +32,7 @@ namespace Tesy.Commands
             {
                 contentToWrite = jsonErr.Message;
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
         }
     }
 }

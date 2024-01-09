@@ -44,7 +44,7 @@ namespace Tesy.Commands
                 );
                 inputQueryParams.TryAdd("userID", loginContentResponse.UserID.ToString());
                 contentToWrite = ContentBuilder.BuildLoginContentString(loginContentResponse);
-                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
 
                 return inputQueryParams;
             }
@@ -72,7 +72,7 @@ namespace Tesy.Commands
                 Output.PrintCredentialsError(credentialsErrorResponse);
                 contentToWrite = ContentBuilder.BuildCredentialsErrorString(credentialsErrorResponse);
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
 
             return new();
         }

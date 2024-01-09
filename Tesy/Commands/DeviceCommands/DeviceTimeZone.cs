@@ -36,7 +36,6 @@ namespace Tesy.Commands.DeviceCommands
         {
             var myDevicesContent = await myDevices.GetMyDevices();
             var deviceTimeContent = await myDevices.GetDeviceTime();
-            var timeZonesFileContent = worldClock.ReadTimeZonesFileContent();
 
             Dictionary<string, string> queryParams;
             string macAddress = "";
@@ -46,8 +45,9 @@ namespace Tesy.Commands.DeviceCommands
             string newTimeValue = "";
             short newWeekdayValue = -1;
 
-            Output.PrintIanaTimeZoneIds(timeZonesFileContent);
-            string newTimeZoneValue = ReadIanaTimeZoneIdFromConsole(timeZonesFileContent);
+            Output.PrintIanaTimeZoneIds(TimeZones.TimeZonesList);
+            string newTimeZoneValue = ReadIanaTimeZoneIdFromConsole(TimeZones.TimeZonesList);
+
             if (newTimeZoneValue != "")
             {
                 newTimeValue = worldClock.GetNewTimeZoneTime(newTimeZoneValue);
@@ -106,7 +106,7 @@ namespace Tesy.Commands.DeviceCommands
         /// </summary>
         /// <param name="timeZonesFileContent">The file of TimeZones to search.</param>
         /// <returns>The read <c>ianaId</c>.</returns>
-        private string ReadIanaTimeZoneIdFromConsole(Dictionary<string, TimeZonesFileContent> timeZonesFileContent)
+        private string ReadIanaTimeZoneIdFromConsole(Dictionary<string, TimeZoneContent> timeZonesFileContent)
         {
             string ianaId = "";
             do

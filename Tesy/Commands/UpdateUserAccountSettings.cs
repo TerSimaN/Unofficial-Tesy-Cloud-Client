@@ -67,7 +67,7 @@ namespace Tesy.Commands
                 var accountDetailsErrorResponse = JsonSerializer.Deserialize<Dictionary<string, AccountDetailsError>>(stream) ?? new();
                 contentToWrite = ContentBuilder.BuildAccountDetailsErrorString(accountDetailsErrorResponse);
             }
-            fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+            fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
         }
     }
 }

@@ -1,6 +1,4 @@
-using System.Text.Json;
 using Tesy.Commands;
-using Tesy.Content;
 using Tesy.Content.MyDevices;
 using Tesy.Convectors;
 using Tesy.Programs;
@@ -10,7 +8,6 @@ namespace Tesy.Classes
 {
     public class WeekProgram
     {
-        private readonly string deviceProgramDataJsonFilePath = Constants.PathToCorrectDeviceProgramDataJsonFile;
         private string textToShow = "";
         
         private readonly MyDevices myDevices;
@@ -18,7 +15,6 @@ namespace Tesy.Classes
         private readonly DeviceSettings deviceSettings;
         private readonly WeekProgramPayload weekProgramPayload = new();
         private readonly ProgramKeyPayload programKeyPayload = new();
-        private readonly FileEditor fileEditor = new();
 
         public WeekProgram(MyDevices myDevices, Cn05uv convector, DeviceSettings deviceSettings)
         {
@@ -30,10 +26,8 @@ namespace Tesy.Classes
         public string FindProgramKey(int day, string from)
         {
             string programKey = "1";
-            string readContent = fileEditor.ReadFromFile(deviceProgramDataJsonFilePath);
 
-            var deviceProgramDataContentResponse = JsonSerializer.Deserialize<Dictionary<string, DeviceProgramDataContent>>(readContent) ?? new();
-            foreach (var programData in deviceProgramDataContentResponse)
+            foreach (var programData in WeeklyPrograms.Programs)
             {
                 int programDay = programData.Value.ProgramDay;
                 string programFrom = programData.Value.ProgramFrom;
@@ -43,13 +37,6 @@ namespace Tesy.Classes
                     break;
                 }
             }
-
-            /*
-            The following command prints in the Console A LOT of text
-            if JSON file "DeviceProgramDataBroken.json" or
-            "DeviceProgramDataMoreBroken.json" is selected!
-            */
-            // Output.PrintDeviceProgramDataContent(deviceProgramDataContentResponse);
 
             return programKey;
         }

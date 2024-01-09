@@ -29,7 +29,7 @@ namespace Tesy.Commands
             {
                 var noMatchFoundInRecordsErrorResponse = JsonSerializer.Deserialize<NoMatchFoundInRecordsError>(stream) ?? new("Error not found");
                 contentToWrite = ContentBuilder.BuildNoMatchFoundInRecordsErrorString(noMatchFoundInRecordsErrorResponse);
-                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Tesy.Commands
                     var deviceTimeContentResponse = JsonSerializer.Deserialize<DeviceTime>(deviceParam.Value.Time) ?? new("Date not found", "Time not found");
                     contentToWrite = ContentBuilder.BuildMyDevicesContentString(myDevicesContentResponse, deviceTimeContentResponse);
                 }
-                fileEditor.WriteToFile(Constants.PathToHttpResponseMessagesFile, contentToWrite);
+                fileEditor.WriteContentToHttpResponseMessagesFile(contentToWrite);
 
                 return myDevicesContentResponse;
             }
