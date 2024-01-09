@@ -70,7 +70,10 @@ Commander commander = new(
 );
 
 await Mqtt.SubscribeForDevice(convector.MacAddress);
+
+#if DEBUG
 Mqtt.HandleRecievedMessages();
+#endif
 
 commander.ShowAllCommands();
 
