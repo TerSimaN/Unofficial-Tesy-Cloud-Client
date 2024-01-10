@@ -3,6 +3,7 @@ using Tesy.Content;
 using Tesy.Content.Documents;
 using Tesy.Content.MyDevices;
 using Tesy.Programs;
+using Tesy.Enums;
 
 namespace Tesy.Classes
 {
@@ -255,12 +256,41 @@ namespace Tesy.Classes
         public static void PrintDeviceProgramsContent(Dictionary<string, DeviceProgram> devicePrograms)
         {
             outputBuilder = new();
+            string weekdayName;
 
             outputBuilder.AppendLine("Week Programs: {");
             foreach (var program in devicePrograms)
             {
+                switch (program.Value.Day)
+                {
+                    case 0:
+                        weekdayName = WeekDays.Monday.ToString();
+                        break;
+                    case 1:
+                        weekdayName = WeekDays.Tuesday.ToString();
+                        break;
+                    case 2:
+                        weekdayName = WeekDays.Wednesday.ToString();
+                        break;
+                    case 3:
+                        weekdayName = WeekDays.Thursday.ToString();
+                        break;
+                    case 4:
+                        weekdayName = WeekDays.Friday.ToString();
+                        break;
+                    case 5:
+                        weekdayName = WeekDays.Saturday.ToString();
+                        break;
+                    case 6:
+                        weekdayName = WeekDays.Sunday.ToString();
+                        break;
+                    default:
+                        weekdayName = "N/A";
+                        break;
+                }
+
                 outputBuilder.AppendLine($"  \"{program.Key}\": {{");
-                outputBuilder.AppendLine($"    Day: {program.Value.Day},");
+                outputBuilder.AppendLine($"    Day: {program.Value.Day} ({weekdayName}),");
                 outputBuilder.AppendLine($"    From: {program.Value.From},");
                 outputBuilder.AppendLine($"    To: {program.Value.To},");
                 outputBuilder.AppendLine($"    Temp: {program.Value.Temp},");
