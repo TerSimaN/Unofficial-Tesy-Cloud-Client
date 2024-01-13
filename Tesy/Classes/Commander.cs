@@ -100,10 +100,14 @@ namespace Tesy.Classes
             this.deviceTimeZone = deviceTimeZone;
         }
 
-        public void ShowAllCommands()
+        public async void ShowAllCommands()
         {
             do
             {
+                var myDevicesContent = await myDevices.GetMyDevices();
+                var deviceTimeContent = await myDevices.GetDeviceTime();
+                Output.PrintDeviceContent(myDevicesContent, deviceTimeContent);
+                
                 Output.PrintListOfAllCommands();
 
                 Console.Write("Input: ");

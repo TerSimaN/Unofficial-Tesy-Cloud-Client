@@ -551,6 +551,64 @@ namespace Tesy.Classes
             Console.Write(outputBuilder.ToString());
         }
 
+        public static void PrintDeviceContent(Dictionary<string, MyDevicesContent> myDevicesContent, DeviceTime deviceTimeContent)
+        {
+            outputBuilder = new();
+
+            outputBuilder.AppendLine("\nDevice Information:");
+            foreach (var deviceParam in myDevicesContent)
+            {
+                outputBuilder.AppendLine($"  Device has Internet: {(deviceParam.Value.HasInternet ? "Yes" : "No")};");
+                outputBuilder.AppendLine("  Device State:");
+                outputBuilder.AppendLine($"   Device Id: {deviceParam.Value.State.Id};");
+                outputBuilder.AppendLine($"   Device was created at: {deviceParam.Value.State.Created_At ?? "N/A"};");
+                outputBuilder.AppendLine($"   Device was updated at: \"{deviceParam.Value.State.Updated_At}\";");
+                outputBuilder.AppendLine($"   Device Mac Address: {deviceParam.Value.State.Mac};");
+                outputBuilder.AppendLine($"   Name: {deviceParam.Value.State.DeviceName ?? "N/A"};");
+                outputBuilder.AppendLine($"   On/Off Status: \"{deviceParam.Value.State.Status}\";");
+                outputBuilder.AppendLine($"   Temperature: {deviceParam.Value.State.Temp ?? "null"};");
+                outputBuilder.AppendLine($"   Opened Window: \"{deviceParam.Value.State.OpenedWindow}\";");
+                outputBuilder.AppendLine("   Delayed Start:");
+                outputBuilder.AppendLine($"    Time: {deviceParam.Value.State.DelayedStart.Time},");
+                outputBuilder.AppendLine($"    Temp: {deviceParam.Value.State.DelayedStart.Temp};");
+                outputBuilder.AppendLine($"   TCorrection: {deviceParam.Value.State.TCorrection};");
+                outputBuilder.AppendLine($"   Anti-Frost: \"{deviceParam.Value.State.AntiFrost}\";");
+                outputBuilder.AppendLine("   Comfort Temp:");
+                outputBuilder.AppendLine($"    Temp: {deviceParam.Value.State.ComfortTemp.Temp};");
+                outputBuilder.AppendLine("   Eco Temp:");
+                outputBuilder.AppendLine($"    Temp: {deviceParam.Value.State.EcoTemp.Temp},");
+                outputBuilder.AppendLine($"    Time: {deviceParam.Value.State.EcoTemp.Time};");
+                outputBuilder.AppendLine($"   UV (AirSafe): \"{deviceParam.Value.State.UV}\";");
+                outputBuilder.AppendLine($"   Locked Device: \"{deviceParam.Value.State.LockedDevice}\";");
+                outputBuilder.AppendLine($"   Device Watt: {deviceParam.Value.State.Watt};");
+                outputBuilder.AppendLine($"   Current measured Temperature: {deviceParam.Value.State.CurrentTemp};");
+                outputBuilder.AppendLine($"   Adaptive Start: \"{deviceParam.Value.State.AdaptiveStart}\";");
+                outputBuilder.AppendLine($"   Device Mode: \"{deviceParam.Value.State.Mode}\";");
+                outputBuilder.AppendLine($"   Device Heating: \"{deviceParam.Value.State.Heating}\";");
+                outputBuilder.AppendLine("   Sleep Mode:");
+                outputBuilder.AppendLine($"    Time: {deviceParam.Value.State.SleepMode.Time};");
+                outputBuilder.AppendLine($"   Target Temperature: {deviceParam.Value.State.Target};");
+                outputBuilder.AppendLine($"   Time Remaining: {deviceParam.Value.State.TimeRemaining};");
+                outputBuilder.AppendLine($"   Mode Time: {deviceParam.Value.State.ModeTime}");
+                outputBuilder.AppendLine($"  Device Model: {deviceParam.Value.Model};");
+                outputBuilder.AppendLine($"  Device Model Type: \"{deviceParam.Value.Model_Type}\";");
+                outputBuilder.AppendLine($"  City: {deviceParam.Value.City};");
+                outputBuilder.AppendLine($"  Country: {deviceParam.Value.Country};");
+                outputBuilder.AppendLine($"  Continent: {deviceParam.Value.Continent};");
+                outputBuilder.AppendLine($"  Timezone: {deviceParam.Value.Timezone};");
+                outputBuilder.AppendLine($"  Date: \"{deviceTimeContent.Date}\";");
+                outputBuilder.AppendLine($"  Time: \"{deviceTimeContent.Time}\"");
+                outputBuilder.AppendLine($"  Device Name: \"{deviceParam.Value.DeviceName}\";");
+                outputBuilder.AppendLine($"  Wifi SSID: {deviceParam.Value.Wifi_SSID};");
+                outputBuilder.AppendLine($"  Wifi Password: {deviceParam.Value.Wifi_Pass};");
+                outputBuilder.AppendLine($"  Firmware Version: {deviceParam.Value.FirmwareVersion};");
+                outputBuilder.AppendLine($"  Local Usage: {(deviceParam.Value.LocalUsage ? "On" : "Off")};");
+                outputBuilder.AppendLine($"  Waiting for connection: {(deviceParam.Value.WaitingForConnection ? "Yes" : "No")}");
+            }
+
+            Console.Write(outputBuilder.ToString());
+        }
+
         public static void PrintMyDevicesContent(Dictionary<string, MyDevicesContent> myDevicesContent, DeviceTime deviceTimeContent)
         {
             outputBuilder = new();
