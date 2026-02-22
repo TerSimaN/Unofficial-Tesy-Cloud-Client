@@ -21,7 +21,7 @@ and more. See the `commands` command for more information on available commands.
 
 ## Requirements
 
-* .NET v7.0 or newer
+* .NET v10.0 or newer
 
 ## How to use it
 
