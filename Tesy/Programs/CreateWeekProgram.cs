@@ -121,18 +121,25 @@ namespace Tesy.Programs
                 {
                     toTimeInHours = int.Parse(inputValue);
                 }
-            } while ((toTimeInHours < 0) || (toTimeInHours > 23));
+            } while ((toTimeInHours < 0) || (toTimeInHours > 24));
 
-            do
+            if (toTimeInHours < 24)
             {
-                Console.Write("Enter \"to\" time in minutes: ");
-                var inputValue = Console.ReadLine();
-
-                if ((inputValue != null) && (inputValue != ""))
+                do
                 {
-                    toTimeInMinutes = int.Parse(inputValue);
-                }
-            } while ((toTimeInMinutes < 0) || (toTimeInMinutes > 59));
+                    Console.Write("Enter \"to\" time in minutes: ");
+                    var inputValue = Console.ReadLine();
+
+                    if ((inputValue != null) && (inputValue != ""))
+                    {
+                        toTimeInMinutes = int.Parse(inputValue);
+                    }
+                } while ((toTimeInMinutes < 0) || (toTimeInMinutes > 59));
+            }
+            else
+            {
+                toTimeInMinutes = 0;
+            }
 
             string toTime = CombineHoursAndMinutes(toTimeInHours, toTimeInMinutes);
             return toTime;

@@ -73,7 +73,7 @@ namespace Tesy.Commands.DeviceCommands
             string selectedWifiSSID = "";
             do
             {
-                Console.Write("Entet Wifi Network Name: ");
+                Console.Write("Enter Wifi Network Name: ");
                 var inputValue = Console.ReadLine();
 
                 if (inputValue != null)
