@@ -388,19 +388,22 @@ namespace Tesy.Classes
                 {
                     builder.AppendLine($"    ModelName: {model.Value.ModelName},");
                     builder.AppendLine($"    ModelImage: {model.Value.ModelImage},");
-                    builder.AppendLine($"    ModelDocuments: {model.Value.Documents},");
-                    builder.AppendLine($"    DocumentLinks: {model.Value.Documents.Links},");
-                    builder.AppendLine("    Documents: {");
-                    builder.AppendLine("      Links: {");
-                    foreach (var modelDocumentLinks in model.Value.Documents.Links)
+                    if (model.Value.Documents != null)
                     {
-                        builder.AppendLine("        {");
-                        builder.AppendLine($"          Name: {modelDocumentLinks.Value.Name},");
-                        builder.AppendLine($"          Link: {modelDocumentLinks.Value.Link}");
-                        builder.AppendLine("        }");
+                        builder.AppendLine($"    ModelDocuments: {model.Value.Documents},");
+                        builder.AppendLine($"    DocumentLinks: {model.Value.Documents.Links},");
+                        builder.AppendLine("    Documents: {");
+                        builder.AppendLine("      Links: {");
+                        foreach (var modelDocumentLinks in model.Value.Documents.Links)
+                        {
+                            builder.AppendLine("        {");
+                            builder.AppendLine($"          Name: {modelDocumentLinks.Value.Name},");
+                            builder.AppendLine($"          Link: {modelDocumentLinks.Value.Link}");
+                            builder.AppendLine("        }");
+                        }
+                        builder.AppendLine("      }");
+                        builder.AppendLine("    }");
                     }
-                    builder.AppendLine("      }");
-                    builder.AppendLine("    }");
                 }
                 builder.AppendLine("  }");
             }
